@@ -1,6 +1,7 @@
 package ventanas;
 
-import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.intellijthemes.FlatCarbonIJTheme;
+
 
 /**
  *
@@ -137,7 +138,7 @@ public class InicioSesion extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-       FlatDarkLaf.setup();
+        FlatCarbonIJTheme.setup();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
