@@ -24,33 +24,13 @@ public class PantallaInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
-        desktopPane.add(jButton1);
-        jButton1.setBounds(300, 190, 79, 27);
-
-        jButton2.setText("jButton1");
-        desktopPane.add(jButton2);
-        jButton2.setBounds(90, 250, 79, 27);
-
-        jButton3.setText("jButton1");
-        desktopPane.add(jButton3);
-        jButton3.setBounds(310, 120, 79, 27);
-
-        jButton4.setText("jButton1");
-        desktopPane.add(jButton4);
-        jButton4.setBounds(200, 220, 79, 27);
-
         jButton5.setText("jButton1");
         desktopPane.add(jButton5);
-        jButton5.setBounds(120, 100, 79, 27);
+        jButton5.setBounds(110, 80, 150, 100);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,10 +89,6 @@ public class PantallaInicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     // End of variables declaration//GEN-END:variables
 
