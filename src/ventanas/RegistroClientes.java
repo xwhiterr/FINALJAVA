@@ -32,7 +32,6 @@ public class RegistroClientes extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -46,15 +45,15 @@ public class RegistroClientes extends javax.swing.JFrame {
 
         jLabel2.setText("Ingrese Nombre(s)");
 
-        jLabel3.setText("Ingrese Apellido(s)");
+        jLabel3.setText("Ingrese Nro de C.I");
 
-        jLabel4.setText("Ingrese Nro de C.I");
+        jLabel4.setText("Ingrese Apellido(s)");
 
         jLabel5.setText("Ingrese Direccion");
 
-        jLabel6.setText("Ingrese Nro de Contacto");
+        jLabel6.setText("Ingrese Dirección");
 
-        jLabel7.setText("Ingrese Nro de C.I.");
+        jLabel7.setText("Ingrese Nro de Contacto");
 
         jButton1.setText("Registrar");
 
@@ -88,7 +87,6 @@ public class RegistroClientes extends javax.swing.JFrame {
                             .addComponent(jTextField3)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextField4)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(189, 189, 189)
@@ -123,9 +121,7 @@ public class RegistroClientes extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
                         .addComponent(jButton2)
                         .addContainerGap(37, Short.MAX_VALUE))
@@ -187,7 +183,6 @@ public class RegistroClientes extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
