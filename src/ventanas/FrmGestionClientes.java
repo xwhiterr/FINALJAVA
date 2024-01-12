@@ -46,6 +46,7 @@ public class FrmGestionClientes extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
@@ -155,7 +156,7 @@ public class FrmGestionClientes extends javax.swing.JFrame {
         jButton4.setBounds(110, 0, 110, 60);
 
         jButton5.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jButton5.setText("ELIMINAR");
+        jButton5.setText("GUARDAR");
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.setMaximumSize(new java.awt.Dimension(100, 100));
         jButton5.setMinimumSize(new java.awt.Dimension(100, 100));
@@ -165,7 +166,7 @@ public class FrmGestionClientes extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton5);
-        jButton5.setBounds(220, 0, 110, 60);
+        jButton5.setBounds(330, 0, 110, 60);
 
         jButton6.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jButton6.setText("SALIR");
@@ -192,6 +193,19 @@ public class FrmGestionClientes extends javax.swing.JFrame {
         });
         jPanel2.add(jButton7);
         jButton7.setBounds(0, 0, 110, 60);
+
+        jButton8.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        jButton8.setText("ELIMINAR");
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton8.setMaximumSize(new java.awt.Dimension(100, 100));
+        jButton8.setMinimumSize(new java.awt.Dimension(100, 100));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton8);
+        jButton8.setBounds(220, 0, 110, 60);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(30, 240, 570, 60);
@@ -227,6 +241,10 @@ public class FrmGestionClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -247,6 +265,7 @@ public class FrmGestionClientes extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
