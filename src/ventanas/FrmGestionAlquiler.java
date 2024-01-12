@@ -1,6 +1,5 @@
 package ventanas;
 
-import com.formdev.flatlaf.intellijthemes.FlatCarbonIJTheme;
 
 /**
  *
@@ -28,6 +27,19 @@ public class FrmGestionAlquiler extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnSalir = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(630, 360));
@@ -35,26 +47,149 @@ public class FrmGestionAlquiler extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 360, 720, 100);
+        jPanel2.setBounds(0, 360, 720, 0);
 
         jPanel3.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         jLabel3.setText("Gestion de Alquiler");
         jPanel3.add(jLabel3);
-        jLabel3.setBounds(30, 10, 220, 30);
+        jLabel3.setBounds(50, 10, 220, 30);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(0, -2, 720, 40);
 
+        btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnSalir.setText("CANCELAR");
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnSalir.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        btnRegistrar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnRegistrar.setText("GUARDAR");
+        btnRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnRegistrar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+
+        btnEditar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnEditar.setText("EDITAR");
+        btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnEditar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
+        btnEliminar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnEliminar.setText("NUEVO CLIENTE");
+        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnEliminar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(102, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(30, 210, 610, 72);
+
+        jLabel1.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        jLabel1.setText("Ingrese Nro de Ci");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(50, 50, 110, 17);
+
+        jTextField1.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(180, 70, 320, 27);
+
+        jLabel2.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        jLabel2.setText("Ingrese nombre del Libro");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(50, 120, 160, 17);
+
+        jTextField2.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(40, 70, 130, 27);
+
+        jLabel4.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        jLabel4.setText("Fecha del Alquiler");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(310, 120, 110, 17);
+
+        jTextField3.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(290, 140, 130, 27);
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(40, 140, 240, 26);
+
+        jLabel5.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        jLabel5.setText("Ingrese Nombre del Cliente");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(190, 50, 180, 17);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        FlatCarbonIJTheme.setup();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -65,8 +200,21 @@ public class FrmGestionAlquiler extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
