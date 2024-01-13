@@ -504,7 +504,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
     private javax.swing.JPanel pnlBarrio;
     private javax.swing.JPanel pnlCiudad;
     private javax.swing.JPanel pnlPais;
-    private javax.swing.JTabbedPane tabReferenciales;
+    public static javax.swing.JTabbedPane tabReferenciales;
     private javax.swing.JTextField txtBarrio;
     private javax.swing.JTextField txtCiudad;
     private javax.swing.JTextField txtPais;

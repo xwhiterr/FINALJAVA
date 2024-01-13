@@ -3,6 +3,7 @@ package ventanas;
 import com.formdev.flatlaf.intellijthemes.FlatArcDarkIJTheme;
 import java.awt.Dimension;
 import javax.swing.JDesktopPane;
+import javax.swing.JInternalFrame;
 
 /**
  *
@@ -152,44 +153,27 @@ public class FrmMdi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGestionReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionReportesActionPerformed
+    private void abrirInternalFrameMdi(JInternalFrame internalFrame) {
         desactivarBotonesMdi();
-        FrmGestionReportes reportes = new FrmGestionReportes();
         Dimension desktopSize = desktopPane.getSize();
-        Dimension jInternalFrameSize = reportes.getSize();
-        reportes.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,
+        Dimension jInternalFrameSize = internalFrame.getSize();
+        internalFrame.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,
                 (desktopSize.height - jInternalFrameSize.height) / 2);
 
-        desktopPane.add(reportes);
-        reportes.setVisible(true);
+        desktopPane.add(internalFrame);
+        internalFrame.setVisible(true);
+    }
+
+    private void btnGestionReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionReportesActionPerformed
+        abrirInternalFrameMdi(new FrmGestionReportes());
     }//GEN-LAST:event_btnGestionReportesActionPerformed
 
     private void btnGestionReferencialesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionReferencialesActionPerformed
-        desactivarBotonesMdi();
-        FrmGestionReferenciales Ref = new FrmGestionReferenciales();
-
-        // Centrar el JInternalFrame en la pantalla
-        Dimension desktopSize = desktopPane.getSize();
-        Dimension jInternalFrameSize = Ref.getSize();
-        Ref.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,
-                (desktopSize.height - jInternalFrameSize.height) / 2);
-
-        desktopPane.add(Ref);
-        Ref.setVisible(true);
+       abrirInternalFrameMdi(new FrmGestionReferenciales());
     }//GEN-LAST:event_btnGestionReferencialesActionPerformed
 
     private void btnGestionFuentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionFuentesActionPerformed
-        desactivarBotonesMdi();
-        FrmGestionFuentes fuentes = new FrmGestionFuentes();
-
-        // Centrar el JInternalFrame en la pantalla
-        Dimension desktopSize = desktopPane.getSize();
-        Dimension jInternalFrameSize = fuentes.getSize();
-        fuentes.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,
-                (desktopSize.height - jInternalFrameSize.height) / 2);
-
-        desktopPane.add(fuentes);
-        fuentes.setVisible(true);
+        abrirInternalFrameMdi(new FrmGestionFuentes());
     }//GEN-LAST:event_btnGestionFuentesActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -197,51 +181,19 @@ public class FrmMdi extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnRegistrarAlquilerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarAlquilerActionPerformed
-       desactivarBotonesMdi();
-        FrmGestionAlquiler alquiler = new FrmGestionAlquiler();
-        Dimension desktopSize = desktopPane.getSize();
-        Dimension jInternalFrameSize = alquiler.getSize();
-        alquiler.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,
-                (desktopSize.height - jInternalFrameSize.height) / 2);
-
-        desktopPane.add(alquiler);
-        alquiler.setVisible(true);
+        abrirInternalFrameMdi(new FrmGestionAlquiler());
     }//GEN-LAST:event_btnRegistrarAlquilerActionPerformed
 
     private void btnGestionClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionClientesActionPerformed
-        desactivarBotonesMdi();
-        FrmGestionClientes clientes = new FrmGestionClientes();
-        Dimension desktopSize = desktopPane.getSize();
-        Dimension jInternalFrameSize = clientes.getSize();
-        clientes.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,
-                (desktopSize.height - jInternalFrameSize.height) / 2);
-
-        desktopPane.add(clientes);
-        clientes.setVisible(true);
+        abrirInternalFrameMdi(new FrmGestionClientes());
     }//GEN-LAST:event_btnGestionClientesActionPerformed
 
     private void btnGestionLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionLibrosActionPerformed
-        desactivarBotonesMdi();
-        FrmGestionLibros libros = new FrmGestionLibros();
-        Dimension desktopSize = desktopPane.getSize();
-        Dimension jInternalFrameSize = libros.getSize();
-        libros.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,
-                (desktopSize.height - jInternalFrameSize.height) / 2);
-
-        desktopPane.add(libros);
-        libros.setVisible(true);
+        abrirInternalFrameMdi(new FrmGestionLibros());
     }//GEN-LAST:event_btnGestionLibrosActionPerformed
 
     private void btnGestionEmpleados1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionEmpleados1ActionPerformed
-        desactivarBotonesMdi();
-        FrmGestionEmpleados empleados = new FrmGestionEmpleados();
-        Dimension desktopSize = desktopPane.getSize();
-        Dimension jInternalFrameSize = empleados.getSize();
-        empleados.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,
-                (desktopSize.height - jInternalFrameSize.height) / 2);
-
-        desktopPane.add(empleados);
-        empleados.setVisible(true);
+        abrirInternalFrameMdi(new FrmGestionEmpleados());
     }//GEN-LAST:event_btnGestionEmpleados1ActionPerformed
 
     private void desktopPaneComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_desktopPaneComponentRemoved
@@ -263,6 +215,7 @@ public class FrmMdi extends javax.swing.JFrame {
         btnSalir.setVisible(false);
         btnGestionClientes.setVisible(false);
         btnGestionEmpleados1.setVisible(false);
+        
     }
 
     public void activarBotonesMdi() {
@@ -275,7 +228,7 @@ public class FrmMdi extends javax.swing.JFrame {
         btnGestionClientes.setVisible(true);
         btnGestionEmpleados1.setVisible(true);
     }
-    
+
     public static JDesktopPane getDesktopPane() {
         return desktopPane;
     }
@@ -288,7 +241,7 @@ public class FrmMdi extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmMdi().setVisible(true);    
+                new FrmMdi().setVisible(true);
             }
         });
 

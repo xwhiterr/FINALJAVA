@@ -1,5 +1,7 @@
 package ventanas;
 
+import classes.Utils;
+
 /**
  *
  * @author Walter
@@ -41,6 +43,9 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jTextField4 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(655, 310));
         setMinimumSize(new java.awt.Dimension(655, 310));
@@ -160,7 +165,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
 
         jTextField2.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(290, 70, 140, 27);
+        jTextField2.setBounds(280, 70, 160, 27);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel3.setText("Ingrese nombre del autor");
@@ -169,7 +174,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
 
         jTextField3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(40, 120, 240, 27);
+        jTextField3.setBounds(40, 120, 230, 27);
 
         jLabel4.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel4.setText("Ingrese Editorial");
@@ -178,7 +183,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
 
         jTextField4.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(440, 70, 170, 27);
+        jTextField4.setBounds(440, 70, 160, 27);
 
         jLabel5.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel5.setText("Ingrese Género");
@@ -193,6 +198,23 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         });
         getContentPane().add(jTextField5);
         jTextField5.setBounds(290, 120, 200, 27);
+
+        jButton1.setText("jButton1");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(490, 120, 20, 27);
+
+        jButton2.setText("jButton1");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(270, 120, 20, 27);
+
+        jButton3.setText("jButton1");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(600, 70, 20, 27);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -221,8 +243,15 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Utils.abrirInternalFrame(new FrmGestionFuentes());
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
