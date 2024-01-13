@@ -1,19 +1,17 @@
 package ventanas;
 
-
 /**
  *
  * @author Walter
  */
-public class FrmGestionReferenciales extends javax.swing.JFrame {
+public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form FrmGestionReferenciales
+     * Creates new form FrmTest
      */
     public FrmGestionReferenciales() {
         initComponents();
-        setTitle("Gestion de Referenciales");
-        setLocationRelativeTo(null);
+        setSize(550, 270);
     }
 
     /**
@@ -25,94 +23,98 @@ public class FrmGestionReferenciales extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        btnAgregar2 = new javax.swing.JButton();
-        btnAgregar3 = new javax.swing.JButton();
-        btnAgregar4 = new javax.swing.JButton();
-        btnAgregar5 = new javax.swing.JButton();
-        btnAgregar6 = new javax.swing.JButton();
+        tabReferenciales = new javax.swing.JTabbedPane();
+        pnlPais = new javax.swing.JPanel();
         lblPais = new javax.swing.JLabel();
         txtPais = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        lblPais1 = new javax.swing.JLabel();
-        txtPais1 = new javax.swing.JTextField();
-        jPanel7 = new javax.swing.JPanel();
-        btnAgregar7 = new javax.swing.JButton();
-        btnAgregar8 = new javax.swing.JButton();
-        btnAgregar9 = new javax.swing.JButton();
-        btnAgregar10 = new javax.swing.JButton();
-        btnAgregar11 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        btnGuardar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        pnlCiudad = new javax.swing.JPanel();
+        lblCiudad = new javax.swing.JLabel();
+        txtCiudad = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
-        btnAgregar12 = new javax.swing.JButton();
-        btnAgregar13 = new javax.swing.JButton();
-        btnAgregar14 = new javax.swing.JButton();
-        btnAgregar15 = new javax.swing.JButton();
-        btnAgregar16 = new javax.swing.JButton();
+        btnGuardar1 = new javax.swing.JButton();
+        btnSalir1 = new javax.swing.JButton();
+        btnEliminar1 = new javax.swing.JButton();
+        btnAgregar1 = new javax.swing.JButton();
+        btnEditar1 = new javax.swing.JButton();
+        pnlBarrio = new javax.swing.JPanel();
+        lblBarrio = new javax.swing.JLabel();
+        txtBarrio = new javax.swing.JTextField();
+        jPanel9 = new javax.swing.JPanel();
+        btnGuardar2 = new javax.swing.JButton();
+        btnSalir2 = new javax.swing.JButton();
+        btnEliminar2 = new javax.swing.JButton();
+        btnAgregar2 = new javax.swing.JButton();
+        btnEditar2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(550, 280));
+        setMinimumSize(new java.awt.Dimension(550, 350));
+        getContentPane().setLayout(null);
 
-        jTabbedPane1.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        tabReferenciales.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        tabReferenciales.setMinimumSize(new java.awt.Dimension(550, 350));
 
-        jPanel1.setLayout(null);
+        lblPais.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        lblPais.setText("Ingrese Pais");
 
-        btnAgregar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar2.setText("GUARDAR");
-        btnAgregar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar2.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar2.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar2.addActionListener(new java.awt.event.ActionListener() {
+        txtPais.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+
+        btnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnGuardar.setText("GUARDAR");
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnGuardar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar2ActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
             }
         });
 
-        btnAgregar3.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar3.setText("SALIR");
-        btnAgregar3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar3.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar3.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar3.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir.setText("SALIR");
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnSalir.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar3ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
-        btnAgregar4.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar4.setText("ELIMINAR");
-        btnAgregar4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar4.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar4.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar4.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnEliminar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar4ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
 
-        btnAgregar5.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar5.setText("AGREGAR");
-        btnAgregar5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar5.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar5.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar5.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnAgregar.setText("AGREGAR");
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnAgregar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar5ActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
 
-        btnAgregar6.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar6.setText("EDITAR");
-        btnAgregar6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar6.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar6.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar6.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnEditar.setText("EDITAR");
+        btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnEditar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar6ActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
 
@@ -122,207 +124,114 @@ public class FrmGestionReferenciales extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAgregar5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregar6, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(btnAgregar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregar3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12))
         );
 
-        jPanel1.add(jPanel6);
-        jPanel6.setBounds(10, 130, 523, 60);
-
-        lblPais.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        lblPais.setText("Ingrese Pais");
-        jPanel1.add(lblPais);
-        lblPais.setBounds(40, 20, 93, 21);
-
-        txtPais.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jPanel1.add(txtPais);
-        txtPais.setBounds(30, 50, 250, 31);
-
-        jTabbedPane1.addTab("País", jPanel1);
-
-        jPanel2.setMinimumSize(new java.awt.Dimension(550, 300));
-        jPanel2.setLayout(null);
-
-        lblPais1.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        lblPais1.setText("Ingrese Ciudad");
-        jPanel2.add(lblPais1);
-        lblPais1.setBounds(40, 20, 120, 21);
-
-        txtPais1.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jPanel2.add(txtPais1);
-        txtPais1.setBounds(30, 50, 250, 31);
-
-        btnAgregar7.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar7.setText("GUARDAR");
-        btnAgregar7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar7.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar7.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar7ActionPerformed(evt);
-            }
-        });
-
-        btnAgregar8.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar8.setText("SALIR");
-        btnAgregar8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar8.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar8.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar8ActionPerformed(evt);
-            }
-        });
-
-        btnAgregar9.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar9.setText("ELIMINAR");
-        btnAgregar9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar9.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar9.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar9ActionPerformed(evt);
-            }
-        });
-
-        btnAgregar10.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar10.setText("AGREGAR");
-        btnAgregar10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar10.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar10.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar10ActionPerformed(evt);
-            }
-        });
-
-        btnAgregar11.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar11.setText("EDITAR");
-        btnAgregar11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar11.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar11.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar11ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnAgregar10, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregar11, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregar9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(btnAgregar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+        javax.swing.GroupLayout pnlPaisLayout = new javax.swing.GroupLayout(pnlPais);
+        pnlPais.setLayout(pnlPaisLayout);
+        pnlPaisLayout.setHorizontalGroup(
+            pnlPaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPaisLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(pnlPaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlPaisLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lblPais))
+                    .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregar8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12))
+        pnlPaisLayout.setVerticalGroup(
+            pnlPaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPaisLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblPais)
+                .addGap(9, 9, 9)
+                .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
-        jPanel2.add(jPanel7);
-        jPanel7.setBounds(10, 130, 523, 60);
+        tabReferenciales.addTab("Pais", pnlPais);
 
-        jTabbedPane1.addTab("Ciudad", jPanel2);
+        lblCiudad.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        lblCiudad.setText("Ciudad");
 
-        jPanel3.setLayout(null);
+        txtCiudad.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jLabel3.setText("Ingrese Barrio");
-        jPanel3.add(jLabel3);
-        jLabel3.setBounds(40, 20, 170, 21);
-
-        jTextField2.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jPanel3.add(jTextField2);
-        jTextField2.setBounds(30, 50, 320, 31);
-
-        btnAgregar12.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar12.setText("GUARDAR");
-        btnAgregar12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar12.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar12.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar12.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnGuardar1.setText("GUARDAR");
+        btnGuardar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar1.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnGuardar1.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar12ActionPerformed(evt);
+                btnGuardar1ActionPerformed(evt);
             }
         });
 
-        btnAgregar13.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar13.setText("SALIR");
-        btnAgregar13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar13.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar13.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar13.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir1.setText("SALIR");
+        btnSalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir1.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnSalir1.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnSalir1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar13ActionPerformed(evt);
+                btnSalir1ActionPerformed(evt);
             }
         });
 
-        btnAgregar14.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar14.setText("ELIMINAR");
-        btnAgregar14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar14.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar14.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar14.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnEliminar1.setText("ELIMINAR");
+        btnEliminar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminar1.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnEliminar1.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnEliminar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar14ActionPerformed(evt);
+                btnEliminar1ActionPerformed(evt);
             }
         });
 
-        btnAgregar15.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar15.setText("AGREGAR");
-        btnAgregar15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar15.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar15.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar15.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnAgregar1.setText("AGREGAR");
+        btnAgregar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregar1.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnAgregar1.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnAgregar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar15ActionPerformed(evt);
+                btnAgregar1ActionPerformed(evt);
             }
         });
 
-        btnAgregar16.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar16.setText("EDITAR");
-        btnAgregar16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar16.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar16.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar16.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnEditar1.setText("EDITAR");
+        btnEditar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditar1.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnEditar1.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnEditar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar16ActionPerformed(evt);
+                btnEditar1ActionPerformed(evt);
             }
         });
 
@@ -332,151 +241,272 @@ public class FrmGestionReferenciales extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAgregar15, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAgregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregar16, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregar14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregar12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(btnAgregar13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregar13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar15, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12))
         );
 
-        jPanel3.add(jPanel8);
-        jPanel8.setBounds(10, 130, 523, 60);
-
-        jTabbedPane1.addTab("Barrio", jPanel3);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
+        javax.swing.GroupLayout pnlCiudadLayout = new javax.swing.GroupLayout(pnlCiudad);
+        pnlCiudad.setLayout(pnlCiudadLayout);
+        pnlCiudadLayout.setHorizontalGroup(
+            pnlCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCiudadLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(pnlCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlCiudadLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lblCiudad))
+                    .addComponent(txtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        pnlCiudadLayout.setVerticalGroup(
+            pnlCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCiudadLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblCiudad)
+                .addGap(9, 9, 9)
+                .addComponent(txtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
+
+        tabReferenciales.addTab("Ciudad", pnlCiudad);
+
+        lblBarrio.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        lblBarrio.setText("Ingrese Barrio");
+
+        txtBarrio.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+
+        btnGuardar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnGuardar2.setText("GUARDAR");
+        btnGuardar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar2.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnGuardar2.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnGuardar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardar2ActionPerformed(evt);
+            }
+        });
+
+        btnSalir2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir2.setText("SALIR");
+        btnSalir2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir2.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnSalir2.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnSalir2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir2ActionPerformed(evt);
+            }
+        });
+
+        btnEliminar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnEliminar2.setText("ELIMINAR");
+        btnEliminar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminar2.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnEliminar2.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnEliminar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminar2ActionPerformed(evt);
+            }
+        });
+
+        btnAgregar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnAgregar2.setText("AGREGAR");
+        btnAgregar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregar2.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnAgregar2.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnAgregar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregar2ActionPerformed(evt);
+            }
+        });
+
+        btnEditar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnEditar2.setText("EDITAR");
+        btnEditar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditar2.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnEditar2.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnEditar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditar2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnAgregar2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEditar2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12))
+        );
+
+        javax.swing.GroupLayout pnlBarrioLayout = new javax.swing.GroupLayout(pnlBarrio);
+        pnlBarrio.setLayout(pnlBarrioLayout);
+        pnlBarrioLayout.setHorizontalGroup(
+            pnlBarrioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBarrioLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(pnlBarrioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlBarrioLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lblBarrio))
+                    .addComponent(txtBarrio, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+        pnlBarrioLayout.setVerticalGroup(
+            pnlBarrioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBarrioLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblBarrio)
+                .addGap(9, 9, 9)
+                .addComponent(txtBarrio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
+        );
+
+        tabReferenciales.addTab("Barrio", pnlBarrio);
+
+        getContentPane().add(tabReferenciales);
+        tabReferenciales.setBounds(0, 0, 560, 260);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAgregar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar2ActionPerformed
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
 
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardar1ActionPerformed
+
+    private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalir1ActionPerformed
+
+    private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminar1ActionPerformed
+
+    private void btnAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregar1ActionPerformed
+
+    private void btnEditar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditar1ActionPerformed
+
+    private void btnGuardar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardar2ActionPerformed
+
+    private void btnSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir2ActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalir2ActionPerformed
+
+    private void btnEliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminar2ActionPerformed
+
+    private void btnAgregar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar2ActionPerformed
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregar2ActionPerformed
 
-    private void btnAgregar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar3ActionPerformed
+    private void btnEditar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditar2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar3ActionPerformed
+    }//GEN-LAST:event_btnEditar2ActionPerformed
 
-    private void btnAgregar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar4ActionPerformed
-
-    private void btnAgregar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar5ActionPerformed
-
-    private void btnAgregar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar6ActionPerformed
-
-    private void btnAgregar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar7ActionPerformed
-
-    private void btnAgregar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar8ActionPerformed
-
-    private void btnAgregar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar9ActionPerformed
-
-    private void btnAgregar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar10ActionPerformed
-
-    private void btnAgregar11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar11ActionPerformed
-
-    private void btnAgregar12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar12ActionPerformed
-
-    private void btnAgregar13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar13ActionPerformed
-
-    private void btnAgregar14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar14ActionPerformed
-
-    private void btnAgregar15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar15ActionPerformed
-
-    private void btnAgregar16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregar16ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmGestionReferenciales().setVisible(true);
-            }
-        });
+    private void setComponentOrientation(float CENTER_ALIGNMENT) {
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregar10;
-    private javax.swing.JButton btnAgregar11;
-    private javax.swing.JButton btnAgregar12;
-    private javax.swing.JButton btnAgregar13;
-    private javax.swing.JButton btnAgregar14;
-    private javax.swing.JButton btnAgregar15;
-    private javax.swing.JButton btnAgregar16;
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnAgregar1;
     private javax.swing.JButton btnAgregar2;
-    private javax.swing.JButton btnAgregar3;
-    private javax.swing.JButton btnAgregar4;
-    private javax.swing.JButton btnAgregar5;
-    private javax.swing.JButton btnAgregar6;
-    private javax.swing.JButton btnAgregar7;
-    private javax.swing.JButton btnAgregar8;
-    private javax.swing.JButton btnAgregar9;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEditar1;
+    private javax.swing.JButton btnEditar2;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminar1;
+    private javax.swing.JButton btnEliminar2;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnGuardar1;
+    private javax.swing.JButton btnGuardar2;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnSalir1;
+    private javax.swing.JButton btnSalir2;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel lblBarrio;
+    private javax.swing.JLabel lblCiudad;
     private javax.swing.JLabel lblPais;
-    private javax.swing.JLabel lblPais1;
+    private javax.swing.JPanel pnlBarrio;
+    private javax.swing.JPanel pnlCiudad;
+    private javax.swing.JPanel pnlPais;
+    private javax.swing.JTabbedPane tabReferenciales;
+    private javax.swing.JTextField txtBarrio;
+    private javax.swing.JTextField txtCiudad;
     private javax.swing.JTextField txtPais;
-    private javax.swing.JTextField txtPais1;
     // End of variables declaration//GEN-END:variables
 }

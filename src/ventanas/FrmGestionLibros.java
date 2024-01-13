@@ -1,20 +1,17 @@
 package ventanas;
 
-import com.formdev.flatlaf.intellijthemes.FlatCarbonIJTheme;
-
 /**
  *
  * @author Walter
  */
-public class FrmGestionLibros extends javax.swing.JFrame {
+public class FrmGestionLibros extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form RegistroLibros
+     * Creates new form FrmGestionLibros
      */
     public FrmGestionLibros() {
         initComponents();
-        this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        setSize(655, 310);
     }
 
     /**
@@ -45,8 +42,8 @@ public class FrmGestionLibros extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(645, 320));
+        setMaximumSize(new java.awt.Dimension(655, 310));
+        setMinimumSize(new java.awt.Dimension(655, 310));
         getContentPane().setLayout(null);
 
         jPanel1.setLayout(null);
@@ -216,27 +213,14 @@ public class FrmGestionLibros extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        FlatCarbonIJTheme.setup();
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmGestionLibros().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton4;

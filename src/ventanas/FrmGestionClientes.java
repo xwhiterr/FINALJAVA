@@ -1,20 +1,19 @@
 package ventanas;
 
-import com.formdev.flatlaf.intellijthemes.FlatCarbonIJTheme;
+import javax.swing.JInternalFrame;
 
 /**
  *
  * @author Walter
  */
-public class FrmGestionClientes extends javax.swing.JFrame {
+public class FrmGestionClientes extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form RegistroClientes
+     * Creates new form FrmGestionClientes
      */
     public FrmGestionClientes() {
         initComponents();
-        this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        setSize(650, 350);
     }
 
     /**
@@ -26,8 +25,6 @@ public class FrmGestionClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField2 = new javax.swing.JTextField();
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -50,9 +47,9 @@ public class FrmGestionClientes extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
-        setMaximumSize(new java.awt.Dimension(631, 360));
-        setMinimumSize(new java.awt.Dimension(631, 360));
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
@@ -109,7 +106,7 @@ public class FrmGestionClientes extends javax.swing.JFrame {
         jLabel7.setText("Barrio");
         jLabel7.setFocusCycleRoot(true);
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(430, 110, 50, 17);
+        jLabel7.setBounds(440, 110, 50, 17);
 
         jLabel8.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel8.setText("Ciudad");
@@ -212,15 +209,28 @@ public class FrmGestionClientes extends javax.swing.JFrame {
 
         jTextField4.setFocusCycleRoot(true);
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(430, 130, 170, 26);
+        jTextField4.setBounds(430, 130, 150, 26);
 
         jTextField7.setFocusCycleRoot(true);
         getContentPane().add(jTextField7);
-        jTextField7.setBounds(250, 130, 180, 26);
+        jTextField7.setBounds(250, 130, 150, 26);
 
         jTextField8.setFocusCycleRoot(true);
         getContentPane().add(jTextField8);
         jTextField8.setBounds(30, 190, 570, 26);
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(400, 130, 30, 27);
+
+        jButton2.setText("jButton2");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(580, 130, 40, 27);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -245,22 +255,14 @@ public class FrmGestionClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        FlatCarbonIJTheme.setup();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmGestionClientes().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -277,7 +279,6 @@ public class FrmGestionClientes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
