@@ -11,10 +11,11 @@ public class Conexion {
     public static Statement statement;
 
     public static boolean conectar() {
-        
-        File db = new File("data/db.sqlite");
-        String path = db.getAbsolutePath();
-        
+
+//        File db = new File("data/db.sqlite");
+//        String path = db.getAbsolutePath();
+        String path = "\\\\192.168.0.11\\data\\db.sqlite";
+
         /* Intentamos la conexion. si falla, damos error.
            Retorna true si la conexion fue exitosa
            Retorna false si la conexion fallo
@@ -27,5 +28,10 @@ public class Conexion {
             System.err.println(ex + "\n" + ex.getStackTrace());
             return false;
         }
+    }
+    
+    public static void main(String[] args) {
+        
+        System.out.println(conectar());
     }
 }
