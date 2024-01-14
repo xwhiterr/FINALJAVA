@@ -42,7 +42,13 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtEstado = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList<>();
         btnCancelar = new javax.swing.JButton();
 
         jLabel6.setText("jLabel6");
@@ -179,8 +185,23 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
         jLabel8.setText("Estado");
         jPanel2.add(jLabel8);
         jLabel8.setBounds(310, 60, 50, 20);
-        jPanel2.add(jTextField2);
-        jTextField2.setBounds(300, 80, 60, 26);
+        jPanel2.add(txtEstado);
+        txtEstado.setBounds(300, 80, 80, 26);
+
+        jScrollPane1.setViewportView(jList1);
+
+        jPanel2.add(jScrollPane1);
+        jScrollPane1.setBounds(10, 50, 110, 10);
+
+        jScrollPane2.setViewportView(jList2);
+
+        jPanel2.add(jScrollPane2);
+        jScrollPane2.setBounds(130, 50, 280, 10);
+
+        jScrollPane3.setViewportView(jList3);
+
+        jPanel2.add(jScrollPane3);
+        jScrollPane3.setBounds(10, 110, 280, 10);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(20, 40, 470, 200);
@@ -242,12 +263,18 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
+    private javax.swing.JList<String> jList3;
     private javax.swing.JPanel jPanel1;
     private static javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField txtCi;
+    private javax.swing.JTextField txtEstado;
     private javax.swing.JTextField txtNombreCliente;
     private javax.swing.JTextField txtNombreLibro;
     // End of variables declaration//GEN-END:variables

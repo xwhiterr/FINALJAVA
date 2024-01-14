@@ -503,7 +503,8 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-       clases.Controlador.actualizar("INSERT INTO autor (aut_nom, aut_ape, pai_id) VALUES ('" + txtNombre.getText() + "', '" + txtApellido.getText() + "', '" + txtID.getText() + "')");
+       clases.Controlador.actualizar("INSERT INTO autor (aut_nom, aut_ape, pai_id) VALUES "
+        + "('" + txtNombre.getText() + "', '" + txtApellido.getText() + "', '" + txtID.getText() + "')");
         txtNombre.setText("");
         txtApellido.setText("");
         txtID.setText("");

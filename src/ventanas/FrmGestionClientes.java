@@ -11,6 +11,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
 
     public FrmGestionClientes() {
         initComponents();
+        setTitle("Gestion de Clientes");
         setSize(650, 350);
         clases.Utils.activarPanel(false, pnlCampos);
     }
@@ -20,6 +21,8 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         pnlCampos = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -36,6 +39,12 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         txtDireccion = new javax.swing.JTextField();
         btnAgregarCiudad = new javax.swing.JButton();
         btnAgregarBarrio = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList4 = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -47,34 +56,57 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
 
         getContentPane().setLayout(null);
 
+        pnlCampos.setLayout(null);
+
+        jScrollPane1.setViewportView(jList1);
+
+        pnlCampos.add(jScrollPane1);
+        jScrollPane1.setBounds(440, 140, 140, 10);
+
         jLabel2.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel2.setText("Nombre(s)");
         jLabel2.setFocusCycleRoot(true);
+        pnlCampos.add(jLabel2);
+        jLabel2.setBounds(175, 32, 70, 17);
 
         txtNombre.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtNombre.setFocusCycleRoot(true);
+        pnlCampos.add(txtNombre);
+        txtNombre.setBounds(155, 52, 218, 27);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel3.setText("Nro de C.I.");
         jLabel3.setFocusCycleRoot(true);
+        pnlCampos.add(jLabel3);
+        jLabel3.setBounds(45, 32, 110, 17);
 
         txtCi.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtCi.setFocusCycleRoot(true);
+        pnlCampos.add(txtCi);
+        txtCi.setBounds(35, 52, 120, 27);
 
         jLabel4.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel4.setText("Dirección");
         jLabel4.setFocusCycleRoot(true);
+        pnlCampos.add(jLabel4);
+        jLabel4.setBounds(45, 152, 130, 17);
 
         jLabel5.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel5.setText("Apellido(s)");
         jLabel5.setFocusCycleRoot(true);
+        pnlCampos.add(jLabel5);
+        jLabel5.setBounds(385, 32, 70, 17);
 
         txtApellido.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtApellido.setFocusCycleRoot(true);
+        pnlCampos.add(txtApellido);
+        txtApellido.setBounds(375, 52, 240, 27);
 
         jLabel6.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel6.setText("Nro de Contacto");
         jLabel6.setFocusCycleRoot(true);
+        pnlCampos.add(jLabel6);
+        jLabel6.setBounds(45, 92, 218, 17);
 
         txtContacto.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtContacto.setFocusCycleRoot(true);
@@ -83,20 +115,32 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
                 txtContactoActionPerformed(evt);
             }
         });
+        pnlCampos.add(txtContacto);
+        txtContacto.setBounds(35, 112, 218, 27);
 
         jLabel7.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel7.setText("Barrio");
         jLabel7.setFocusCycleRoot(true);
+        pnlCampos.add(jLabel7);
+        jLabel7.setBounds(445, 92, 50, 17);
 
         jLabel8.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel8.setText("Ciudad");
         jLabel8.setFocusCycleRoot(true);
+        pnlCampos.add(jLabel8);
+        jLabel8.setBounds(265, 92, 150, 20);
 
         txtBarrio.setFocusCycleRoot(true);
+        pnlCampos.add(txtBarrio);
+        txtBarrio.setBounds(435, 112, 150, 26);
 
         txtCiudad.setFocusCycleRoot(true);
+        pnlCampos.add(txtCiudad);
+        txtCiudad.setBounds(255, 112, 150, 26);
 
         txtDireccion.setFocusCycleRoot(true);
+        pnlCampos.add(txtDireccion);
+        txtDireccion.setBounds(35, 172, 580, 26);
 
         btnAgregarCiudad.setText("jButton1");
         btnAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +148,8 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
                 btnAgregarCiudadActionPerformed(evt);
             }
         });
+        pnlCampos.add(btnAgregarCiudad);
+        btnAgregarCiudad.setBounds(405, 112, 30, 27);
 
         btnAgregarBarrio.setText("jButton2");
         btnAgregarBarrio.addActionListener(new java.awt.event.ActionListener() {
@@ -111,83 +157,23 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
                 btnAgregarBarrioActionPerformed(evt);
             }
         });
+        pnlCampos.add(btnAgregarBarrio);
+        btnAgregarBarrio.setBounds(585, 112, 30, 27);
 
-        javax.swing.GroupLayout pnlCamposLayout = new javax.swing.GroupLayout(pnlCampos);
-        pnlCampos.setLayout(pnlCamposLayout);
-        pnlCamposLayout.setHorizontalGroup(
-            pnlCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
-            .addGroup(pnlCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlCamposLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(pnlCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnlCamposLayout.createSequentialGroup()
-                            .addComponent(txtCi, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, 0)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(2, 2, 2)
-                            .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pnlCamposLayout.createSequentialGroup()
-                            .addComponent(txtContacto, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(2, 2, 2)
-                            .addComponent(txtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, 0)
-                            .addComponent(btnAgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, 0)
-                            .addComponent(txtBarrio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, 0)
-                            .addComponent(btnAgregarBarrio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(pnlCamposLayout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addGroup(pnlCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(pnlCamposLayout.createSequentialGroup()
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(20, 20, 20)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(140, 140, 140)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(pnlCamposLayout.createSequentialGroup()
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(2, 2, 2)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(30, 30, 30)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        pnlCamposLayout.setVerticalGroup(
-            pnlCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
-            .addGroup(pnlCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlCamposLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(pnlCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel5))
-                    .addGap(3, 3, 3)
-                    .addGroup(pnlCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtCi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(13, 13, 13)
-                    .addGroup(pnlCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel7))
-                    .addGroup(pnlCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtContacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnAgregarCiudad)
-                        .addComponent(txtBarrio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnAgregarBarrio))
-                    .addGap(13, 13, 13)
-                    .addComponent(jLabel4)
-                    .addGap(3, 3, 3)
-                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        jScrollPane2.setViewportView(jList2);
+
+        pnlCampos.add(jScrollPane2);
+        jScrollPane2.setBounds(160, 80, 210, 10);
+
+        jScrollPane3.setViewportView(jList3);
+
+        pnlCampos.add(jScrollPane3);
+        jScrollPane3.setBounds(40, 80, 110, 10);
+
+        jScrollPane4.setViewportView(jList4);
+
+        pnlCampos.add(jScrollPane4);
+        jScrollPane4.setBounds(260, 140, 140, 10);
 
         getContentPane().add(pnlCampos);
         pnlCampos.setBounds(0, 0, 650, 230);
@@ -294,7 +280,20 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        // TODO add your handling code here:
+        clases.Controlador.actualizar("INSERT INTO cliente (cli_ci, cli_nom, cli_ape, cli_tel, ciu_id, bar_id, cli_dire) VALUES ('" + txtCi.getText() + 
+                "', '" + txtNombre.getText() + 
+                "', '" + txtApellido.getText() + 
+                "', '" + txtContacto.getText() + 
+                "', '" + txtCiudad.getText() + 
+                "', '" + txtBarrio.getText() + 
+                "', '" + txtDireccion.getText() + "')");
+        txtNombre.setText("");
+        txtApellido.setText("");
+        txtCi.setText("");
+        txtCiudad.setText("");
+        txtBarrio.setText("");
+        txtContacto.setText("");
+        txtDireccion.setText("");
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -334,8 +333,16 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
+    private javax.swing.JList<String> jList3;
+    private javax.swing.JList<String> jList4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JPanel pnlCampos;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtBarrio;
