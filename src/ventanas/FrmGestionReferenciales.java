@@ -469,9 +469,6 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditar2ActionPerformed
 
-    private void setComponentOrientation(float CENTER_ALIGNMENT) {
-    }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;

@@ -1,7 +1,6 @@
 package ventanas;
 
 import classes.Utils;
-import ventanas.FrmMdi;
 
 /**
  *
@@ -9,9 +8,6 @@ import ventanas.FrmMdi;
  */
 public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form FrmGestionEmpleados
-     */
     public FrmGestionEmpleados() {
         initComponents();
         setSize(600, 380);

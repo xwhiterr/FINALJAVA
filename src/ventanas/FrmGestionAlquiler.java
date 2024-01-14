@@ -32,7 +32,7 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
         txtNombreLibro = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         calFecha = new com.toedter.calendar.JDateChooser();
-        jButton1 = new javax.swing.JButton();
+        btnAgregarCliente = new javax.swing.JButton();
 
         getContentPane().setLayout(null);
 
@@ -124,14 +124,14 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
         getContentPane().add(calFecha);
         calFecha.setBounds(320, 140, 140, 26);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarCliente.setText("jButton1");
+        btnAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(440, 70, 20, 27);
+        getContentPane().add(btnAgregarCliente);
+        btnAgregarCliente.setBounds(440, 70, 20, 27);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -144,16 +144,16 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarClienteActionPerformed
         Utils.abrirInternalFrame(new FrmGestionClientes());
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAgregarClienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarCliente;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardar;
     private com.toedter.calendar.JDateChooser calFecha;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
