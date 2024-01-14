@@ -136,9 +136,9 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
                 .addComponent(bntEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGap(19, 19, 19))
         );
         BotoneraAutorLayout.setVerticalGroup(
             BotoneraAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,37 +487,19 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     private javax.swing.JPanel BotoneraGenero;
     private javax.swing.JButton BtnGuardar;
     private javax.swing.JButton bntEliminar;
-    private javax.swing.JButton btnAgrePai;
-    private javax.swing.JButton btnAgrePai1;
-    private javax.swing.JButton btnAgrePai2;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnAgregar1;
     private javax.swing.JButton btnAgregar2;
-    private javax.swing.JButton btnAgregar4;
-    private javax.swing.JButton btnAgregar5;
-    private javax.swing.JButton btnAgregar6;
-    private javax.swing.JButton btnAgregar7;
-    private javax.swing.JButton btnAgregar8;
-    private javax.swing.JButton btnAgregar9;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEditar1;
     private javax.swing.JButton btnEditar2;
     private javax.swing.JButton btnEliminar1;
     private javax.swing.JButton btnEliminar2;
-    private javax.swing.JButton btnGuaPai;
-    private javax.swing.JButton btnGuaPai1;
-    private javax.swing.JButton btnGuaPai2;
     private javax.swing.JButton btnGuardar1;
     private javax.swing.JButton btnGuardar2;
-    private javax.swing.JButton btnSaliPai;
-    private javax.swing.JButton btnSaliPai1;
-    private javax.swing.JButton btnSaliPai2;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSalir1;
     private javax.swing.JButton btnSalir2;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JLabel lblAutor;
     private javax.swing.JLabel lblEditorial;
     private javax.swing.JLabel lblGenero;

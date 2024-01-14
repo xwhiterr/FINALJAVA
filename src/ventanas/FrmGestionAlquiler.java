@@ -1,5 +1,6 @@
 package ventanas;
 
+import classes.Utils;
 import javax.swing.JDesktopPane;
 
 /**
@@ -24,11 +25,11 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
         btnCancelar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombreCliente = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtCi = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtNombreLibro = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         calFecha = new com.toedter.calendar.JDateChooser();
         jButton1 = new javax.swing.JButton();
@@ -96,25 +97,25 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(50, 50, 110, 17);
 
-        jTextField1.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(170, 70, 270, 27);
+        txtNombreCliente.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        getContentPane().add(txtNombreCliente);
+        txtNombreCliente.setBounds(170, 70, 270, 27);
 
         jLabel2.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel2.setText("Nombre del Libro");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(50, 120, 160, 17);
 
-        jTextField2.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(40, 70, 130, 27);
+        txtCi.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        getContentPane().add(txtCi);
+        txtCi.setBounds(40, 70, 130, 27);
 
         jLabel4.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel4.setText("Fecha del Alquiler");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(330, 120, 110, 17);
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(40, 140, 280, 26);
+        getContentPane().add(txtNombreLibro);
+        txtNombreLibro.setBounds(40, 140, 280, 26);
 
         jLabel5.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel5.setText("Nombre del Cliente");
@@ -144,11 +145,7 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        desktopPane = getDesktopPane();
-        FrmGestionClientes clientes = new FrmGestionClientes();
-        desktopPane.add(clientes);
-        clientes.toFront();
-        clientes.setVisible(true);
+        Utils.abrirInternalFrame(new FrmGestionClientes());
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -164,8 +161,8 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txtCi;
+    private javax.swing.JTextField txtNombreCliente;
+    private javax.swing.JTextField txtNombreLibro;
     // End of variables declaration//GEN-END:variables
 }

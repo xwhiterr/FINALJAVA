@@ -27,11 +27,11 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        tgBtnAlquilados = new javax.swing.JToggleButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton3 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         getContentPane().setLayout(null);
 
@@ -56,21 +56,21 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 590, 300);
 
-        jToggleButton1.setText("Alquilados");
-        jPanel2.add(jToggleButton1);
+        tgBtnAlquilados.setText("Alquilados");
+        jPanel2.add(tgBtnAlquilados);
         jPanel2.add(jSeparator1);
 
-        jButton1.setText("Imprimir");
-        jPanel2.add(jButton1);
+        btnImprimir.setText("Imprimir");
+        jPanel2.add(btnImprimir);
         jPanel2.add(jSeparator2);
 
-        jButton3.setText("Salir");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3);
+        jPanel2.add(btnSalir);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 300, 590, 40);
@@ -78,20 +78,20 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnImprimir;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton tgBtnAlquilados;
     // End of variables declaration//GEN-END:variables
 }

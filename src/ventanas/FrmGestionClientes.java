@@ -1,5 +1,6 @@
 package ventanas;
 
+import classes.Utils;
 import javax.swing.JInternalFrame;
 
 /**
@@ -26,81 +27,86 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtCi = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtContacto = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        txtBarrio = new javax.swing.JTextField();
+        txtCiudad = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
+        btnAgregarCiudad = new javax.swing.JButton();
+        btnAgregarBarrio = new javax.swing.JButton();
 
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel2.setText("Ingrese Nombre(s)");
+        jLabel2.setText("Nombre(s)");
         jLabel2.setFocusCycleRoot(true);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(40, 50, 218, 17);
 
-        jTextField1.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jTextField1.setFocusCycleRoot(true);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(30, 70, 218, 27);
+        txtNombre.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        txtNombre.setFocusCycleRoot(true);
+        getContentPane().add(txtNombre);
+        txtNombre.setBounds(30, 70, 218, 27);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel3.setText("Ingrese Nro de C.I.");
+        jLabel3.setText("Nro de C.I.");
         jLabel3.setFocusCycleRoot(true);
         getContentPane().add(jLabel3);
         jLabel3.setBounds(490, 50, 110, 17);
 
-        jTextField3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jTextField3.setFocusCycleRoot(true);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(480, 70, 120, 27);
+        txtCi.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        txtCi.setFocusCycleRoot(true);
+        getContentPane().add(txtCi);
+        txtCi.setBounds(480, 70, 120, 27);
 
         jLabel4.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel4.setText("Ingrese Dirección");
+        jLabel4.setText("Dirección");
         jLabel4.setFocusCycleRoot(true);
         getContentPane().add(jLabel4);
         jLabel4.setBounds(40, 170, 130, 17);
 
         jLabel5.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel5.setText("Ingrese Apellido(s)");
+        jLabel5.setText("Apellido(s)");
         jLabel5.setFocusCycleRoot(true);
         getContentPane().add(jLabel5);
         jLabel5.setBounds(260, 50, 218, 17);
 
-        jTextField5.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jTextField5.setFocusCycleRoot(true);
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(250, 70, 218, 27);
+        txtApellido.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        txtApellido.setFocusCycleRoot(true);
+        getContentPane().add(txtApellido);
+        txtApellido.setBounds(250, 70, 218, 27);
 
         jLabel6.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel6.setText("Ingrese Nro de Contacto");
+        jLabel6.setText("Nro de Contacto");
         jLabel6.setFocusCycleRoot(true);
         getContentPane().add(jLabel6);
         jLabel6.setBounds(40, 110, 218, 17);
 
-        jTextField6.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jTextField6.setFocusCycleRoot(true);
-        getContentPane().add(jTextField6);
-        jTextField6.setBounds(30, 130, 218, 27);
+        txtContacto.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        txtContacto.setFocusCycleRoot(true);
+        txtContacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContactoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtContacto);
+        txtContacto.setBounds(30, 130, 218, 27);
 
         jLabel7.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel7.setText("Barrio");
@@ -139,135 +145,148 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         jPanel2.setFocusCycleRoot(true);
         jPanel2.setLayout(null);
 
-        jButton4.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jButton4.setText("EDITAR");
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButton4.setMinimumSize(new java.awt.Dimension(100, 100));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnEditar.setText("EDITAR");
+        btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnEditar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4);
-        jButton4.setBounds(110, 0, 110, 60);
+        jPanel2.add(btnEditar);
+        btnEditar.setBounds(110, 0, 110, 60);
 
-        jButton5.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jButton5.setText("GUARDAR");
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButton5.setMinimumSize(new java.awt.Dimension(100, 100));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnGuardar.setText("GUARDAR");
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnGuardar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton5);
-        jButton5.setBounds(330, 0, 110, 60);
+        jPanel2.add(btnGuardar);
+        btnGuardar.setBounds(330, 0, 110, 60);
 
-        jButton6.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jButton6.setText("SALIR");
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton6.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButton6.setMinimumSize(new java.awt.Dimension(100, 100));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnSalir.setText("SALIR");
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnSalir.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton6);
-        jButton6.setBounds(460, 0, 110, 60);
+        jPanel2.add(btnSalir);
+        btnSalir.setBounds(460, 0, 110, 60);
 
-        jButton7.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jButton7.setText("AGREGAR");
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton7.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButton7.setMinimumSize(new java.awt.Dimension(100, 100));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnAgregar.setText("AGREGAR");
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnAgregar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton7);
-        jButton7.setBounds(0, 0, 110, 60);
+        jPanel2.add(btnAgregar);
+        btnAgregar.setBounds(0, 0, 110, 60);
 
-        jButton8.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jButton8.setText("ELIMINAR");
-        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton8.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButton8.setMinimumSize(new java.awt.Dimension(100, 100));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnEliminar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton8);
-        jButton8.setBounds(220, 0, 110, 60);
+        jPanel2.add(btnEliminar);
+        btnEliminar.setBounds(220, 0, 110, 60);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(30, 240, 570, 60);
 
-        jTextField4.setFocusCycleRoot(true);
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(430, 130, 150, 26);
+        txtBarrio.setFocusCycleRoot(true);
+        getContentPane().add(txtBarrio);
+        txtBarrio.setBounds(430, 130, 150, 26);
 
-        jTextField7.setFocusCycleRoot(true);
-        getContentPane().add(jTextField7);
-        jTextField7.setBounds(250, 130, 150, 26);
+        txtCiudad.setFocusCycleRoot(true);
+        getContentPane().add(txtCiudad);
+        txtCiudad.setBounds(250, 130, 150, 26);
 
-        jTextField8.setFocusCycleRoot(true);
-        getContentPane().add(jTextField8);
-        jTextField8.setBounds(30, 190, 570, 26);
+        txtDireccion.setFocusCycleRoot(true);
+        getContentPane().add(txtDireccion);
+        txtDireccion.setBounds(30, 190, 570, 26);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarCiudad.setText("jButton1");
+        btnAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarCiudadActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(400, 130, 30, 27);
+        getContentPane().add(btnAgregarCiudad);
+        btnAgregarCiudad.setBounds(400, 130, 30, 27);
 
-        jButton2.setText("jButton2");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(580, 130, 40, 27);
+        btnAgregarBarrio.setText("jButton2");
+        btnAgregarBarrio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarBarrioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAgregarBarrio);
+        btnAgregarBarrio.setBounds(580, 130, 30, 27);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnEditarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCiudadActionPerformed
+        Utils.abrirInternalFrame(new FrmGestionReferenciales());
+    }//GEN-LAST:event_btnAgregarCiudadActionPerformed
+
+    private void btnAgregarBarrioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarBarrioActionPerformed
+        Utils.abrirInternalFrame(new FrmGestionReferenciales());
+    }//GEN-LAST:event_btnAgregarBarrioActionPerformed
+
+    private void txtContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContactoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContactoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnAgregarBarrio;
+    private javax.swing.JButton btnAgregarCiudad;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -278,12 +297,12 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtBarrio;
+    private javax.swing.JTextField txtCi;
+    private javax.swing.JTextField txtCiudad;
+    private javax.swing.JTextField txtContacto;
+    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

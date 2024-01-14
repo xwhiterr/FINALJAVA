@@ -28,24 +28,24 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
+        btnELliminar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombreLibro = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtISBN = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnAgregarGen = new javax.swing.JButton();
+        btnAgregarAut = new javax.swing.JButton();
+        btnAgregarEdi = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(655, 310));
         setMinimumSize(new java.awt.Dimension(655, 310));
@@ -61,58 +61,58 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 630, 40);
 
-        jButton4.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jButton4.setText("EDITAR");
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButton4.setMinimumSize(new java.awt.Dimension(100, 100));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnEditar.setText("EDITAR");
+        btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnEditar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jButton5.setText("GUARDAR");
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButton5.setMinimumSize(new java.awt.Dimension(100, 100));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnGuardar.setText("GUARDAR");
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnGuardar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
             }
         });
 
-        jButton6.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jButton6.setText("SALIR");
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton6.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButton6.setMinimumSize(new java.awt.Dimension(100, 100));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnSalir.setText("SALIR");
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnSalir.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
-        jButton7.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jButton7.setText("AGREGAR");
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton7.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButton7.setMinimumSize(new java.awt.Dimension(100, 100));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnAgregar.setText("AGREGAR");
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnAgregar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
 
-        jButton8.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jButton8.setText("ELIMINAR");
-        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton8.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButton8.setMinimumSize(new java.awt.Dimension(100, 100));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnELliminar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnELliminar.setText("ELIMINAR");
+        btnELliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnELliminar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnELliminar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnELliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnELliminarActionPerformed(evt);
             }
         });
 
@@ -122,15 +122,15 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnELliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -138,11 +138,11 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnELliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -150,25 +150,25 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jPanel2.setBounds(10, 190, 620, 70);
 
         jLabel1.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel1.setText("Ingrese nombre del Libro");
+        jLabel1.setText("Nombre del Libro");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(50, 50, 150, 17);
 
-        jTextField1.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(40, 70, 240, 27);
+        txtNombreLibro.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        getContentPane().add(txtNombreLibro);
+        txtNombreLibro.setBounds(40, 70, 240, 27);
 
         jLabel2.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel2.setText("Ingrese ISBN");
+        jLabel2.setText("ISBN");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(300, 50, 80, 17);
 
-        jTextField2.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(280, 70, 160, 27);
+        txtISBN.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        getContentPane().add(txtISBN);
+        txtISBN.setBounds(280, 70, 160, 27);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel3.setText("Ingrese nombre del autor");
+        jLabel3.setText("Nombre del autor");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(50, 100, 160, 17);
 
@@ -177,7 +177,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jTextField3.setBounds(40, 120, 230, 27);
 
         jLabel4.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel4.setText("Ingrese Editorial");
+        jLabel4.setText("Editorial");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(450, 50, 110, 17);
 
@@ -186,7 +186,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jTextField4.setBounds(440, 70, 160, 27);
 
         jLabel5.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel5.setText("Ingrese Género");
+        jLabel5.setText("Género");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(300, 100, 90, 17);
 
@@ -199,64 +199,82 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         getContentPane().add(jTextField5);
         jTextField5.setBounds(290, 120, 200, 27);
 
-        jButton1.setText("jButton1");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(490, 120, 20, 27);
-
-        jButton2.setText("jButton1");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarGen.setText("jButton1");
+        btnAgregarGen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAgregarGenActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(270, 120, 20, 27);
+        getContentPane().add(btnAgregarGen);
+        btnAgregarGen.setBounds(490, 120, 20, 27);
 
-        jButton3.setText("jButton1");
-        getContentPane().add(jButton3);
-        jButton3.setBounds(600, 70, 20, 27);
+        btnAgregarAut.setText("jButton1");
+        btnAgregarAut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarAutActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAgregarAut);
+        btnAgregarAut.setBounds(270, 120, 20, 27);
+
+        btnAgregarEdi.setText("jButton1");
+        btnAgregarEdi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarEdiActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAgregarEdi);
+        btnAgregarEdi.setBounds(600, 70, 20, 27);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnEditarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
 
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnELliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnELliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnELliminarActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnAgregarAutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAutActionPerformed
         Utils.abrirInternalFrame(new FrmGestionFuentes());
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnAgregarAutActionPerformed
+
+    private void btnAgregarEdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEdiActionPerformed
+        Utils.abrirInternalFrame(new FrmGestionFuentes());
+    }//GEN-LAST:event_btnAgregarEdiActionPerformed
+
+    private void btnAgregarGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarGenActionPerformed
+        Utils.abrirInternalFrame(new FrmGestionFuentes());
+    }//GEN-LAST:event_btnAgregarGenActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnAgregarAut;
+    private javax.swing.JButton btnAgregarEdi;
+    private javax.swing.JButton btnAgregarGen;
+    private javax.swing.JButton btnELliminar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -265,10 +283,10 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField txtISBN;
+    private javax.swing.JTextField txtNombreLibro;
     // End of variables declaration//GEN-END:variables
 }
