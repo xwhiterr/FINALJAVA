@@ -1,17 +1,19 @@
 package ventanas;
 
+import clases.Controlador;
+
 /**
  *
  * @author Walter
  */
 public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
 
-
     public FrmGestionReferenciales() {
         initComponents();
         setSize(550, 270);
     }
-
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -22,7 +24,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         lblPais = new javax.swing.JLabel();
         txtPais = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
-        btnGuardar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
@@ -31,7 +33,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         lblCiudad = new javax.swing.JLabel();
         txtCiudad = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
-        btnGuardar1 = new javax.swing.JButton();
+        btnBuscar1 = new javax.swing.JButton();
         btnSalir1 = new javax.swing.JButton();
         btnEliminar1 = new javax.swing.JButton();
         btnAgregar1 = new javax.swing.JButton();
@@ -40,7 +42,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         lblBarrio = new javax.swing.JLabel();
         txtBarrio = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
-        btnGuardar2 = new javax.swing.JButton();
+        btnBuscar2 = new javax.swing.JButton();
         btnSalir2 = new javax.swing.JButton();
         btnEliminar2 = new javax.swing.JButton();
         btnAgregar2 = new javax.swing.JButton();
@@ -57,14 +59,14 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
 
         txtPais.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
 
-        btnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnGuardar.setText("GUARDAR");
-        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnGuardar.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnGuardar.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnBuscar.setText("BUSCAR");
+        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnBuscar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -124,7 +126,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
@@ -134,7 +136,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -153,7 +155,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                         .addGap(10, 10, 10)
                         .addComponent(lblPais))
                     .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         pnlPaisLayout.setVerticalGroup(
             pnlPaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,14 +176,14 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
 
         txtCiudad.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
 
-        btnGuardar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnGuardar1.setText("GUARDAR");
-        btnGuardar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnGuardar1.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnGuardar1.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnBuscar1.setText("BUSCAR");
+        btnBuscar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar1.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnBuscar1.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnBuscar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardar1ActionPerformed(evt);
+                btnBuscar1ActionPerformed(evt);
             }
         });
 
@@ -241,7 +243,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
@@ -251,7 +253,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -270,7 +272,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                         .addGap(10, 10, 10)
                         .addComponent(lblCiudad))
                     .addComponent(txtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         pnlCiudadLayout.setVerticalGroup(
             pnlCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,14 +293,14 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
 
         txtBarrio.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
 
-        btnGuardar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnGuardar2.setText("GUARDAR");
-        btnGuardar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnGuardar2.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnGuardar2.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnGuardar2.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnBuscar2.setText("BUSCAR");
+        btnBuscar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar2.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnBuscar2.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnBuscar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardar2ActionPerformed(evt);
+                btnBuscar2ActionPerformed(evt);
             }
         });
 
@@ -358,7 +360,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
@@ -368,7 +370,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEditar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -387,7 +389,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                         .addGap(10, 10, 10)
                         .addComponent(lblBarrio))
                     .addComponent(txtBarrio, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         pnlBarrioLayout.setVerticalGroup(
             pnlBarrioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -409,32 +411,29 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-
-    }//GEN-LAST:event_btnGuardarActionPerformed
-
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        // TODO add your handling code here:
+        clases.Controlador.actualizar("INSERT INTO pais (pai_desc) VALUES ( '"+txtPais.getText() +"')");
+        txtPais.setText("");
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditarActionPerformed
 
-    private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
+    private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardar1ActionPerformed
+    }//GEN-LAST:event_btnBuscar1ActionPerformed
 
     private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
-        dispose();
+
     }//GEN-LAST:event_btnSalir1ActionPerformed
 
     private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
@@ -442,16 +441,17 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
     private void btnAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar1ActionPerformed
-        // TODO add your handling code here:
+        clases.Controlador.actualizar("INSERT INTO ciudad (ciu_desc) VALUES ( '"+txtCiudad.getText() +"')");
+        txtPais.setText("");
     }//GEN-LAST:event_btnAgregar1ActionPerformed
 
     private void btnEditar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditar1ActionPerformed
 
-    private void btnGuardar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar2ActionPerformed
+    private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardar2ActionPerformed
+    }//GEN-LAST:event_btnBuscar2ActionPerformed
 
     private void btnSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir2ActionPerformed
         dispose();
@@ -462,27 +462,33 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEliminar2ActionPerformed
 
     private void btnAgregar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar2ActionPerformed
-        // TODO add your handling code here:
+        clases.Controlador.actualizar("INSERT INTO barrio (bar_desc) VALUES ( '"+txtBarrio.getText() +"')");
+        txtPais.setText("");
+         
     }//GEN-LAST:event_btnAgregar2ActionPerformed
 
     private void btnEditar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditar2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditar2ActionPerformed
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnAgregar1;
     private javax.swing.JButton btnAgregar2;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnBuscar1;
+    private javax.swing.JButton btnBuscar2;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEditar1;
     private javax.swing.JButton btnEditar2;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnEliminar1;
     private javax.swing.JButton btnEliminar2;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnGuardar1;
-    private javax.swing.JButton btnGuardar2;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSalir1;
     private javax.swing.JButton btnSalir2;

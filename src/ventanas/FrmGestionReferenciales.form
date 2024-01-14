@@ -68,7 +68,7 @@
                           </Group>
                           <Component id="txtPais" min="-2" pref="250" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -115,7 +115,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnEliminar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="63" max="32767" attributes="0"/>
                           <Component id="btnSalir" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -127,7 +127,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnSalir" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="btnGuardar" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                              <Component id="btnBuscar" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="btnEliminar" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="btnEditar" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="btnAgregar" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
@@ -138,12 +138,12 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="btnGuardar">
+                <Component class="javax.swing.JButton" name="btnBuscar">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="HP Simplified" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="GUARDAR"/>
+                    <Property name="text" type="java.lang.String" value="BUSCAR"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Hand Cursor"/>
                     </Property>
@@ -155,7 +155,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnSalir">
@@ -264,7 +264,7 @@
                           </Group>
                           <Component id="txtCiudad" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -311,7 +311,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnEliminar1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnGuardar1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnBuscar1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="63" max="32767" attributes="0"/>
                           <Component id="btnSalir1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -323,7 +323,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnSalir1" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="btnGuardar1" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                              <Component id="btnBuscar1" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="btnEliminar1" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="btnEditar1" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="btnAgregar1" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
@@ -334,12 +334,12 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="btnGuardar1">
+                <Component class="javax.swing.JButton" name="btnBuscar1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="HP Simplified" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="GUARDAR"/>
+                    <Property name="text" type="java.lang.String" value="BUSCAR"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Hand Cursor"/>
                     </Property>
@@ -351,7 +351,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardar1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscar1ActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnSalir1">
@@ -460,7 +460,7 @@
                           </Group>
                           <Component id="txtBarrio" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -507,7 +507,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnEliminar2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnGuardar2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnBuscar2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="63" max="32767" attributes="0"/>
                           <Component id="btnSalir2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -519,7 +519,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnSalir2" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="btnGuardar2" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                              <Component id="btnBuscar2" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="btnEliminar2" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="btnEditar2" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="btnAgregar2" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
@@ -530,12 +530,12 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="btnGuardar2">
+                <Component class="javax.swing.JButton" name="btnBuscar2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="HP Simplified" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="GUARDAR"/>
+                    <Property name="text" type="java.lang.String" value="BUSCAR"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Hand Cursor"/>
                     </Property>
@@ -547,7 +547,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardar2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscar2ActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnSalir2">

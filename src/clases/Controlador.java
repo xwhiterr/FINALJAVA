@@ -24,19 +24,23 @@ public class Controlador {
             return null;
         }
     }
-    
-     public void actualizar(String nomtabla, String parametros){
+        /**
+         * Este metodo Agrega nueva informacion a la base de datos
+         * 
+         */
+     public static void actualizar(String query){
          Statement statement = null;
-         String query;
             try{
             statement = getStatement();
-            query = "CALL " +nomtabla+ "(" + parametros + ")";
+            System.out.println(query);
             statement.execute(query);
-            JOptionPane.showMessageDialog(null, "Registro fue insertado");
+            JOptionPane.showMessageDialog(null, "Registro agregado");
             }
             catch (Exception ex){
-                System.err.println("err actualizar: Error SQL" + ex );
+                System.err.println("err actualizar: Error SQL" + ex + "\n" + ex.getCause() );
+                JOptionPane.showMessageDialog(null, "Se infringe la integridad de datos");
             }  
     }
     
 }
+
