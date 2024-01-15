@@ -1,6 +1,8 @@
 package ventanas;
 
 import clases.Utils;
+import clases.BusquedaFuzzy;
+import java.awt.KeyboardFocusManager;
 import javax.swing.JInternalFrame;
 
 /**
@@ -14,6 +16,8 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         setTitle("Gestion de Clientes");
         setSize(650, 350);
         clases.Utils.activarPanel(false, pnlCampos);
+        
+        scrNombre.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -23,6 +27,12 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         pnlCampos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        scrNombre = new javax.swing.JScrollPane();
+        lstNombre = new javax.swing.JList<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList4 = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -39,12 +49,6 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         txtDireccion = new javax.swing.JTextField();
         btnAgregarCiudad = new javax.swing.JButton();
         btnAgregarBarrio = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jList4 = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -63,16 +67,48 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         pnlCampos.add(jScrollPane1);
         jScrollPane1.setBounds(440, 140, 140, 10);
 
+        lstNombre.setNextFocusableComponent(txtApellido);
+        lstNombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                lstNombreFocusGained(evt);
+            }
+        });
+        lstNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                lstNombreKeyReleased(evt);
+            }
+        });
+        scrNombre.setViewportView(lstNombre);
+
+        pnlCampos.add(scrNombre);
+        scrNombre.setBounds(160, 80, 210, 10);
+
+        jScrollPane3.setViewportView(jList3);
+
+        pnlCampos.add(jScrollPane3);
+        jScrollPane3.setBounds(40, 80, 110, 10);
+
+        jScrollPane4.setViewportView(jList4);
+
+        pnlCampos.add(jScrollPane4);
+        jScrollPane4.setBounds(260, 140, 140, 10);
+
         jLabel2.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel2.setText("Nombre(s)");
         jLabel2.setFocusCycleRoot(true);
         pnlCampos.add(jLabel2);
-        jLabel2.setBounds(175, 32, 70, 17);
+        jLabel2.setBounds(175, 32, 140, 17);
 
         txtNombre.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtNombre.setFocusCycleRoot(true);
+        txtNombre.setNextFocusableComponent(lstNombre);
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombreKeyReleased(evt);
+            }
+        });
         pnlCampos.add(txtNombre);
-        txtNombre.setBounds(155, 52, 218, 27);
+        txtNombre.setBounds(155, 52, 218, 23);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel3.setText("Nro de C.I.");
@@ -83,7 +119,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         txtCi.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtCi.setFocusCycleRoot(true);
         pnlCampos.add(txtCi);
-        txtCi.setBounds(35, 52, 120, 27);
+        txtCi.setBounds(35, 52, 120, 23);
 
         jLabel4.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel4.setText("Dirección");
@@ -95,12 +131,12 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         jLabel5.setText("Apellido(s)");
         jLabel5.setFocusCycleRoot(true);
         pnlCampos.add(jLabel5);
-        jLabel5.setBounds(385, 32, 70, 17);
+        jLabel5.setBounds(385, 32, 80, 17);
 
         txtApellido.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtApellido.setFocusCycleRoot(true);
         pnlCampos.add(txtApellido);
-        txtApellido.setBounds(375, 52, 240, 27);
+        txtApellido.setBounds(375, 52, 240, 23);
 
         jLabel6.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel6.setText("Nro de Contacto");
@@ -116,7 +152,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(txtContacto);
-        txtContacto.setBounds(35, 112, 218, 27);
+        txtContacto.setBounds(35, 112, 218, 23);
 
         jLabel7.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel7.setText("Barrio");
@@ -132,15 +168,15 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
 
         txtBarrio.setFocusCycleRoot(true);
         pnlCampos.add(txtBarrio);
-        txtBarrio.setBounds(435, 112, 150, 26);
+        txtBarrio.setBounds(435, 112, 150, 24);
 
         txtCiudad.setFocusCycleRoot(true);
         pnlCampos.add(txtCiudad);
-        txtCiudad.setBounds(255, 112, 150, 26);
+        txtCiudad.setBounds(255, 112, 150, 24);
 
         txtDireccion.setFocusCycleRoot(true);
         pnlCampos.add(txtDireccion);
-        txtDireccion.setBounds(35, 172, 580, 26);
+        txtDireccion.setBounds(35, 172, 580, 24);
 
         btnAgregarCiudad.setText("jButton1");
         btnAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +185,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(btnAgregarCiudad);
-        btnAgregarCiudad.setBounds(405, 112, 30, 27);
+        btnAgregarCiudad.setBounds(405, 112, 30, 24);
 
         btnAgregarBarrio.setText("jButton2");
         btnAgregarBarrio.addActionListener(new java.awt.event.ActionListener() {
@@ -158,22 +194,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(btnAgregarBarrio);
-        btnAgregarBarrio.setBounds(585, 112, 30, 27);
-
-        jScrollPane2.setViewportView(jList2);
-
-        pnlCampos.add(jScrollPane2);
-        jScrollPane2.setBounds(160, 80, 210, 10);
-
-        jScrollPane3.setViewportView(jList3);
-
-        pnlCampos.add(jScrollPane3);
-        jScrollPane3.setBounds(40, 80, 110, 10);
-
-        jScrollPane4.setViewportView(jList4);
-
-        pnlCampos.add(jScrollPane4);
-        jScrollPane4.setBounds(260, 140, 140, 10);
+        btnAgregarBarrio.setBounds(585, 112, 30, 24);
 
         getContentPane().add(pnlCampos);
         pnlCampos.setBounds(0, 0, 650, 230);
@@ -316,6 +337,21 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         clases.Utils.activarPanel(true, pnlCampos);
     }//GEN-LAST:event_btnNuevoActionPerformed
 
+    private void txtNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyReleased
+        clases.BusquedaFuzzy.busqueda("cli_nom", "cliente", txtNombre, scrNombre, lstNombre);
+    }//GEN-LAST:event_txtNombreKeyReleased
+
+    private void lstNombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lstNombreFocusGained
+        lstNombre.setSelectedIndex(0);
+    }//GEN-LAST:event_lstNombreFocusGained
+
+    private void lstNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstNombreKeyReleased
+        txtNombre.setText(lstNombre.getSelectedValue());
+        KeyboardFocusManager.getCurrentKeyboardFocusManager().focusNextComponent();
+        scrNombre.setEnabled(false);
+        scrNombre.setVisible(false);
+    }//GEN-LAST:event_lstNombreKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
@@ -334,16 +370,16 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
     private javax.swing.JList<String> jList4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JList<String> lstNombre;
     private javax.swing.JPanel pnlCampos;
+    private javax.swing.JScrollPane scrNombre;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtBarrio;
     private javax.swing.JTextField txtCi;
