@@ -1,8 +1,8 @@
 package clases;
 
-import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Conexion {
@@ -14,7 +14,7 @@ public class Conexion {
 
 //        File db = new File("data/db.sqlite");
 //        String path = db.getAbsolutePath();
-        String path = "\\\\192.168.0.11\\data\\db.sqlite";
+        String path = "C:\\JAVALPI\\FINALJAVA\\data\\db.sqlite";
 
         /* Intentamos la conexion. si falla, damos error.
            Retorna true si la conexion fue exitosa
@@ -29,9 +29,9 @@ public class Conexion {
             return false;
         }
     }
-    
+
     public static void main(String[] args) {
-        
+
         System.out.println(conectar());
     }
 }

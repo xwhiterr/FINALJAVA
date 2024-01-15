@@ -169,7 +169,7 @@ public class FrmMdi extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGestionReportesActionPerformed
 
     private void btnGestionReferencialesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionReferencialesActionPerformed
-       abrirInternalFrameMdi(new FrmGestionReferenciales());
+        abrirInternalFrameMdi(new FrmGestionReferenciales());
     }//GEN-LAST:event_btnGestionReferencialesActionPerformed
 
     private void btnGestionFuentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionFuentesActionPerformed
@@ -215,7 +215,7 @@ public class FrmMdi extends javax.swing.JFrame {
         btnSalir.setVisible(false);
         btnGestionClientes.setVisible(false);
         btnGestionEmpleados1.setVisible(false);
-        
+
     }
 
     public void activarBotonesMdi() {

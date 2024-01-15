@@ -227,7 +227,7 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-
+        clases.Controlador.actualizar("INSER INTO estado (cli_id");
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnEntregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntregarActionPerformed

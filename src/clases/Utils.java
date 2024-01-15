@@ -26,7 +26,6 @@ public class Utils {
         Dimension jInternalFrameSize = internalFrame.getSize();
         internalFrame.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,
                 (desktopSize.height - jInternalFrameSize.height) / 2);
-
     }
 
     public static void activarPanel(boolean activarCampos, JPanel pnlPanel) {
@@ -50,6 +49,5 @@ public class Utils {
                 }
             }
         }
-
     }
 }
