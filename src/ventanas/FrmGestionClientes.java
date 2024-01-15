@@ -286,7 +286,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
                 "', '" + txtContacto.getText() + 
                 "', '" + txtCiudad.getText() + 
                 "', '" + txtBarrio.getText() + 
-                "', '" + txtDireccion.getText() + "')");
+                "', '" + txtDireccion.getText() + "');");
         txtNombre.setText("");
         txtApellido.setText("");
         txtCi.setText("");

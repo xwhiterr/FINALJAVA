@@ -19,7 +19,7 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        tgBtnAlquilados = new javax.swing.JToggleButton();
+        tglEstado = new javax.swing.JToggleButton();
         jSeparator1 = new javax.swing.JSeparator();
         btnImprimir = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
@@ -31,13 +31,13 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Id", "Libro", "Cliente", "Fecha"
+
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -48,8 +48,13 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 590, 300);
 
-        tgBtnAlquilados.setText("Alquilados");
-        jPanel2.add(tgBtnAlquilados);
+        tglEstado.setText("Alquilados");
+        tglEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tglEstadoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(tglEstado);
         jPanel2.add(jSeparator1);
 
         btnImprimir.setText("Imprimir");
@@ -74,6 +79,13 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void tglEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tglEstadoActionPerformed
+        if (tglEstado.isSelected()) {
+            tglEstado.setText("Disponibles");
+        } else {
+            tglEstado.setText("Alquilados");
+        }
+    }//GEN-LAST:event_tglEstadoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnImprimir;
@@ -84,6 +96,6 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JToggleButton tgBtnAlquilados;
+    private javax.swing.JToggleButton tglEstado;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,14 +11,14 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
     public FrmGestionEmpleados() {
         initComponents();
         setSize(600, 380);
-         clases.Utils.activarPanel(false, pnlCampos);
+        clases.Utils.activarPanel(false, pnlCampos);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         btnBuscar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -30,12 +30,6 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
         btnAgregarBarrio = new javax.swing.JButton();
         pnlCampos = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtCi = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtApellido = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtContacto = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -44,6 +38,12 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
         txtBarrio = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtDireccion = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtCi = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtApellido = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -155,33 +155,6 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
         pnlCampos.add(jLabel9);
         jLabel9.setBounds(40, 20, 169, 21);
 
-        jLabel5.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel5.setText("Apellido(s)");
-        pnlCampos.add(jLabel5);
-        jLabel5.setBounds(260, 60, 120, 17);
-
-        txtNombre.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        pnlCampos.add(txtNombre);
-        txtNombre.setBounds(30, 80, 220, 27);
-
-        jLabel2.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel2.setText("Nombre(s)");
-        pnlCampos.add(jLabel2);
-        jLabel2.setBounds(40, 60, 120, 17);
-
-        txtCi.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        pnlCampos.add(txtCi);
-        txtCi.setBounds(440, 80, 110, 27);
-
-        jLabel3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        jLabel3.setText("Nro de C.I.");
-        pnlCampos.add(jLabel3);
-        jLabel3.setBounds(450, 60, 70, 17);
-
-        txtApellido.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        pnlCampos.add(txtApellido);
-        txtApellido.setBounds(250, 80, 190, 27);
-
         jLabel6.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel6.setText("Nro de Contacto");
         pnlCampos.add(jLabel6);
@@ -213,9 +186,36 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel4.setText("Dirección");
         pnlCampos.add(jLabel4);
-        jLabel4.setBounds(40, 200, 110, 17);
+        jLabel4.setBounds(40, 190, 110, 17);
         pnlCampos.add(txtDireccion);
-        txtDireccion.setBounds(30, 220, 520, 26);
+        txtDireccion.setBounds(30, 210, 520, 26);
+
+        jLabel3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        jLabel3.setText("Nro de C.I.");
+        pnlCampos.add(jLabel3);
+        jLabel3.setBounds(40, 70, 70, 17);
+
+        txtCi.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        pnlCampos.add(txtCi);
+        txtCi.setBounds(30, 90, 110, 27);
+
+        jLabel2.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        jLabel2.setText("Nombre(s)");
+        pnlCampos.add(jLabel2);
+        jLabel2.setBounds(150, 70, 120, 17);
+
+        txtNombre.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        pnlCampos.add(txtNombre);
+        txtNombre.setBounds(140, 90, 220, 27);
+
+        jLabel5.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        jLabel5.setText("Apellido(s)");
+        pnlCampos.add(jLabel5);
+        jLabel5.setBounds(370, 70, 120, 17);
+
+        txtApellido.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        pnlCampos.add(txtApellido);
+        txtApellido.setBounds(360, 90, 190, 27);
 
         getContentPane().add(pnlCampos);
         pnlCampos.setBounds(0, 0, 580, 260);
@@ -287,7 +287,20 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
+        clases.Controlador.actualizar("INSERT INTO empleado (emp_ci, emp_nom, emp_ape, emp_cel, ciu_id, bar_id, emp_dire) VALUES ('" + txtCi.getText()
+                + "', '" + txtNombre.getText()
+                + "', '" + txtApellido.getText()
+                + "', '" + txtContacto.getText()
+                + "', '" + txtCiudad.getText()
+                + "', '" + txtBarrio.getText()
+                + "', '" + txtDireccion.getText() + "')");
+        txtNombre.setText("");
+        txtApellido.setText("");
+        txtCi.setText("");
+        txtCiudad.setText("");
+        txtBarrio.setText("");
+        txtContacto.setText("");
+        txtDireccion.setText("");
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -323,6 +336,7 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnSalir;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
