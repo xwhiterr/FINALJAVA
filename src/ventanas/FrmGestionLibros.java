@@ -10,8 +10,9 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
 
     public FrmGestionLibros() {
         initComponents();
-        setSize(655, 310);
+        setSize(714, 310);
          clases.Utils.activarPanel(false, pnlCampos);
+         clases.Utils.activarScrollList(false, pnlCampos);
     }
 
     @SuppressWarnings("unchecked")
@@ -33,6 +34,18 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         btnAgregarGen = new javax.swing.JButton();
         btnAgregarAut = new javax.swing.JButton();
         btnAgregarEdi = new javax.swing.JButton();
+        scrEditorial = new javax.swing.JScrollPane();
+        lstEditorial = new javax.swing.JList<>();
+        scrAutor = new javax.swing.JScrollPane();
+        lstAutor = new javax.swing.JList<>();
+        scrGenero = new javax.swing.JScrollPane();
+        lstGenero = new javax.swing.JList<>();
+        txtIdEdi = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtIdGen = new javax.swing.JTextField();
+        txtIdAut = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnBuscar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -54,43 +67,43 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel1.setText("Nombre del Libro");
         pnlCampos.add(jLabel1);
-        jLabel1.setBounds(50, 50, 150, 17);
+        jLabel1.setBounds(30, 50, 150, 17);
 
         txtNombreLibro.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         pnlCampos.add(txtNombreLibro);
-        txtNombreLibro.setBounds(40, 70, 240, 27);
+        txtNombreLibro.setBounds(20, 70, 240, 27);
 
         jLabel2.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel2.setText("ISBN");
         pnlCampos.add(jLabel2);
-        jLabel2.setBounds(300, 50, 80, 17);
+        jLabel2.setBounds(280, 50, 80, 17);
 
         txtISBN.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         pnlCampos.add(txtISBN);
-        txtISBN.setBounds(280, 70, 160, 27);
+        txtISBN.setBounds(260, 70, 180, 27);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel3.setText("Nombre del autor");
         pnlCampos.add(jLabel3);
-        jLabel3.setBounds(50, 100, 160, 17);
+        jLabel3.setBounds(70, 110, 160, 17);
 
         txtAutor.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         pnlCampos.add(txtAutor);
-        txtAutor.setBounds(40, 120, 230, 27);
+        txtAutor.setBounds(60, 130, 230, 27);
 
         jLabel4.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel4.setText("Editorial");
         pnlCampos.add(jLabel4);
-        jLabel4.setBounds(450, 50, 110, 17);
+        jLabel4.setBounds(500, 50, 110, 17);
 
         txtEditorial.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         pnlCampos.add(txtEditorial);
-        txtEditorial.setBounds(440, 70, 160, 27);
+        txtEditorial.setBounds(490, 70, 160, 27);
 
         jLabel5.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel5.setText("Género");
         pnlCampos.add(jLabel5);
-        jLabel5.setBounds(300, 100, 90, 17);
+        jLabel5.setBounds(380, 110, 90, 17);
 
         txtGenero.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtGenero.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +112,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(txtGenero);
-        txtGenero.setBounds(290, 120, 200, 27);
+        txtGenero.setBounds(370, 130, 200, 27);
 
         btnAgregarGen.setText("jButton1");
         btnAgregarGen.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +121,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(btnAgregarGen);
-        btnAgregarGen.setBounds(490, 120, 20, 27);
+        btnAgregarGen.setBounds(570, 130, 20, 27);
 
         btnAgregarAut.setText("jButton1");
         btnAgregarAut.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +130,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(btnAgregarAut);
-        btnAgregarAut.setBounds(270, 120, 20, 27);
+        btnAgregarAut.setBounds(290, 130, 20, 27);
 
         btnAgregarEdi.setText("jButton1");
         btnAgregarEdi.addActionListener(new java.awt.event.ActionListener() {
@@ -126,10 +139,43 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(btnAgregarEdi);
-        btnAgregarEdi.setBounds(600, 70, 20, 27);
+        btnAgregarEdi.setBounds(650, 70, 20, 27);
+
+        scrEditorial.setViewportView(lstEditorial);
+
+        pnlCampos.add(scrEditorial);
+        scrEditorial.setBounds(490, 100, 160, 10);
+
+        scrAutor.setViewportView(lstAutor);
+
+        pnlCampos.add(scrAutor);
+        scrAutor.setBounds(60, 160, 230, 10);
+
+        scrGenero.setViewportView(lstGenero);
+
+        pnlCampos.add(scrGenero);
+        scrGenero.setBounds(370, 160, 200, 10);
+        pnlCampos.add(txtIdEdi);
+        txtIdEdi.setBounds(450, 70, 40, 26);
+
+        jLabel6.setText("ID");
+        pnlCampos.add(jLabel6);
+        jLabel6.setBounds(460, 50, 30, 16);
+        pnlCampos.add(txtIdGen);
+        txtIdGen.setBounds(330, 130, 40, 26);
+        pnlCampos.add(txtIdAut);
+        txtIdAut.setBounds(20, 130, 40, 26);
+
+        jLabel7.setText("ID");
+        pnlCampos.add(jLabel7);
+        jLabel7.setBounds(30, 110, 30, 16);
+
+        jLabel8.setText("ID");
+        pnlCampos.add(jLabel8);
+        jLabel8.setBounds(340, 110, 30, 16);
 
         getContentPane().add(pnlCampos);
-        pnlCampos.setBounds(0, 0, 630, 190);
+        pnlCampos.setBounds(0, 0, 700, 190);
 
         btnBuscar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         btnBuscar.setText("BUSCAR");
@@ -195,11 +241,11 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
                 .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnELliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -217,7 +263,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         );
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(10, 190, 620, 70);
+        jPanel2.setBounds(10, 190, 680, 70);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -227,7 +273,16 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
+        clases.Controlador.executeQuery("INSERT INTO libro (lib_nom, lib_isbn, edi_id, aut_id, gen_id) VALUES ('" + txtNombreLibro.getText() + 
+                "', '" + txtISBN.getText() + 
+                "', '" + txtIdEdi.getText() + 
+                "', '" + txtIdAut.getText() + 
+                "', '" + txtIdGen.getText() + "')");
+        txtNombreLibro.setText("");
+        txtISBN.setText("");
+        txtEditorial.setText("");
+        txtAutor.setText("");
+        txtGenero.setText("");
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -273,13 +328,25 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JList<String> lstAutor;
+    private javax.swing.JList<String> lstEditorial;
+    private javax.swing.JList<String> lstGenero;
     private javax.swing.JPanel pnlCampos;
+    private javax.swing.JScrollPane scrAutor;
+    private javax.swing.JScrollPane scrEditorial;
+    private javax.swing.JScrollPane scrGenero;
     private javax.swing.JTextField txtAutor;
     private javax.swing.JTextField txtEditorial;
     private javax.swing.JTextField txtGenero;
     private javax.swing.JTextField txtISBN;
+    private javax.swing.JTextField txtIdAut;
+    private javax.swing.JTextField txtIdEdi;
+    private javax.swing.JTextField txtIdGen;
     private javax.swing.JTextField txtNombreLibro;
     // End of variables declaration//GEN-END:variables
 }
