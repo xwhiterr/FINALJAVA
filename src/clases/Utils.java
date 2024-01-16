@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import javax.swing.JInternalFrame;
 import javax.swing.JDesktopPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import static ventanas.FrmMdi.getDesktopPane;
 
@@ -46,6 +47,32 @@ public class Utils {
                 }
                 if (component instanceof JDateChooser) {
                     component.setEnabled(false);
+                }
+            }
+        }
+    }
+    
+    public static void limpiarPanel(JPanel pnlPanel) {
+        Component[] components = pnlPanel.getComponents();
+            for (Component component : components) {
+                if (component instanceof JTextField) {
+                    ((JTextField) component).setText("");
+                }
+            }
+    }
+    
+    public static void activarScrollList(boolean setVisible, JPanel pnlPanel) {
+        Component[] components = pnlPanel.getComponents();
+        if (setVisible == true) {
+            for (Component component : components) {
+                if (component instanceof JScrollPane) {
+                    component.setVisible(true);
+                }
+            }
+        } else {
+            for (Component component : components) {
+                if (component instanceof JScrollPane) {
+                    component.setVisible(false);
                 }
             }
         }

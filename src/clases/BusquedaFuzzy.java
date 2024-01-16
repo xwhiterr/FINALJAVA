@@ -1,16 +1,22 @@
 package clases;
 
-import clases.Controlador;
+import java.awt.Component;
+import java.awt.KeyboardFocusManager;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Comparator;
 import javax.swing.DefaultListModel;
+import javax.swing.JPanel;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.MouseAdapter;
 import me.xdrop.fuzzywuzzy.FuzzySearch;
+import java.awt.event.MouseEvent;
 
 /**
  *
@@ -18,16 +24,16 @@ import me.xdrop.fuzzywuzzy.FuzzySearch;
  */
 public class BusquedaFuzzy {
 
-    private static Statement statement = null;
-    private static Connection conexion = null;
-    private static DefaultListModel<String> listModel = null;
-    private static String search = null;
-    private static ArrayList<String> arrCache = new ArrayList<>();
-    private static ArrayList<String> arrCacheCopy = new ArrayList<>();
-    private static ResultSet rs = null;
-    private static int fuzzyRatio = 0;
-    private static boolean queryExecuted = false;
-    private static boolean searchCacheFull = false;
+    private Statement statement = null;
+    private Connection conexion = null;
+    private DefaultListModel<String> listModel = null;
+    private String search = null;
+    private ArrayList<String> arrCache = new ArrayList<>();
+    private ArrayList<String> arrCacheCopy = new ArrayList<>();
+    private ResultSet rs = null;
+    private int fuzzyRatio = 0;
+    private boolean queryExecuted = false;
+    private boolean searchCacheFull = false;
 
     /**
      * Realiza una búsqueda fuzzy y actualiza la lista de resultados.
@@ -39,7 +45,7 @@ public class BusquedaFuzzy {
      * @param lstList {@code JList} que va a contener los resultados.
      *
      */
-    public static void busqueda(String nombreColumna, String nombreTabla, JTextField txtField, JScrollPane scrPane, JList<String> lstList) {
+    public void busqueda(String nombreColumna, String nombreTabla, JTextField txtField, JScrollPane scrPane, JList<String> lstList) {
 
         /*Variables importantes:
           statement
@@ -121,5 +127,57 @@ public class BusquedaFuzzy {
             System.err.println("frmFuzzyTest err second TryCatch: Error SQL\n" + e);
         }
 
+    }
+
+    /**
+     * Setea el texto de la lista en el {@code JtextField} y oculta el
+     * {@code JScrollPane}. Mejor usado bajo un evento
+     *
+     * @param txtField {@code JTextField} que contiene la cadena de búsqueda.
+     * @param scrPane {@code JScrollPane} que contiene la lista de resultados.
+     * @param lstList {@code JList} que va a contener los resultados.
+     *
+     */
+    public void setText(JTextField txtField, JScrollPane scrPane, JList<String> lstList) {
+        txtField.setText(lstList.getSelectedValue());
+        KeyboardFocusManager.getCurrentKeyboardFocusManager().focusNextComponent();
+        scrPane.setVisible(false);
+    }
+
+    public void attachFocusLostListener(JPanel pnlPanel, JTextField txtField, JScrollPane scrPane, JList<String> lstList) {
+        Component[] components = pnlPanel.getComponents();
+
+        for (Component component : components) {
+            if (component instanceof JTextField) {
+                
+                
+
+                component.addMouseListener(new MouseAdapter() {
+                    public void mouseExited(MouseEvent e) {
+                        Utils.activarScrollList(false, pnlPanel);
+                    }
+                });
+                
+            } else if (component instanceof JScrollPane) {
+                
+
+
+                component.addMouseListener(new MouseAdapter() {
+                    public void mouseExited(MouseEvent e) {
+                        Utils.activarScrollList(false, pnlPanel);
+                    }
+                });
+                
+            } else if (component instanceof JList) {
+                
+
+
+                component.addMouseListener(new MouseAdapter() {
+                    public void mouseExited(MouseEvent e) {
+                        Utils.activarScrollList(false, pnlPanel);
+                    }
+                });
+            }
+        }
     }
 }

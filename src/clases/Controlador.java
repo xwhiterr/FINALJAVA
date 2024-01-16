@@ -6,7 +6,12 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class Controlador {
-
+    
+        /**
+         * Getter del objeto conexion.
+         * 
+         * @return Retorna un objeto {@code Connection} o {@code null} si falla la conexion.
+         */
     public static Connection getConnection() {
         if (Conexion.conectar()) {
             return Conexion.conexion;
@@ -15,7 +20,11 @@ public class Controlador {
             return null;
         }
     }
-
+        /**
+         * Getter del objeto statement.
+         * 
+         * @return Retorna un objeto {@code Statement} o {@code null} si falla la conexion.
+         */
     public static Statement getStatement() {
         if (Conexion.conectar()) {
             return Conexion.statement;
@@ -25,10 +34,11 @@ public class Controlador {
         }
     }
         /**
-         * Este metodo Agrega nueva informacion a la base de datos
+         * Ejecuta una instruccion SQL.
          * 
+         * @param query Toma un {@code String} SQL y lo ejecuta en la base de datos.
          */
-     public static void actualizar(String query){
+     public static void executeQuery(String query){
          Statement statement = null;
             try{
             statement = getStatement();

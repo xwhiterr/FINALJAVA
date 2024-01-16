@@ -287,7 +287,7 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        clases.Controlador.actualizar("INSERT INTO empleado (emp_ci, emp_nom, emp_ape, emp_cel, ciu_id, bar_id, emp_dire) VALUES ('" + txtCi.getText()
+        clases.Controlador.executeQuery("INSERT INTO empleado (emp_ci, emp_nom, emp_ape, emp_cel, ciu_id, bar_id, emp_dire) VALUES ('" + txtCi.getText()
                 + "', '" + txtNombre.getText()
                 + "', '" + txtApellido.getText()
                 + "', '" + txtContacto.getText()
