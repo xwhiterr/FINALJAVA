@@ -8,6 +8,7 @@ import javax.swing.JInternalFrame;
 
 public class FrmGestionClientes extends javax.swing.JInternalFrame {
 
+    
     private static boolean banderaNuevo = false;
 
     // Inicializa motores de busqueda
