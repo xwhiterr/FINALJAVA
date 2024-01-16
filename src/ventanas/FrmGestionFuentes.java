@@ -469,7 +469,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEliminar1btnAgregar4ActionPerformed
 
     private void btnAgregar1btnAgrePaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar1btnAgrePaiActionPerformed
-        clases.Controlador.actualizar("INSERT INTO editorial (edi_nom) VALUES ( '"+txtEditorial.getText() +"')");
+        clases.Controlador.executeQuery("INSERT INTO editorial (edi_nom) VALUES ( '"+txtEditorial.getText() +"')");
         txtEditorial.setText("");
     }//GEN-LAST:event_btnAgregar1btnAgrePaiActionPerformed
 
@@ -490,7 +490,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEliminar2btnAgregar4ActionPerformed
 
     private void btnAgregar2btnAgrePaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar2btnAgrePaiActionPerformed
-        clases.Controlador.actualizar("INSERT INTO genero (gen_desc) VALUES ( '"+txtGenero.getText() +"')");
+        clases.Controlador.executeQuery("INSERT INTO genero (gen_desc) VALUES ( '"+txtGenero.getText() +"')");
         txtGenero.setText("");
     }//GEN-LAST:event_btnAgregar2btnAgrePaiActionPerformed
 
@@ -503,7 +503,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-       clases.Controlador.actualizar("INSERT INTO autor (aut_nom, aut_ape, pai_id) VALUES "
+       clases.Controlador.executeQuery("INSERT INTO autor (aut_nom, aut_ape, pai_id) VALUES "
         + "('" + txtNombre.getText() + "', '" + txtApellido.getText() + "', '" + txtID.getText() + "')");
         txtNombre.setText("");
         txtApellido.setText("");

@@ -420,7 +420,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        clases.Controlador.actualizar("INSERT INTO pais (pai_desc) VALUES ( '"+txtPais.getText() +"')");
+        clases.Controlador.executeQuery("INSERT INTO pais (pai_desc) VALUES ( '"+txtPais.getText() +"')");
         txtPais.setText("");
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -441,7 +441,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
     private void btnAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar1ActionPerformed
-        clases.Controlador.actualizar("INSERT INTO ciudad (ciu_desc) VALUES ( '"+txtCiudad.getText() +"')");
+        clases.Controlador.executeQuery("INSERT INTO ciudad (ciu_desc) VALUES ( '"+txtCiudad.getText() +"')");
         txtPais.setText("");
     }//GEN-LAST:event_btnAgregar1ActionPerformed
 
@@ -462,7 +462,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEliminar2ActionPerformed
 
     private void btnAgregar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar2ActionPerformed
-        clases.Controlador.actualizar("INSERT INTO barrio (bar_desc) VALUES ( '"+txtBarrio.getText() +"')");
+        clases.Controlador.executeQuery("INSERT INTO barrio (bar_desc) VALUES ( '"+txtBarrio.getText() +"')");
         txtPais.setText("");
          
     }//GEN-LAST:event_btnAgregar2ActionPerformed
