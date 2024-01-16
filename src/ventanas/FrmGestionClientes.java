@@ -381,6 +381,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        banderaNuevo = false;
         clases.Utils.activarPanel(true, pnlCampos);
         KeyboardFocusManager.getCurrentKeyboardFocusManager().focusNextComponent();
     }//GEN-LAST:event_btnBuscarActionPerformed
@@ -397,17 +398,13 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
                 + "', '" + txtCiudad.getText()
                 + "', '" + txtCiudadId.getText()
                 + "', '" + txtDireccion.getText() + "');");
-        txtNombre.setText("");
-        txtCiudad.setText("");
-        txtCi.setText("");
-        txtCiudad.setText("");
-        txtCiudadId.setText("");
-        txtContacto.setText("");
-        txtDireccion.setText("");
+        Utils.limpiarPanel(pnlCampos);
+        banderaNuevo = false;
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
+        Utils.activarPanel(false, pnlCampos);
+        Utils.limpiarPanel(pnlCampos);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCiudadActionPerformed
@@ -445,7 +442,9 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         BLOQUE DE BUSQUEDA CI
      */
     private void txtCiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCiKeyReleased
+        if (banderaNuevo == false) {
         busqueda2.busqueda("cli_ci", "cliente", txtCi, scrCi, lstCi);
+        }
     }//GEN-LAST:event_txtCiKeyReleased
 
     private void lstCiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lstCiFocusGained
