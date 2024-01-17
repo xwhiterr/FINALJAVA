@@ -24,7 +24,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
 
         clases.Utils.activarPanel(false, pnlCampos);
         clases.Utils.activarScrollList(false, pnlCampos);
-        busqueda1.attachFocusLostListener(pnlCampos, txtNombre, scrNombre, lstNombre);
+        busqueda1.cerrarJListMouseExited(pnlCampos);
 
     }
 
@@ -32,6 +32,14 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlTitulo = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        pnlBotonera = new javax.swing.JPanel();
+        btnBuscar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        btnNuevo = new javax.swing.JButton();
         pnlCampos = new javax.swing.JPanel();
         scrBarrio = new javax.swing.JScrollPane();
         lstBarrio = new javax.swing.JList<>();
@@ -61,16 +69,109 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         txtCiudadId = new javax.swing.JTextField();
         txtBarrio = new javax.swing.JTextField();
         txtBarrioId = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        btnBuscar = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
-        btnNuevo = new javax.swing.JButton();
 
         getContentPane().setLayout(null);
+
+        pnlTitulo.setFocusCycleRoot(true);
+
+        jLabel9.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        jLabel9.setText("Gestion de Clientes");
+
+        javax.swing.GroupLayout pnlTituloLayout = new javax.swing.GroupLayout(pnlTitulo);
+        pnlTitulo.setLayout(pnlTituloLayout);
+        pnlTituloLayout.setHorizontalGroup(
+            pnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTituloLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(408, Short.MAX_VALUE))
+        );
+        pnlTituloLayout.setVerticalGroup(
+            pnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(pnlTitulo);
+        pnlTitulo.setBounds(30, 2, 570, 30);
+
+        pnlBotonera.setFocusCycleRoot(true);
+        pnlBotonera.setLayout(null);
+
+        btnBuscar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnBuscar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\buscar.png")); // NOI18N
+        btnBuscar.setText("BUSCAR");
+        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar.setIconTextGap(2);
+        btnBuscar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnBuscar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnBuscar.setNextFocusableComponent(txtCi);
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        pnlBotonera.add(btnBuscar);
+        btnBuscar.setBounds(230, 0, 120, 60);
+
+        btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
+        btnSalir.setText("SALIR");
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnSalir.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        pnlBotonera.add(btnSalir);
+        btnSalir.setBounds(590, 0, 130, 60);
+
+        btnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
+        btnGuardar.setText("GUARDAR");
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.setIconTextGap(2);
+        btnGuardar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnGuardar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+        pnlBotonera.add(btnGuardar);
+        btnGuardar.setBounds(110, 0, 120, 60);
+
+        btnCancelar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnCancelar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\cerrar.png")); // NOI18N
+        btnCancelar.setText("CANCELAR");
+        btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancelar.setIconTextGap(2);
+        btnCancelar.setMaximumSize(new java.awt.Dimension(100, 100));
+        btnCancelar.setMinimumSize(new java.awt.Dimension(100, 100));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        pnlBotonera.add(btnCancelar);
+        btnCancelar.setBounds(350, 0, 130, 60);
+
+        btnNuevo.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnNuevo.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\añadir.png")); // NOI18N
+        btnNuevo.setText("NUEVO");
+        btnNuevo.setIconTextGap(2);
+        btnNuevo.setNextFocusableComponent(txtCi);
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
+        pnlBotonera.add(btnNuevo);
+        btnNuevo.setBounds(0, 0, 110, 60);
+
+        getContentPane().add(pnlBotonera);
+        pnlBotonera.setBounds(30, 240, 720, 60);
 
         pnlCampos.setLayout(null);
 
@@ -153,7 +254,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(txtNombre);
-        txtNombre.setBounds(170, 50, 290, 21);
+        txtNombre.setBounds(170, 50, 290, 27);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel3.setText("Nro de C.I.");
@@ -170,7 +271,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(txtCi);
-        txtCi.setBounds(30, 50, 120, 21);
+        txtCi.setBounds(30, 50, 120, 27);
 
         jLabel4.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel4.setText("Dirección");
@@ -193,7 +294,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(txtCiudad);
-        txtCiudad.setBounds(310, 110, 160, 21);
+        txtCiudad.setBounds(310, 110, 160, 27);
 
         jLabel6.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel6.setText("Nro de Contacto");
@@ -216,7 +317,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         txtDireccion.setFocusCycleRoot(true);
         txtDireccion.setNextFocusableComponent(btnGuardar);
         pnlCampos.add(txtDireccion);
-        txtDireccion.setBounds(30, 170, 720, 24);
+        txtDireccion.setBounds(30, 170, 720, 26);
 
         btnAgregarCiudad.setText("jButton1");
         btnAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
@@ -225,7 +326,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(btnAgregarCiudad);
-        btnAgregarCiudad.setBounds(470, 110, 30, 20);
+        btnAgregarCiudad.setBounds(470, 110, 30, 30);
 
         btnAgregarBarrio.setText("jButton2");
         btnAgregarBarrio.addActionListener(new java.awt.event.ActionListener() {
@@ -234,13 +335,13 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(btnAgregarBarrio);
-        btnAgregarBarrio.setBounds(720, 110, 30, 20);
+        btnAgregarBarrio.setBounds(720, 110, 30, 30);
 
         txtContacto.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtContacto.setFocusCycleRoot(true);
         txtContacto.setNextFocusableComponent(txtCiudadId);
         pnlCampos.add(txtContacto);
-        txtContacto.setBounds(30, 110, 218, 21);
+        txtContacto.setBounds(30, 110, 218, 27);
 
         jLabel10.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel10.setText("Ciudad");
@@ -258,13 +359,13 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         txtApellido.setFocusCycleRoot(true);
         txtApellido.setNextFocusableComponent(txtContacto);
         pnlCampos.add(txtApellido);
-        txtApellido.setBounds(460, 50, 290, 21);
+        txtApellido.setBounds(460, 50, 290, 27);
 
         txtCiudadId.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtCiudadId.setFocusCycleRoot(true);
         txtCiudadId.setNextFocusableComponent(txtCiudad);
         pnlCampos.add(txtCiudadId);
-        txtCiudadId.setBounds(260, 110, 50, 21);
+        txtCiudadId.setBounds(260, 110, 50, 27);
 
         txtBarrio.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtBarrio.setFocusCycleRoot(true);
@@ -275,108 +376,16 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(txtBarrio);
-        txtBarrio.setBounds(560, 110, 160, 21);
+        txtBarrio.setBounds(560, 110, 160, 27);
 
         txtBarrioId.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtBarrioId.setFocusCycleRoot(true);
         txtBarrioId.setNextFocusableComponent(txtBarrio);
         pnlCampos.add(txtBarrioId);
-        txtBarrioId.setBounds(510, 110, 50, 21);
+        txtBarrioId.setBounds(510, 110, 50, 27);
 
         getContentPane().add(pnlCampos);
-        pnlCampos.setBounds(0, 0, 760, 230);
-
-        jPanel1.setFocusCycleRoot(true);
-
-        jLabel9.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jLabel9.setText("Gestion de Clientes");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(408, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(30, 2, 570, 30);
-
-        jPanel2.setFocusCycleRoot(true);
-        jPanel2.setLayout(null);
-
-        btnBuscar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnBuscar.setText("BUSCAR");
-        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscar.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnBuscar.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnBuscar.setNextFocusableComponent(txtCi);
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnBuscar);
-        btnBuscar.setBounds(190, 0, 100, 60);
-
-        btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnSalir.setText("SALIR");
-        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnSalir.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnSalir);
-        btnSalir.setBounds(610, 0, 110, 60);
-
-        btnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnGuardar.setText("GUARDAR");
-        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnGuardar.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnGuardar.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnGuardar);
-        btnGuardar.setBounds(90, 0, 100, 60);
-
-        btnCancelar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnCancelar.setText("CANCELAR");
-        btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCancelar.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnCancelar.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnCancelar);
-        btnCancelar.setBounds(290, 0, 100, 60);
-
-        btnNuevo.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnNuevo.setText("NUEVO");
-        btnNuevo.setNextFocusableComponent(txtCi);
-        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnNuevo);
-        btnNuevo.setBounds(0, 0, 90, 60);
-
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(30, 240, 720, 60);
+        pnlCampos.setBounds(0, 0, 760, 330);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -394,10 +403,10 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         clases.Controlador.executeQuery("INSERT INTO cliente (cli_ci, cli_nom, cli_ape, cli_tel, ciu_id, bar_id, cli_dire) VALUES ('" + txtCi.getText()
                 + "', '" + txtNombre.getText()
-                + "', '" + txtCiudad.getText()
+                + "', '" + txtApellido.getText()
                 + "', '" + txtContacto.getText()
-                + "', '" + txtCiudad.getText()
                 + "', '" + txtCiudadId.getText()
+                + "', '" + txtBarrioId.getText()
                 + "', '" + txtDireccion.getText() + "');");
         Utils.limpiarPanel(pnlCampos);
         banderaNuevo = false;
@@ -509,13 +518,13 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JList<String> lstBarrio;
     private static javax.swing.JList<String> lstCi;
     private javax.swing.JList<String> lstCiudad;
     private static javax.swing.JList<String> lstNombre;
+    private javax.swing.JPanel pnlBotonera;
     private javax.swing.JPanel pnlCampos;
+    private javax.swing.JPanel pnlTitulo;
     private javax.swing.JScrollPane scrBarrio;
     private javax.swing.JScrollPane scrCi;
     private javax.swing.JScrollPane scrCiudad;

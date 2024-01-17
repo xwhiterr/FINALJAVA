@@ -8,7 +8,8 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
 
     public FrmGestionFuentes() {
         initComponents();
-        setSize(590, 300);
+        setSize(630, 300);
+        clases.Utils.activarScrollList(false, pnlAutor);
     }
 
 
@@ -26,34 +27,25 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         BotoneraEditorial = new javax.swing.JPanel();
         btnGuardar1 = new javax.swing.JButton();
         btnSalir1 = new javax.swing.JButton();
-        btnEliminar1 = new javax.swing.JButton();
-        btnAgregar1 = new javax.swing.JButton();
-        btnEditar1 = new javax.swing.JButton();
         pnlGenero = new javax.swing.JPanel();
         lblGenero = new javax.swing.JLabel();
         txtGenero = new javax.swing.JTextField();
         BotoneraGenero = new javax.swing.JPanel();
         btnGuardar2 = new javax.swing.JButton();
         btnSalir2 = new javax.swing.JButton();
-        btnEliminar2 = new javax.swing.JButton();
-        btnAgregar2 = new javax.swing.JButton();
-        btnEditar2 = new javax.swing.JButton();
         pnlAutor = new javax.swing.JPanel();
         lblAutor = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         BotoneraAutor = new javax.swing.JPanel();
         BtnGuardar = new javax.swing.JButton();
-        bntEliminar = new javax.swing.JButton();
-        btnEditar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        txtApellido = new javax.swing.JTextField();
+        txtPais = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
-        txtPais = new javax.swing.JTextField();
-        btnAgregar = new javax.swing.JButton();
+        txtApellido = new javax.swing.JTextField();
+        txtIdPais = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -68,12 +60,24 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         tabInfoLibros.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         tabInfoLibros.setMinimumSize(new java.awt.Dimension(550, 350));
 
+        pnlEditorial.setLayout(null);
+
         lblEditorial.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         lblEditorial.setText("Ingrese Editorial");
+        pnlEditorial.add(lblEditorial);
+        lblEditorial.setBounds(35, 22, 240, 21);
 
         txtEditorial.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        txtEditorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEditorialActionPerformed(evt);
+            }
+        });
+        pnlEditorial.add(txtEditorial);
+        txtEditorial.setBounds(25, 52, 250, 31);
 
         btnGuardar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnGuardar1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnGuardar1.setText("GUARDAR");
         btnGuardar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar1.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -85,6 +89,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         });
 
         btnSalir1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir1.setText("SALIR");
         btnSalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir1.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -95,102 +100,43 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
             }
         });
 
-        btnEliminar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnEliminar1.setText("ELIMINAR");
-        btnEliminar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar1.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnEliminar1.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnEliminar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminar1btnAgregar4ActionPerformed(evt);
-            }
-        });
-
-        btnAgregar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar1.setText("AGREGAR");
-        btnAgregar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar1.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar1.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar1btnAgrePaiActionPerformed(evt);
-            }
-        });
-
-        btnEditar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnEditar1.setText("EDITAR");
-        btnEditar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEditar1.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnEditar1.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnEditar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditar1btnAgregar6ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout BotoneraEditorialLayout = new javax.swing.GroupLayout(BotoneraEditorial);
         BotoneraEditorial.setLayout(BotoneraEditorialLayout);
         BotoneraEditorialLayout.setHorizontalGroup(
             BotoneraEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BotoneraEditorialLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnAgregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
+                .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         BotoneraEditorialLayout.setVerticalGroup(
             BotoneraEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BotoneraEditorialLayout.createSequentialGroup()
                 .addGroup(BotoneraEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12))
         );
 
-        javax.swing.GroupLayout pnlEditorialLayout = new javax.swing.GroupLayout(pnlEditorial);
-        pnlEditorial.setLayout(pnlEditorialLayout);
-        pnlEditorialLayout.setHorizontalGroup(
-            pnlEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlEditorialLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(pnlEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotoneraEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlEditorialLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblEditorial))
-                    .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-        pnlEditorialLayout.setVerticalGroup(
-            pnlEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlEditorialLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblEditorial)
-                .addGap(9, 9, 9)
-                .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(BotoneraEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
-        );
+        pnlEditorial.add(BotoneraEditorial);
+        BotoneraEditorial.setBounds(25, 127, 514, 60);
 
         tabInfoLibros.addTab("Editorial", pnlEditorial);
 
+        pnlGenero.setLayout(null);
+
         lblGenero.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         lblGenero.setText("Ingrese Genero");
+        pnlGenero.add(lblGenero);
+        lblGenero.setBounds(35, 22, 230, 21);
 
         txtGenero.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        pnlGenero.add(txtGenero);
+        txtGenero.setBounds(25, 52, 250, 31);
 
         btnGuardar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnGuardar2.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnGuardar2.setText("GUARDAR");
         btnGuardar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar2.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -202,6 +148,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         });
 
         btnSalir2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir2.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir2.setText("SALIR");
         btnSalir2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir2.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -212,120 +159,56 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
             }
         });
 
-        btnEliminar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnEliminar2.setText("ELIMINAR");
-        btnEliminar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar2.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnEliminar2.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnEliminar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminar2btnAgregar4ActionPerformed(evt);
-            }
-        });
-
-        btnAgregar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar2.setText("AGREGAR");
-        btnAgregar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar2.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar2.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar2btnAgrePaiActionPerformed(evt);
-            }
-        });
-
-        btnEditar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnEditar2.setText("EDITAR");
-        btnEditar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEditar2.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnEditar2.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnEditar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditar2btnAgregar6ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout BotoneraGeneroLayout = new javax.swing.GroupLayout(BotoneraGenero);
         BotoneraGenero.setLayout(BotoneraGeneroLayout);
         BotoneraGeneroLayout.setHorizontalGroup(
             BotoneraGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BotoneraGeneroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAgregar2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEditar2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
+                .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         BotoneraGeneroLayout.setVerticalGroup(
             BotoneraGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BotoneraGeneroLayout.createSequentialGroup()
                 .addGroup(BotoneraGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12))
         );
 
-        javax.swing.GroupLayout pnlGeneroLayout = new javax.swing.GroupLayout(pnlGenero);
-        pnlGenero.setLayout(pnlGeneroLayout);
-        pnlGeneroLayout.setHorizontalGroup(
-            pnlGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlGeneroLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(pnlGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotoneraGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlGeneroLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblGenero))
-                    .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-        pnlGeneroLayout.setVerticalGroup(
-            pnlGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlGeneroLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblGenero)
-                .addGap(9, 9, 9)
-                .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(BotoneraGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
-        );
+        pnlGenero.add(BotoneraGenero);
+        BotoneraGenero.setBounds(25, 127, 517, 60);
 
         tabInfoLibros.addTab("Genero", pnlGenero);
 
+        pnlAutor.setLayout(null);
+
         lblAutor.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         lblAutor.setText("Ingrese Autor");
+        pnlAutor.add(lblAutor);
+        lblAutor.setBounds(30, 20, 105, 21);
 
         txtNombre.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        pnlAutor.add(txtNombre);
+        txtNombre.setBounds(10, 90, 205, 30);
 
         BtnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        BtnGuardar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         BtnGuardar.setText("GUARDAR");
         BtnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnGuardar.setMaximumSize(new java.awt.Dimension(100, 100));
         BtnGuardar.setMinimumSize(new java.awt.Dimension(100, 100));
-
-        bntEliminar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        bntEliminar.setText("ELIMINAR");
-        bntEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bntEliminar.setMaximumSize(new java.awt.Dimension(100, 100));
-        bntEliminar.setMinimumSize(new java.awt.Dimension(100, 100));
-
-        btnEditar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnEditar.setText("EDITAR");
-        btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEditar.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnEditar.setMinimumSize(new java.awt.Dimension(100, 100));
+        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir.setText("SALIR");
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -341,175 +224,107 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         BotoneraAutorLayout.setHorizontalGroup(
             BotoneraAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BotoneraAutorLayout.createSequentialGroup()
-                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bntEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 337, Short.MAX_VALUE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         BotoneraAutorLayout.setVerticalGroup(
             BotoneraAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BotoneraAutorLayout.createSequentialGroup()
                 .addGroup(BotoneraAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bntEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12))
         );
 
-        txtApellido.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        pnlAutor.add(BotoneraAutor);
+        BotoneraAutor.setBounds(20, 140, 580, 60);
+
+        txtPais.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        pnlAutor.add(txtPais);
+        txtPais.setBounds(470, 90, 130, 31);
 
         jLabel2.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel2.setText("Nombre");
+        pnlAutor.add(jLabel2);
+        jLabel2.setBounds(30, 60, 190, 17);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel3.setText("Apellido");
-
-        jLabel5.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        jLabel5.setText("ID");
+        pnlAutor.add(jLabel3);
+        jLabel3.setBounds(230, 60, 180, 17);
 
         jLabel6.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel6.setText("Pais");
+        pnlAutor.add(jLabel6);
+        jLabel6.setBounds(490, 60, 40, 17);
 
-        btnAgregar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar.setText("AGREGAR");
-        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnAgregar.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+        txtApellido.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        pnlAutor.add(txtApellido);
+        txtApellido.setBounds(220, 90, 190, 31);
+
+        txtIdPais.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        txtIdPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActionPerformed(evt);
+                txtIdPaisActionPerformed(evt);
             }
         });
+        pnlAutor.add(txtIdPais);
+        txtIdPais.setBounds(420, 90, 50, 31);
 
-        javax.swing.GroupLayout pnlAutorLayout = new javax.swing.GroupLayout(pnlAutor);
-        pnlAutor.setLayout(pnlAutorLayout);
-        pnlAutorLayout.setHorizontalGroup(
-            pnlAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlAutorLayout.createSequentialGroup()
-                .addGroup(pnlAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlAutorLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(lblAutor))
-                    .addGroup(pnlAutorLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(141, 141, 141)
-                        .addComponent(jLabel3)
-                        .addGap(118, 118, 118)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlAutorLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(pnlAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlAutorLayout.createSequentialGroup()
-                                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BotoneraAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlAutorLayout.createSequentialGroup()
-                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-        pnlAutorLayout.setVerticalGroup(
-            pnlAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlAutorLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(lblAutor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(pnlAutorLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addGroup(pnlAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(pnlAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel5)))))
-                .addGap(5, 5, 5)
-                .addGroup(pnlAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32)
-                .addGroup(pnlAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotoneraAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        jLabel5.setText("ID");
+        pnlAutor.add(jLabel5);
+        jLabel5.setBounds(440, 60, 30, 16);
 
         tabInfoLibros.addTab("Autor", pnlAutor);
 
         getContentPane().add(tabInfoLibros);
-        tabInfoLibros.setBounds(0, 0, 580, 260);
+        tabInfoLibros.setBounds(0, 0, 630, 260);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardar1btnGuaPaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1btnGuaPaiActionPerformed
-        // TODO add your handling code here:
+        clases.Controlador.executeQuery("INSERT INTO editorial (edi_nom) VALUES ( '"+txtEditorial.getText() +"')");
+        txtEditorial.setText("");
     }//GEN-LAST:event_btnGuardar1btnGuaPaiActionPerformed
 
     private void btnSalir1btnSaliPaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1btnSaliPaiActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnSalir1btnSaliPaiActionPerformed
 
-    private void btnEliminar1btnAgregar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1btnAgregar4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminar1btnAgregar4ActionPerformed
-
-    private void btnAgregar1btnAgrePaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar1btnAgrePaiActionPerformed
-        clases.Controlador.executeQuery("INSERT INTO editorial (edi_nom) VALUES ( '"+txtEditorial.getText() +"')");
-        txtEditorial.setText("");
-    }//GEN-LAST:event_btnAgregar1btnAgrePaiActionPerformed
-
-    private void btnEditar1btnAgregar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditar1btnAgregar6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditar1btnAgregar6ActionPerformed
-
     private void btnGuardar2btnGuaPaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar2btnGuaPaiActionPerformed
-        // TODO add your handling code here:
+        clases.Controlador.executeQuery("INSERT INTO genero (gen_desc) VALUES ( '"+txtGenero.getText() +"')");
+        txtGenero.setText("");
     }//GEN-LAST:event_btnGuardar2btnGuaPaiActionPerformed
 
     private void btnSalir2btnSaliPaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir2btnSaliPaiActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnSalir2btnSaliPaiActionPerformed
-
-    private void btnEliminar2btnAgregar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar2btnAgregar4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminar2btnAgregar4ActionPerformed
-
-    private void btnAgregar2btnAgrePaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar2btnAgrePaiActionPerformed
-        clases.Controlador.executeQuery("INSERT INTO genero (gen_desc) VALUES ( '"+txtGenero.getText() +"')");
-        txtGenero.setText("");
-    }//GEN-LAST:event_btnAgregar2btnAgrePaiActionPerformed
-
-    private void btnEditar2btnAgregar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditar2btnAgregar6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditar2btnAgregar6ActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-       clases.Controlador.executeQuery("INSERT INTO autor (aut_nom, aut_ape, pai_id) VALUES "
-        + "('" + txtNombre.getText() + "', '" + txtApellido.getText() + "', '" + txtID.getText() + "')");
-        txtNombre.setText("");
-        txtApellido.setText("");
-        txtID.setText("");
-        txtApellido.setText("");
-    }//GEN-LAST:event_btnAgregarActionPerformed
+    private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
+       clases.Controlador.executeQuery("INSERT INTO autor (aut_nom, aut_ape, pai_id) VALUES ('" + txtNombre.getText() + 
+                "', '" + txtApellido.getText() + 
+              "', '" + txtIdPais.getText() + "');");
+       txtNombre.setText("");  
+       txtApellido.setText("");  
+       txtIdPais.setText(""); 
+       txtPais.setText("");
+    }//GEN-LAST:event_BtnGuardarActionPerformed
+
+    private void txtEditorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEditorialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEditorialActionPerformed
+
+    private void txtIdPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdPaisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdPaisActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -517,15 +332,6 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     private javax.swing.JPanel BotoneraEditorial;
     private javax.swing.JPanel BotoneraGenero;
     private javax.swing.JButton BtnGuardar;
-    private javax.swing.JButton bntEliminar;
-    private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnAgregar1;
-    private javax.swing.JButton btnAgregar2;
-    private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnEditar1;
-    private javax.swing.JButton btnEditar2;
-    private javax.swing.JButton btnEliminar1;
-    private javax.swing.JButton btnEliminar2;
     private javax.swing.JButton btnGuardar1;
     private javax.swing.JButton btnGuardar2;
     private javax.swing.JButton btnSalir;
@@ -548,7 +354,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtEditorial;
     private javax.swing.JTextField txtGenero;
-    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtIdPais;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPais;
     // End of variables declaration//GEN-END:variables
