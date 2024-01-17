@@ -57,8 +57,10 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         txtPais.setBounds(40, 50, 250, 31);
 
         btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\cerrar.png")); // NOI18N
         btnSalir.setText("SALIR");
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setIconTextGap(2);
         btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
         btnSalir.setMinimumSize(new java.awt.Dimension(100, 100));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -68,8 +70,10 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         });
 
         btnAgregar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnAgregar.setText("AGREGAR");
         btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregar.setIconTextGap(2);
         btnAgregar.setMaximumSize(new java.awt.Dimension(100, 100));
         btnAgregar.setMinimumSize(new java.awt.Dimension(100, 100));
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -84,9 +88,9 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
         jPanel6Layout.setVerticalGroup(
@@ -115,6 +119,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         txtCiudad.setBounds(25, 52, 250, 31);
 
         btnSalir1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\cerrar.png")); // NOI18N
         btnSalir1.setText("SALIR");
         btnSalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir1.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -126,6 +131,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         });
 
         btnAgregar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnAgregar1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnAgregar1.setText("AGREGAR");
         btnAgregar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregar1.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -141,10 +147,9 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnAgregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-                .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAgregar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -173,6 +178,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         txtBarrio.setBounds(25, 52, 250, 31);
 
         btnSalir2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir2.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\cerrar.png")); // NOI18N
         btnSalir2.setText("SALIR");
         btnSalir2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir2.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -184,6 +190,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         });
 
         btnAgregar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnAgregar2.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnAgregar2.setText("GUARDAR");
         btnAgregar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregar2.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -201,8 +208,8 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnAgregar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96)
-                .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(8, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -235,7 +242,7 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
-
+        dispose();
     }//GEN-LAST:event_btnSalir1ActionPerformed
 
     private void btnAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar1ActionPerformed

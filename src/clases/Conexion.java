@@ -14,7 +14,7 @@ public class Conexion {
 
 //        File db = new File("data/db.sqlite");
 //        String path = db.getAbsolutePath();
-        String path = "/home/caches/Documents/UTIC/LPT1/FINALJAVA/data/db.sqlite";
+        String path = "C:\\JAVALPI\\FINALJAVA\\data\\db.sqlite";
         /* Intentamos la conexion. si falla, damos error.
            Retorna true si la conexion fue exitosa
            Retorna false si la conexion fallo

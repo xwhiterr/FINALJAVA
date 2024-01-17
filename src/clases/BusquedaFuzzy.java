@@ -144,7 +144,7 @@ public class BusquedaFuzzy {
         scrPane.setVisible(false);
     }
 
-    public void attachFocusLostListener(JPanel pnlPanel, JTextField txtField, JScrollPane scrPane, JList<String> lstList) {
+    public void cerrarJListMouseExited(JPanel pnlPanel) {
         Component[] components = pnlPanel.getComponents();
 
         for (Component component : components) {

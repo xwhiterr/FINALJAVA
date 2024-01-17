@@ -77,6 +77,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         txtEditorial.setBounds(25, 52, 250, 31);
 
         btnGuardar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnGuardar1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnGuardar1.setText("GUARDAR");
         btnGuardar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar1.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -88,6 +89,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         });
 
         btnSalir1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir1.setText("SALIR");
         btnSalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir1.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -103,10 +105,10 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         BotoneraEditorialLayout.setHorizontalGroup(
             BotoneraEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BotoneraEditorialLayout.createSequentialGroup()
-                .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 329, Short.MAX_VALUE)
-                .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
+                .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         BotoneraEditorialLayout.setVerticalGroup(
             BotoneraEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +120,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         );
 
         pnlEditorial.add(BotoneraEditorial);
-        BotoneraEditorial.setBounds(25, 127, 515, 60);
+        BotoneraEditorial.setBounds(25, 127, 514, 60);
 
         tabInfoLibros.addTab("Editorial", pnlEditorial);
 
@@ -134,6 +136,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         txtGenero.setBounds(25, 52, 250, 31);
 
         btnGuardar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnGuardar2.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnGuardar2.setText("GUARDAR");
         btnGuardar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar2.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -145,6 +148,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         });
 
         btnSalir2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir2.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir2.setText("SALIR");
         btnSalir2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir2.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -161,10 +165,10 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
             BotoneraGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BotoneraGeneroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 326, Short.MAX_VALUE)
-                .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
+                .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         BotoneraGeneroLayout.setVerticalGroup(
             BotoneraGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,7 +180,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         );
 
         pnlGenero.add(BotoneraGenero);
-        BotoneraGenero.setBounds(25, 127, 518, 60);
+        BotoneraGenero.setBounds(25, 127, 517, 60);
 
         tabInfoLibros.addTab("Genero", pnlGenero);
 
@@ -185,13 +189,14 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         lblAutor.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         lblAutor.setText("Ingrese Autor");
         pnlAutor.add(lblAutor);
-        lblAutor.setBounds(41, 27, 105, 21);
+        lblAutor.setBounds(30, 20, 105, 21);
 
         txtNombre.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         pnlAutor.add(txtNombre);
-        txtNombre.setBounds(25, 87, 205, 30);
+        txtNombre.setBounds(10, 90, 205, 30);
 
         BtnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        BtnGuardar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         BtnGuardar.setText("GUARDAR");
         BtnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnGuardar.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -203,6 +208,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         });
 
         btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir.setText("SALIR");
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -219,9 +225,10 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
             BotoneraAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BotoneraAutorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 344, Short.MAX_VALUE)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 337, Short.MAX_VALUE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         BotoneraAutorLayout.setVerticalGroup(
             BotoneraAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,30 +240,30 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         );
 
         pnlAutor.add(BotoneraAutor);
-        BotoneraAutor.setBounds(20, 140, 520, 60);
+        BotoneraAutor.setBounds(20, 140, 580, 60);
 
         txtPais.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         pnlAutor.add(txtPais);
-        txtPais.setBounds(486, 87, 130, 31);
+        txtPais.setBounds(470, 90, 130, 31);
 
         jLabel2.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel2.setText("Nombre");
         pnlAutor.add(jLabel2);
-        jLabel2.setBounds(41, 65, 190, 17);
+        jLabel2.setBounds(30, 60, 190, 17);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel3.setText("Apellido");
         pnlAutor.add(jLabel3);
-        jLabel3.setBounds(242, 65, 180, 17);
+        jLabel3.setBounds(230, 60, 180, 17);
 
         jLabel6.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel6.setText("Pais");
         pnlAutor.add(jLabel6);
-        jLabel6.setBounds(500, 60, 40, 17);
+        jLabel6.setBounds(490, 60, 40, 17);
 
         txtApellido.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         pnlAutor.add(txtApellido);
-        txtApellido.setBounds(236, 87, 190, 31);
+        txtApellido.setBounds(220, 90, 190, 31);
 
         txtIdPais.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         txtIdPais.addActionListener(new java.awt.event.ActionListener() {
@@ -265,11 +272,11 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
             }
         });
         pnlAutor.add(txtIdPais);
-        txtIdPais.setBounds(436, 87, 50, 31);
+        txtIdPais.setBounds(420, 90, 50, 31);
 
         jLabel5.setText("ID");
         pnlAutor.add(jLabel5);
-        jLabel5.setBounds(450, 60, 30, 16);
+        jLabel5.setBounds(440, 60, 30, 16);
 
         tabInfoLibros.addTab("Autor", pnlAutor);
 
@@ -294,7 +301,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnGuardar2btnGuaPaiActionPerformed
 
     private void btnSalir2btnSaliPaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir2btnSaliPaiActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnSalir2btnSaliPaiActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed

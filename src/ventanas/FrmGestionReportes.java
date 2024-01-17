@@ -8,7 +8,7 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
 
     public FrmGestionReportes() {
         initComponents();
-        setSize(600, 380);
+        setSize(605, 420);
     }
 
     @SuppressWarnings("unchecked")
@@ -48,6 +48,10 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 590, 300);
 
+        jPanel2.setLayout(null);
+
+        tglEstado.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        tglEstado.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\entregar.png")); // NOI18N
         tglEstado.setText("Alquilados");
         tglEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,12 +59,20 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(tglEstado);
+        tglEstado.setBounds(10, 0, 130, 50);
         jPanel2.add(jSeparator1);
+        jSeparator1.setBounds(257, 17, 0, 3);
 
+        btnImprimir.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnImprimir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\exportar.png")); // NOI18N
         btnImprimir.setText("Imprimir");
         jPanel2.add(btnImprimir);
+        btnImprimir.setBounds(230, 0, 120, 50);
         jPanel2.add(jSeparator2);
+        jSeparator2.setBounds(347, 17, 0, 3);
 
+        btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,9 +80,10 @@ public class FrmGestionReportes extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(btnSalir);
+        btnSalir.setBounds(450, 0, 130, 50);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 300, 590, 40);
+        jPanel2.setBounds(0, 310, 590, 60);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

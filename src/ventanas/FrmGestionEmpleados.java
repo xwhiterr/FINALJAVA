@@ -16,7 +16,7 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
     
     public FrmGestionEmpleados() {
         initComponents();
-        setSize(650, 400);
+        setSize(690, 400);
         clases.Utils.activarPanel(false, pnlCampos);
         scrCi.setVisible(false);
         clases.Utils.activarScrollList(false, pnlCampos);
@@ -64,15 +64,16 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         getContentPane().setLayout(null);
 
         jPanel2.setLayout(null);
 
         btnBuscar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnBuscar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\buscar.png")); // NOI18N
         btnBuscar.setText("BUSCAR");
         btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar.setIconTextGap(2);
         btnBuscar.setMaximumSize(new java.awt.Dimension(100, 100));
         btnBuscar.setMinimumSize(new java.awt.Dimension(100, 100));
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -81,11 +82,13 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(btnBuscar);
-        btnBuscar.setBounds(210, 0, 100, 60);
+        btnBuscar.setBounds(250, 0, 120, 60);
 
         btnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnGuardar.setText("GUARDAR");
         btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.setIconTextGap(2);
         btnGuardar.setMaximumSize(new java.awt.Dimension(100, 100));
         btnGuardar.setMinimumSize(new java.awt.Dimension(100, 100));
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -94,11 +97,13 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(btnGuardar);
-        btnGuardar.setBounds(110, 0, 100, 60);
+        btnGuardar.setBounds(130, 0, 120, 60);
 
         btnNuevo.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnNuevo.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\añadir.png")); // NOI18N
         btnNuevo.setText("NUEVO");
         btnNuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnNuevo.setIconTextGap(2);
         btnNuevo.setMaximumSize(new java.awt.Dimension(100, 100));
         btnNuevo.setMinimumSize(new java.awt.Dimension(100, 100));
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -107,11 +112,13 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(btnNuevo);
-        btnNuevo.setBounds(10, 0, 100, 60);
+        btnNuevo.setBounds(10, 0, 120, 60);
 
         btnEliminar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\eliminar.png")); // NOI18N
         btnEliminar.setText("ELIMINAR");
         btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminar.setIconTextGap(2);
         btnEliminar.setMaximumSize(new java.awt.Dimension(100, 100));
         btnEliminar.setMinimumSize(new java.awt.Dimension(100, 100));
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -120,13 +127,15 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(btnEliminar);
-        btnEliminar.setBounds(310, 0, 100, 60);
+        btnEliminar.setBounds(370, 0, 130, 60);
         jPanel2.add(jLabel1);
         jLabel1.setBounds(435, 19, 0, 0);
 
         btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir.setText("SALIR");
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setIconTextGap(2);
         btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
         btnSalir.setMinimumSize(new java.awt.Dimension(100, 100));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -135,10 +144,10 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(btnSalir);
-        btnSalir.setBounds(490, 0, 100, 60);
+        btnSalir.setBounds(550, 0, 120, 60);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(10, 280, 600, 60);
+        jPanel2.setBounds(0, 280, 670, 60);
 
         pnlCampos.setLayout(null);
 
@@ -259,17 +268,8 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
         pnlCampos.add(jLabel17);
         jLabel17.setBounds(200, 130, 43, 16);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        pnlCampos.add(jButton1);
-        jButton1.setBounds(300, 30, 79, 27);
-
         getContentPane().add(pnlCampos);
-        pnlCampos.setBounds(0, 0, 660, 260);
+        pnlCampos.setBounds(0, 0, 680, 350);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -319,16 +319,6 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
         Utils.abrirInternalFrame(new FrmGestionReferenciales());
     }//GEN-LAST:event_btnAgregarBarrioActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        statement = Controlador.getStatement();
-        try {
-                  rs  = statement.executeQuery("SELECT * FROM empleado");  
-        } catch (Exception e) {
-            System.err.println(e.getStackTrace());
-        }
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarBarrio;
@@ -339,7 +329,6 @@ public class FrmGestionEmpleados extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnSalir;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
