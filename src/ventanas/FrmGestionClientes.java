@@ -2,9 +2,12 @@ package ventanas;
 
 import clases.Utils;
 import clases.BusquedaFuzzy;
+import clases.Controlador;
 import java.awt.KeyboardFocusManager;
 import java.util.Set;
 import javax.swing.JInternalFrame;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class FrmGestionClientes extends javax.swing.JInternalFrame {
 
@@ -16,6 +19,10 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private static BusquedaFuzzy busqueda2 = new BusquedaFuzzy();
     private static BusquedaFuzzy busqueda3 = new BusquedaFuzzy();
     private static BusquedaFuzzy busqueda4 = new BusquedaFuzzy();
+    // Inicializa variables para popular campos
+    private static ResultSet rs;
+    private static Statement statement = Controlador.getStatement();
+    private static String queryCi;
 
     public FrmGestionClientes() {
         initComponents();
@@ -464,6 +471,32 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private void lstCiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstCiKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
             busqueda2.setText(txtCi, scrCi, lstCi);
+            
+            try {
+                queryCi = txtCi.getText();
+                rs = statement.executeQuery("SELECT * FROM cliente WHERE cli_ci = '" + queryCi + "'");
+
+                // Llenamos datos no foraneos
+                txtNombre.setText(rs.getString("cli_nom"));
+                txtApellido.setText(rs.getString("cli_ape"));
+                txtContacto.setText(rs.getString("cli_tel"));
+                txtCiudadId.setText(rs.getString("ciu_id"));
+                txtBarrioId.setText(rs.getString("bar_id"));
+                txtDireccion.setText(rs.getString("cli_dire"));
+            
+                // Llenamos datos foraneos
+                queryCi = txtCiudadId.getText();
+                rs = statement.executeQuery("SELECT * FROM ciudad WHERE ciu_id = '" + queryCi + "'");
+                txtCiudad.setText(rs.getString("ciu_desc"));
+                
+                queryCi = txtBarrioId.getText();
+                rs = statement.executeQuery("SELECT * FROM barrio WHERE bar_id = '" + queryCi + "'");
+                txtBarrio.setText(rs.getString("bar_desc"));
+                
+            } catch (Exception e) {
+                System.err.println("CI err: Error SQL\n" + e);
+            }
+            
         }
     }//GEN-LAST:event_lstCiKeyReleased
     /*
