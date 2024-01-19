@@ -1,16 +1,14 @@
 package principal;
 
-/**
- *
- * @author Walter
- */
+import com.formdev.flatlaf.intellijthemes.FlatArcDarkIJTheme;
+import ventanas.FrmMdi;
+
+
 public class main {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+
+    public static void main(String[] args) { 
+        FlatArcDarkIJTheme.setup();
     }
-    
+
 }

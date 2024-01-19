@@ -3,6 +3,7 @@ package clases;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.event.KeyEvent;
 import javax.swing.JInternalFrame;
 import javax.swing.JDesktopPane;
 import javax.swing.JPanel;
@@ -51,16 +52,16 @@ public class Utils {
             }
         }
     }
-    
+
     public static void limpiarPanel(JPanel pnlPanel) {
         Component[] components = pnlPanel.getComponents();
-            for (Component component : components) {
-                if (component instanceof JTextField) {
-                    ((JTextField) component).setText("");
-                }
+        for (Component component : components) {
+            if (component instanceof JTextField) {
+                ((JTextField) component).setText("");
             }
+        }
     }
-    
+
     public static void activarScrollList(boolean setVisible, JPanel pnlPanel) {
         Component[] components = pnlPanel.getComponents();
         if (setVisible == true) {
@@ -77,4 +78,17 @@ public class Utils {
             }
         }
     }
+
+        public void mayuscula(KeyEvent x) {
+            char c = x.getKeyChar();
+            String cc = (String.valueOf(c)).toUpperCase();
+            c = cc.charAt(0);
+            x.setKeyChar(c);
+        }
+
+        public String convertirFecha(JDateChooser fechaFormulario) {
+            return String.valueOf(fechaFormulario.getDate().getDate())
+                    + "/" + String.valueOf(fechaFormulario.getDate().getMonth() + 1)
+                    + "/" + String.valueOf(fechaFormulario.getDate().getYear() + 1900);
+        }
 }

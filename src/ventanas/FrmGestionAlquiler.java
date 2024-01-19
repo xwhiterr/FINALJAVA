@@ -3,14 +3,17 @@ package ventanas;
 import clases.BusquedaFuzzy;
 import clases.Utils;
 import javax.swing.JDesktopPane;
+import clases.Utils;
 
 /**
  *
  * @author Walter
  */
+
 public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
 
     private static JDesktopPane desktopPane;
+    Utils funciones = new Utils();
 
     //Inicializa Motores de busqueda
     private static BusquedaFuzzy busqueda1 = new BusquedaFuzzy();
@@ -309,7 +312,7 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
         clases.Controlador.executeQuery("INSERT INTO estado (cli_id, lib_id, lib_est, est_fecha) VALUES ('" + txtIdCliente.getText()
                 + "', '" + txtIdLibro.getText()
                 + "', 'O"
-                + "', '" + calFecha.getDate() + "')");
+                + "', '" + funciones.convertirFecha(calFecha) + "')");
         txtCi.setText("");
         txtIdCliente.setText("");
         txtNombreCliente.setText("");
@@ -321,7 +324,7 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
         clases.Controlador.executeQuery("INSERT INTO estado (cli_id, lib_id, lib_est, est_fecha) VALUES ('" + txtIdCliente.getText()
                 + "', '" + txtIdLibro.getText()
                 + "', 'I"
-                + "', '" + calFecha.getDate() + "')");
+                + "', '" + funciones.convertirFecha(calFecha) + "')");
         txtCi.setText("");
         txtIdCliente.setText("");
         txtNombreCliente.setText("");

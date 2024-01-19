@@ -31,7 +31,7 @@ public class FrmMdi extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnGestionClientes = new javax.swing.JButton();
         btnGestionEmpleados1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnAcercaDe = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -154,9 +154,16 @@ public class FrmMdi extends javax.swing.JFrame {
         desktopPane.add(btnGestionEmpleados1);
         btnGestionEmpleados1.setBounds(10, 550, 240, 50);
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\acercade.png")); // NOI18N
-        desktopPane.add(jButton1);
-        jButton1.setBounds(10, 720, 50, 40);
+        btnAcercaDe.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnAcercaDe.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\acercade.png")); // NOI18N
+        btnAcercaDe.setText("Acerca de");
+        btnAcercaDe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAcercaDeActionPerformed(evt);
+            }
+        });
+        desktopPane.add(btnAcercaDe);
+        btnAcercaDe.setBounds(10, 700, 240, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -226,6 +233,10 @@ public class FrmMdi extends javax.swing.JFrame {
 
     }//GEN-LAST:event_desktopPaneComponentAdded
 
+    private void btnAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcercaDeActionPerformed
+        abrirInternalFrameMdi(new AcercaDe());
+    }//GEN-LAST:event_btnAcercaDeActionPerformed
+
     public void desactivarBotonesMdi() {
         // Ocultar los botones
         btnGestionReportes.setVisible(false);
@@ -269,6 +280,7 @@ public class FrmMdi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAcercaDe;
     private javax.swing.JButton btnGestionClientes;
     private javax.swing.JButton btnGestionEmpleados1;
     private javax.swing.JButton btnGestionFuentes;
@@ -278,7 +290,6 @@ public class FrmMdi extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrarAlquiler;
     private javax.swing.JButton btnSalir;
     public static javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
