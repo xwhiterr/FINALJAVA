@@ -1,16 +1,26 @@
 package principal;
 
+
+
+import com.formdev.flatlaf.intellijthemes.FlatArcDarkIJTheme;
+import ventanas.FrmLogin;
+
 /**
  *
  * @author Walter
  */
 public class main {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        FlatArcDarkIJTheme.setup();
+         
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrmLogin().setVisible(true);
+            }
+        });
     }
     
 }

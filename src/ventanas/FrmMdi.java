@@ -14,22 +14,24 @@ import javax.swing.JInternalFrame;
  */
 public class FrmMdi extends javax.swing.JFrame {
 
-    public static int envVarEmpleadoId = 1;
+    public static int envVarEmpleadoId;
     public static String envVarEmpleado;
 
     // Variables para cargar empleado
     private static ResultSet rs;
     private static Statement statement;
 
-    public FrmMdi() {
+    public FrmMdi(int envVar) {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setResizable(false);
 
         // Seteamos el empleado
+        envVarEmpleadoId = envVar;
+        
         try {
             statement = Controlador.getStatement();
-            rs = statement.executeQuery("SELECT * FROM empleado WHERE emp_id = '1'");
+            rs = statement.executeQuery("SELECT * FROM empleado WHERE emp_id = '" + envVarEmpleadoId + "'");
             envVarEmpleado = (rs.getString("emp_nom") + ' ' + rs.getString("emp_ape"));
             txtEmpleado.setText("Bienvenido: " + rs.getString("emp_nom") + ' ' + rs.getString("emp_ape"));
         } catch (Exception e) {
@@ -280,12 +282,7 @@ public class FrmMdi extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         FlatArcDarkIJTheme.setup();
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmMdi().setVisible(true);
-            }
-        });
+
 
     }
 

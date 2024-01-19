@@ -6,6 +6,7 @@ import clases.Utils;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -32,6 +33,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         clases.Utils.activarPanel(false, pnlCampos);
         clases.Utils.activarScrollList(false, pnlCampos);
         busqueda1.cerrarJListMouseExited(pnlCampos);
+        txtLibroId.setEnabled(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -45,6 +47,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         btnNuevo = new javax.swing.JButton();
         btnELliminar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        txtLibroId = new javax.swing.JTextField();
         pnlCampos = new javax.swing.JPanel();
         scrEditorial = new javax.swing.JScrollPane();
         lstEditorial = new javax.swing.JList<>();
@@ -74,7 +77,6 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         txtAutorId = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtLibroId = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(655, 310));
@@ -162,9 +164,18 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         getContentPane().add(pnlBotonera);
         pnlBotonera.setBounds(10, 200, 690, 60);
 
+        txtLibroId.setNextFocusableComponent(txtLibro);
+        txtLibroId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtLibroIdKeyReleased(evt);
+            }
+        });
+        getContentPane().add(txtLibroId);
+        txtLibroId.setBounds(20, 70, 40, 24);
+
         pnlCampos.setLayout(null);
 
-        scrEditorial.setNextFocusableComponent(lstEditorial);
+        scrEditorial.setNextFocusableComponent(txtAutorId);
 
         lstEditorial.setNextFocusableComponent(txtAutor);
         lstEditorial.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -184,7 +195,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
 
         scrAutor.setNextFocusableComponent(lstAutor);
 
-        lstAutor.setNextFocusableComponent(txtGenero);
+        lstAutor.setNextFocusableComponent(txtGeneroId);
         lstAutor.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 lstAutorFocusGained(evt);
@@ -262,7 +273,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jLabel2.setBounds(300, 50, 80, 20);
 
         txtISBN.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        txtISBN.setNextFocusableComponent(txtEditorial);
+        txtISBN.setNextFocusableComponent(txtEditorialId);
         pnlCampos.add(txtISBN);
         txtISBN.setBounds(290, 70, 150, 21);
 
@@ -272,7 +283,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jLabel3.setBounds(70, 110, 160, 20);
 
         txtAutor.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        txtAutor.setNextFocusableComponent(scrAutor);
+        txtAutor.setNextFocusableComponent(lstAutor);
         txtAutor.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtAutorKeyReleased(evt);
@@ -287,7 +298,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jLabel4.setBounds(510, 50, 110, 20);
 
         txtEditorial.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        txtEditorial.setNextFocusableComponent(scrEditorial);
+        txtEditorial.setNextFocusableComponent(lstEditorial);
         txtEditorial.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEditorialKeyReleased(evt);
@@ -302,7 +313,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jLabel5.setBounds(380, 110, 90, 20);
 
         txtGenero.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        txtGenero.setNextFocusableComponent(scrGenero);
+        txtGenero.setNextFocusableComponent(lstGenero);
         txtGenero.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtGeneroKeyReleased(evt);
@@ -337,14 +348,35 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         });
         pnlCampos.add(btnAgregarEdi);
         btnAgregarEdi.setBounds(660, 70, 20, 24);
+
+        txtEditorialId.setNextFocusableComponent(txtEditorial);
+        txtEditorialId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEditorialIdKeyReleased(evt);
+            }
+        });
         pnlCampos.add(txtEditorialId);
         txtEditorialId.setBounds(460, 70, 40, 24);
 
         jLabel6.setText("ID");
         pnlCampos.add(jLabel6);
         jLabel6.setBounds(470, 50, 30, 18);
+
+        txtGeneroId.setNextFocusableComponent(txtGenero);
+        txtGeneroId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtGeneroIdKeyReleased(evt);
+            }
+        });
         pnlCampos.add(txtGeneroId);
         txtGeneroId.setBounds(330, 130, 40, 24);
+
+        txtAutorId.setNextFocusableComponent(txtAutor);
+        txtAutorId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAutorIdKeyReleased(evt);
+            }
+        });
         pnlCampos.add(txtAutorId);
         txtAutorId.setBounds(20, 130, 40, 24);
 
@@ -355,8 +387,6 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jLabel8.setText("ID");
         pnlCampos.add(jLabel8);
         jLabel8.setBounds(340, 110, 30, 18);
-        pnlCampos.add(txtLibroId);
-        txtLibroId.setBounds(20, 70, 40, 24);
 
         jLabel10.setText("ID");
         pnlCampos.add(jLabel10);
@@ -374,6 +404,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         btnGuardar.setEnabled(true);
         banderaNuevo = false;
         clases.Utils.activarPanel(true, pnlCampos);
+        txtLibroId.setEnabled(true);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -389,6 +420,8 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
             banderaNuevo = false;
             clases.Utils.activarPanel(false, pnlCampos);
             Utils.limpiarPanel(pnlCampos);
+            txtLibroId.setText("");
+            txtLibroId.setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(null, "HAY CAMPOS VACIOS");
         }
@@ -408,6 +441,8 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         btnGuardar.setEnabled(true);
         banderaNuevo = true;
         clases.Utils.activarPanel(true, pnlCampos);
+        txtLibroId.setText("");
+        txtLibroId.setEnabled(false);
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnELliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnELliminarActionPerformed
@@ -417,6 +452,8 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         banderaNuevo = false;
         clases.Utils.activarPanel(false, pnlCampos);
         Utils.limpiarPanel(pnlCampos);
+        txtLibroId.setText("");
+        txtLibroId.setEnabled(false);
     }//GEN-LAST:event_btnELliminarActionPerformed
 
     private void btnAgregarAutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAutActionPerformed
@@ -445,6 +482,13 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     private void lstEditorialKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstEditorialKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
             busqueda1.setText(txtEditorial, scrEditorial, lstEditorial);
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM editorial WHERE edi_nom = '" + txtEditorial.getText() + "'");
+                txtEditorialId.setText(rs.getString("edi_id"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
         }
     }//GEN-LAST:event_lstEditorialKeyReleased
 
@@ -462,6 +506,13 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     private void lstAutorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstAutorKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
             busqueda2.setText(txtAutor, scrAutor, lstAutor);
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM autor WHERE aut_nom = '" + txtAutor.getText().split(" ")[0] + "'");
+                txtAutorId.setText(rs.getString("aut_id"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
         }
     }//GEN-LAST:event_lstAutorKeyReleased
 
@@ -479,6 +530,13 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     private void lstGeneroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstGeneroKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
             busqueda3.setText(txtGenero, scrGenero, lstGenero);
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM genero WHERE gen_desc = '" + txtGenero.getText() + "'");
+                txtGeneroId.setText(rs.getString("gen_id"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
         }
     }//GEN-LAST:event_lstGeneroKeyReleased
 
@@ -486,9 +544,11 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         BLOQUE DE BUSQUEDA LIBRO
      */
     private void txtLibroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLibroKeyReleased
-        busqueda4.busqueda("lib_nom", "libro", txtLibro, scrLibro, lstLibro);
+        if (banderaNuevo == false) {
+            busqueda4.busqueda("lib_nom", "libro", txtLibro, scrLibro, lstLibro);
+        }
     }//GEN-LAST:event_txtLibroKeyReleased
-    
+
     private void lstLibroFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lstLibroFocusGained
         lstLibro.setSelectedIndex(0);
     }//GEN-LAST:event_lstLibroFocusGained
@@ -496,6 +556,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     private void lstLibroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstLibroKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
             busqueda4.setText(txtLibro, scrLibro, lstLibro);
+            cargarCampos("txtLibro", txtLibro);
         }
     }//GEN-LAST:event_lstLibroKeyReleased
 
@@ -505,7 +566,96 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         banderaNuevo = false;
         clases.Utils.activarPanel(false, pnlCampos);
         Utils.limpiarPanel(pnlCampos);
+        txtLibroId.setText("");
+        
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void txtLibroIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLibroIdKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            cargarCampos("txtLibroId", txtLibroId);
+        }
+    }//GEN-LAST:event_txtLibroIdKeyReleased
+
+    private void txtEditorialIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEditorialIdKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM editorial WHERE edi_id = '" + txtEditorialId.getText() + "'");
+                txtEditorial.setText(rs.getString("edi_nom"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
+        }
+    }//GEN-LAST:event_txtEditorialIdKeyReleased
+
+    private void txtAutorIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAutorIdKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM autor WHERE aut_id = '" + txtAutorId.getText() + "'");
+                txtAutor.setText(rs.getString("aut_nom") + ' ' + rs.getString("aut_ape"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
+        }
+    }//GEN-LAST:event_txtAutorIdKeyReleased
+
+    private void txtGeneroIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGeneroIdKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM genero WHERE gen_id = '" + txtGeneroId.getText() + "'");
+                txtGenero.setText(rs.getString("gen_desc"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
+        }
+    }//GEN-LAST:event_txtGeneroIdKeyReleased
+    
+
+    private void cargarCampos(String cajaTexto, JTextField txtText) {
+        try {
+            rs = null;
+            statement = Controlador.getStatement();
+            System.out.println(txtText.getText());
+            query = txtText.getText();
+
+            if (cajaTexto == "txtLibro") {
+                rs = statement.executeQuery("SELECT * FROM v_libro WHERE lib_nom = '" + query + "'");
+            }
+
+            if (cajaTexto == "txtLibroId") {
+                rs = statement.executeQuery("SELECT * FROM v_libro WHERE lib_id = '" + query + "'");
+            }
+
+            if (rs.next()) {
+                // DEBUG
+                System.out.println("gen_desc: " + rs.getString("gen_desc"));
+                System.out.println("gen_id: " + rs.getString("gen_id"));
+                System.out.println("aut_nom_ape: " + rs.getString("aut_nom") + ' ' + rs.getString("aut_ape"));
+                System.out.println("aut_id: " + rs.getString("aut_id"));
+                System.out.println("edi_nom: " + rs.getString("edi_nom"));
+                System.out.println("edi_id: " + rs.getString("edi_id"));
+                System.out.println("lib_isbn: " + rs.getString("lib_isbn"));
+                System.out.println("lib_nom: " + rs.getString("lib_nom"));
+                System.out.println("lib_id: " + rs.getString("lib_id"));
+                // DEBUG
+
+                txtGenero.setText(rs.getString("gen_desc"));
+                txtGeneroId.setText(rs.getString("gen_id"));
+                txtAutor.setText(rs.getString("aut_nom") + ' ' + rs.getString("aut_ape"));
+                txtAutorId.setText(rs.getString("aut_id"));
+                txtEditorial.setText(rs.getString("edi_nom"));
+                txtEditorialId.setText(rs.getString("edi_id"));
+                txtISBN.setText(rs.getString("lib_isbn"));
+                txtLibro.setText(rs.getString("lib_nom"));
+                txtLibroId.setText(rs.getString("lib_id"));
+            }
+
+        } catch (Exception e) {
+            System.err.println("Nombre err: Error SQL\n" + e);
+        }
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

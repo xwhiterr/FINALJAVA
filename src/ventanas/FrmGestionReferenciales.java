@@ -1,6 +1,7 @@
 package ventanas;
 
 import clases.Controlador;
+import clases.Utils;
 
 /**
  *
@@ -12,8 +13,6 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         initComponents();
         setSize(330, 300);
     }
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -50,14 +49,15 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         lblPais.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         lblPais.setText("Ingrese Pais");
         pnlPais.add(lblPais);
-        lblPais.setBounds(50, 20, 93, 21);
+        lblPais.setBounds(40, 20, 220, 30);
 
         txtPais.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         pnlPais.add(txtPais);
-        txtPais.setBounds(40, 50, 250, 31);
+        txtPais.setBounds(30, 50, 260, 25);
+
+        jPanel6.setLayout(null);
 
         btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\cerrar.png")); // NOI18N
         btnSalir.setText("SALIR");
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.setIconTextGap(2);
@@ -68,9 +68,10 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                 btnSalirActionPerformed(evt);
             }
         });
+        jPanel6.add(btnSalir);
+        btnSalir.setBounds(190, 0, 100, 60);
 
         btnAgregar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnAgregar.setText("AGREGAR");
         btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregar.setIconTextGap(2);
@@ -81,29 +82,11 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12))
-        );
+        jPanel6.add(btnAgregar);
+        btnAgregar.setBounds(30, 0, 100, 60);
 
         pnlPais.add(jPanel6);
-        jPanel6.setBounds(25, 128, 290, 60);
+        jPanel6.setBounds(0, 130, 310, 60);
 
         tabReferenciales.addTab("Pais", pnlPais);
 
@@ -112,14 +95,15 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         lblCiudad.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         lblCiudad.setText("Ingrese Ciudad");
         pnlCiudad.add(lblCiudad);
-        lblCiudad.setBounds(35, 22, 114, 21);
+        lblCiudad.setBounds(40, 20, 230, 30);
 
         txtCiudad.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         pnlCiudad.add(txtCiudad);
-        txtCiudad.setBounds(25, 52, 250, 31);
+        txtCiudad.setBounds(30, 50, 260, 25);
+
+        jPanel8.setLayout(null);
 
         btnSalir1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnSalir1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\cerrar.png")); // NOI18N
         btnSalir1.setText("SALIR");
         btnSalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir1.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -129,9 +113,10 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                 btnSalir1ActionPerformed(evt);
             }
         });
+        jPanel8.add(btnSalir1);
+        btnSalir1.setBounds(160, 0, 100, 60);
 
         btnAgregar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnAgregar1.setText("AGREGAR");
         btnAgregar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregar1.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -141,28 +126,11 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                 btnAgregar1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(btnAgregar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12))
-        );
+        jPanel8.add(btnAgregar1);
+        btnAgregar1.setBounds(0, 0, 100, 60);
 
         pnlCiudad.add(jPanel8);
-        jPanel8.setBounds(25, 131, 260, 60);
+        jPanel8.setBounds(30, 130, 270, 60);
 
         tabReferenciales.addTab("Ciudad", pnlCiudad);
 
@@ -171,14 +139,15 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
         lblBarrio.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         lblBarrio.setText("Ingrese Barrio");
         pnlBarrio.add(lblBarrio);
-        lblBarrio.setBounds(35, 22, 109, 21);
+        lblBarrio.setBounds(40, 20, 200, 30);
 
         txtBarrio.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         pnlBarrio.add(txtBarrio);
-        txtBarrio.setBounds(25, 52, 250, 31);
+        txtBarrio.setBounds(30, 50, 260, 25);
+
+        jPanel9.setLayout(null);
 
         btnSalir2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnSalir2.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\cerrar.png")); // NOI18N
         btnSalir2.setText("SALIR");
         btnSalir2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir2.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -188,9 +157,10 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                 btnSalir2ActionPerformed(evt);
             }
         });
+        jPanel9.add(btnSalir2);
+        btnSalir2.setBounds(160, 0, 100, 60);
 
         btnAgregar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnAgregar2.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnAgregar2.setText("GUARDAR");
         btnAgregar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregar2.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -200,29 +170,11 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
                 btnAgregar2ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnAgregar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12))
-        );
+        jPanel9.add(btnAgregar2);
+        btnAgregar2.setBounds(0, 0, 100, 60);
 
         pnlBarrio.add(jPanel9);
-        jPanel9.setBounds(25, 134, 270, 60);
+        jPanel9.setBounds(30, 130, 270, 60);
 
         tabReferenciales.addTab("Barrio", pnlBarrio);
 
@@ -237,8 +189,10 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        clases.Controlador.executeQuery("INSERT INTO pais (pai_desc) VALUES ( '"+txtPais.getText() +"')");
-        txtPais.setText("");
+        if (Utils.condicionalGuardar(pnlPais)) {
+            clases.Controlador.executeQuery("INSERT INTO pais (pai_desc) VALUES ( '" + txtPais.getText() + "')");
+            txtPais.setText("");
+        }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
@@ -246,8 +200,10 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalir1ActionPerformed
 
     private void btnAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar1ActionPerformed
-        clases.Controlador.executeQuery("INSERT INTO ciudad (ciu_desc) VALUES ( '"+txtCiudad.getText() +"')");
-        txtPais.setText("");
+        if (Utils.condicionalGuardar(pnlCiudad)) {
+            clases.Controlador.executeQuery("INSERT INTO ciudad (ciu_desc) VALUES ( '" + txtCiudad.getText() + "')");
+            txtCiudad.setText("");
+        }
     }//GEN-LAST:event_btnAgregar1ActionPerformed
 
     private void btnSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir2ActionPerformed
@@ -255,9 +211,10 @@ public class FrmGestionReferenciales extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalir2ActionPerformed
 
     private void btnAgregar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar2ActionPerformed
-        clases.Controlador.executeQuery("INSERT INTO barrio (bar_desc) VALUES ( '"+txtBarrio.getText() +"')");
-        txtPais.setText("");
-         
+        if (Utils.condicionalGuardar(pnlBarrio)) {
+            clases.Controlador.executeQuery("INSERT INTO barrio (bar_desc) VALUES ( '" + txtBarrio.getText() + "')");
+            txtBarrio.setText("");
+        }
     }//GEN-LAST:event_btnAgregar2ActionPerformed
 
 
