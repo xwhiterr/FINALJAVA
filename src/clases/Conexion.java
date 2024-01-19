@@ -12,16 +12,26 @@ public class Conexion {
 
     public static boolean conectar() {
 
-//        File db = new File("data/db.sqlite");
-//        String path = db.getAbsolutePath();
-        String path = "C:\\JAVALPI\\FINALJAVA\\data\\db.sqlite";
+
+        String path = "/home/caches/Documents/UTIC/LPT1/FINALJAVA/data/db.sqlite";
         /* Intentamos la conexion. si falla, damos error.
            Retorna true si la conexion fue exitosa
            Retorna false si la conexion fallo
          */
         try {
+            try {
+            if (statement != null) {
+                statement.close();
+            }
+            if (conexion != null) {
+                conexion.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
             conexion = DriverManager.getConnection("jdbc:sqlite:" + path);
             statement = conexion.createStatement();
+            System.out.println("CONEXION " + conexion.isValid(1000));
             return true;
         } catch (Exception ex) {
             System.err.println(ex + "\n" + ex.getStackTrace());
@@ -32,5 +42,6 @@ public class Conexion {
     public static void main(String[] args) {
 
         System.out.println(conectar());
+        
     }
 }

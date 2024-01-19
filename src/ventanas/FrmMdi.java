@@ -175,7 +175,7 @@ public class FrmMdi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void abrirInternalFrameMdi(JInternalFrame internalFrame) {
-        desactivarBotonesMdi();
+//        desactivarBotonesMdi();
         Dimension desktopSize = desktopPane.getSize();
         Dimension jInternalFrameSize = internalFrame.getSize();
         internalFrame.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,

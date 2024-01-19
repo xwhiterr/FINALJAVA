@@ -17,6 +17,7 @@ import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import me.xdrop.fuzzywuzzy.FuzzySearch;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 
 /**
  *
@@ -46,7 +47,7 @@ public class BusquedaFuzzy {
      *
      */
     public void busqueda(String nombreColumna, String nombreTabla, JTextField txtField, JScrollPane scrPane, JList<String> lstList) {
-
+        
         /*Variables importantes:
           statement
           conexion
@@ -91,6 +92,7 @@ public class BusquedaFuzzy {
             if (search.length() < 2) {
                 queryExecuted = false;
                 searchCacheFull = false;
+                
             }
 
             // llenamos el array cache con la respuesta SQL
@@ -102,7 +104,7 @@ public class BusquedaFuzzy {
                     arrCache.add(rs.getString("search"));
                 }
                 searchCacheFull = true;
-                conexion.close();
+                //conexion.close();
             }
 
             // Creamos una copia no ordenada de arrCache filtrada
@@ -128,6 +130,15 @@ public class BusquedaFuzzy {
         }
 
     }
+    
+    public void reset() {
+    listModel = null;
+    queryExecuted = false;
+    arrCache.clear();
+    arrCacheCopy.clear();
+    searchCacheFull = false;
+    // Reset any other state variables if needed
+}
 
     /**
      * Setea el texto de la lista en el {@code JtextField} y oculta el
@@ -144,33 +155,34 @@ public class BusquedaFuzzy {
         scrPane.setVisible(false);
     }
 
+    public void setText(JTextField txtFieldApe, JTextField txtField, JScrollPane scrPane, JList<String> lstList) {
+        txtField.setText(lstList.getSelectedValue().split(" ")[0]);
+        txtFieldApe.setText(lstList.getSelectedValue().split(" ")[1]);
+        KeyboardFocusManager.getCurrentKeyboardFocusManager().focusNextComponent();
+        scrPane.setVisible(false);
+    }
+
     public void cerrarJListMouseExited(JPanel pnlPanel) {
         Component[] components = pnlPanel.getComponents();
 
         for (Component component : components) {
             if (component instanceof JTextField) {
-                
-                
 
                 component.addMouseListener(new MouseAdapter() {
                     public void mouseExited(MouseEvent e) {
                         Utils.activarScrollList(false, pnlPanel);
                     }
                 });
-                
+
             } else if (component instanceof JScrollPane) {
-                
-
 
                 component.addMouseListener(new MouseAdapter() {
                     public void mouseExited(MouseEvent e) {
                         Utils.activarScrollList(false, pnlPanel);
                     }
                 });
-                
-            } else if (component instanceof JList) {
-                
 
+            } else if (component instanceof JList) {
 
                 component.addMouseListener(new MouseAdapter() {
                     public void mouseExited(MouseEvent e) {

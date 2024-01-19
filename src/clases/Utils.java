@@ -5,6 +5,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import javax.swing.JInternalFrame;
 import javax.swing.JDesktopPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -51,16 +52,16 @@ public class Utils {
             }
         }
     }
-    
+
     public static void limpiarPanel(JPanel pnlPanel) {
         Component[] components = pnlPanel.getComponents();
-            for (Component component : components) {
-                if (component instanceof JTextField) {
-                    ((JTextField) component).setText("");
-                }
+        for (Component component : components) {
+            if (component instanceof JTextField) {
+                ((JTextField) component).setText("");
             }
+        }
     }
-    
+
     public static void activarScrollList(boolean setVisible, JPanel pnlPanel) {
         Component[] components = pnlPanel.getComponents();
         if (setVisible == true) {
@@ -76,5 +77,18 @@ public class Utils {
                 }
             }
         }
+    }
+
+    public static boolean condicionalGuardar(JPanel pnlPanel) {
+        Boolean bandera = true;
+        Component[] components = pnlPanel.getComponents();
+        for (Component component : components) {
+            if (component instanceof JTextField) {
+                if (((JTextField) component).getText().equals("")) {
+                    bandera = false;
+                }
+            }
+        }
+        return bandera;
     }
 }
