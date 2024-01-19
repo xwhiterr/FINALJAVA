@@ -3,7 +3,6 @@ package ventanas;
 import clases.Utils;
 import clases.BusquedaFuzzy;
 import clases.Controlador;
-import com.sun.source.tree.BreakTree;
 import java.awt.KeyboardFocusManager;
 import javax.swing.JTextField;
 import java.sql.ResultSet;
@@ -19,7 +18,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private static BusquedaFuzzy busqueda2 = new BusquedaFuzzy();
     private static BusquedaFuzzy busqueda3 = new BusquedaFuzzy();
     private static BusquedaFuzzy busqueda4 = new BusquedaFuzzy();
-    
+
     //Variables para cargar campos
     private static ResultSet rs;
     private static Statement statement;
@@ -441,8 +440,12 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
                         + "', '" + txtCiudadId.getText()
                         + "', '" + txtBarrioId.getText()
                         + "', '" + txtDireccion.getText() + "');");
-                Utils.limpiarPanel(pnlCampos);
+
+                btnNuevo.setEnabled(true);
+                btnBuscar.setEnabled(true);
                 banderaNuevo = false;
+                clases.Utils.activarPanel(false, pnlCampos);
+                Utils.limpiarPanel(pnlCampos);
             }
 
             if (!txtClienteId.getText().equals("") && banderaNuevo == false) {
@@ -454,7 +457,11 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
                         + "cli_dire = '" + txtDireccion.getText() + "',"
                         + "bar_id = '" + txtBarrioId.getText() + "',"
                         + "ciu_id = '" + txtCiudadId.getText() + "' WHERE cli_id = '" + txtClienteId.getText() + "';");
-
+                
+                btnNuevo.setEnabled(true);
+                btnBuscar.setEnabled(true);
+                clases.Utils.activarPanel(false, pnlCampos);
+                Utils.limpiarPanel(pnlCampos);
             }
         } else {
             JOptionPane.showMessageDialog(null, "HAY CAMPOS VACIOS");

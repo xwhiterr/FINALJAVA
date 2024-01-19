@@ -1,12 +1,10 @@
 package ventanas;
 
+import ventanas.FrmMdi;
 import clases.BusquedaFuzzy;
 import clases.Controlador;
 import clases.Utils;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -19,12 +17,12 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
 
     private static boolean banderaNuevo = false;
 
-    //Inicializa Motores de busqueda
+    // Inicializa Motores de busqueda
     private static BusquedaFuzzy busqueda1 = new BusquedaFuzzy();
     private static BusquedaFuzzy busqueda2 = new BusquedaFuzzy();
     private static BusquedaFuzzy busqueda3 = new BusquedaFuzzy();
-    
-    //Variables para cargar campos
+
+    // Variables para cargar campos
     private static ResultSet rs;
     private static Statement statement;
     private static String query;
@@ -35,6 +33,9 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
         clases.Utils.activarPanel(false, pnlCampos);
         clases.Utils.activarScrollList(false, pnlCampos);
         busqueda1.cerrarJListMouseExited(pnlCampos);
+
+        //Setea empleado conectado
+        txtEmpleado.setText(FrmMdi.getEmpleado());
     }
 
     @SuppressWarnings("unchecked")
@@ -325,43 +326,42 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntregarActionPerformed
+        txtEstado.setText("O");
         if (Utils.condicionalGuardar(pnlCampos)) {
             Controlador.executeQuery("INSERT INTO estado (cli_id, lib_id, lib_est, est_fecha) VALUES ('" + txtClienteId.getText()
                     + "', '" + txtLibroId.getText()
                     + "', 'O"
                     + "', '" + calFecha.getDate() + "')");
 
-            txtClienteId.setText("");
-            txtCliente.setText("");
-            txtLibroId.setText("");
-            txtLibro.setText("");
-
             btnNuevo.setEnabled(true);
             btnBuscar.setEnabled(true);
             banderaNuevo = false;
             clases.Utils.activarPanel(false, pnlCampos);
             Utils.limpiarPanel(pnlCampos);
+
+            // :))))
+            txtEmpleado.setText(FrmMdi.getEmpleado());
         } else {
             JOptionPane.showMessageDialog(null, "HAY CAMPOS VACIOS");
         }
     }//GEN-LAST:event_btnEntregarActionPerformed
 
     private void btnRecibirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecibirActionPerformed
+        txtEstado.setText("I");
         if (Utils.condicionalGuardar(pnlCampos)) {
             Controlador.executeQuery("INSERT INTO estado (cli_id, lib_id, lib_est, est_fecha) VALUES ('" + txtClienteId.getText()
                     + "', '" + txtLibroId.getText()
                     + "', 'I"
                     + "', '" + calFecha.getDate() + "')");
-            txtClienteId.setText("");
-            txtCliente.setText("");
-            txtLibroId.setText("");
-            txtLibro.setText("");
 
             btnNuevo.setEnabled(true);
             btnBuscar.setEnabled(true);
             banderaNuevo = false;
             clases.Utils.activarPanel(false, pnlCampos);
             Utils.limpiarPanel(pnlCampos);
+
+            // :))))
+            txtEmpleado.setText(FrmMdi.getEmpleado());
         } else {
             JOptionPane.showMessageDialog(null, "HAY CAMPOS VACIOS");
         }
@@ -380,9 +380,15 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
         banderaNuevo = false;
         clases.Utils.activarPanel(false, pnlCampos);
         Utils.limpiarPanel(pnlCampos);
+
+        // :))))
+        txtEmpleado.setText(FrmMdi.getEmpleado());
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        busqueda1.reset();
+        busqueda2.reset();
+        busqueda3.reset();
         dispose();
     }//GEN-LAST:event_SalirActionPerformed
 
@@ -503,6 +509,7 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
                     rs = statement.executeQuery("SELECT * FROM vestado WHERE lib_id = '" + txtLibroId.getText() + "' order by est_id desc");
                     txtLibro.setText(rs.getString("lib_nom"));
                 } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
 
@@ -530,6 +537,7 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
             }
 
             if (rs.next()) {
+                //DEBUG
                 System.out.println("lib_est: " + rs.getString("lib_est"));
                 System.out.println("est_fecha: " + rs.getString("est_fecha"));
                 System.out.println("emp_nom: " + rs.getString("emp_nom"));
@@ -539,6 +547,7 @@ public class FrmGestionAlquiler extends javax.swing.JInternalFrame {
                 System.out.println("lib_id: " + rs.getString("lib_id"));
                 System.out.println("lib_nom: " + rs.getString("lib_nom"));
                 System.out.println("cli_ci: " + rs.getString("cli_ci"));
+                //DEBUG
 
                 txtEstado.setText(rs.getString("lib_est"));
                 calFecha.setDateFormatString(rs.getString("est_fecha"));
