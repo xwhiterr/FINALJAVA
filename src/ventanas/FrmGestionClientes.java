@@ -2,13 +2,15 @@ package ventanas;
 
 import clases.Utils;
 import clases.BusquedaFuzzy;
+import clases.Controlador;
 import java.awt.KeyboardFocusManager;
-import java.util.Set;
-import javax.swing.JInternalFrame;
+import javax.swing.JTextField;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 public class FrmGestionClientes extends javax.swing.JInternalFrame {
 
-    
     private static boolean banderaNuevo = false;
 
     // Inicializa motores de busqueda
@@ -17,6 +19,11 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private static BusquedaFuzzy busqueda3 = new BusquedaFuzzy();
     private static BusquedaFuzzy busqueda4 = new BusquedaFuzzy();
 
+    //Variables para cargar campos
+    private static ResultSet rs;
+    private static Statement statement;
+    private static String queryCi;
+
     public FrmGestionClientes() {
         initComponents();
         setTitle("Gestion de Clientes");
@@ -24,7 +31,15 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
 
         clases.Utils.activarPanel(false, pnlCampos);
         clases.Utils.activarScrollList(false, pnlCampos);
+
+        txtNombre.setName("txtNombre");
+        txtCi.setName("txtCi");
+        txtCiudadId.setName("txtCiudadId");
+        txtBarrioId.setName("txtBarrioId");
+
         busqueda1.cerrarJListMouseExited(pnlCampos);
+
+        btnGuardar.setEnabled(false);
 
     }
 
@@ -69,6 +84,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         txtCiudadId = new javax.swing.JTextField();
         txtBarrio = new javax.swing.JTextField();
         txtBarrioId = new javax.swing.JTextField();
+        txtClienteId = new javax.swing.JTextField();
 
         getContentPane().setLayout(null);
 
@@ -82,23 +98,21 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         pnlTituloLayout.setHorizontalGroup(
             pnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTituloLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(408, Short.MAX_VALUE))
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 408, Short.MAX_VALUE))
         );
         pnlTituloLayout.setVerticalGroup(
             pnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         getContentPane().add(pnlTitulo);
-        pnlTitulo.setBounds(30, 2, 570, 30);
+        pnlTitulo.setBounds(30, -8, 570, 40);
 
         pnlBotonera.setFocusCycleRoot(true);
         pnlBotonera.setLayout(null);
 
         btnBuscar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnBuscar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\buscar.png")); // NOI18N
         btnBuscar.setText("BUSCAR");
         btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBuscar.setIconTextGap(2);
@@ -114,7 +128,6 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         btnBuscar.setBounds(230, 0, 120, 60);
 
         btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir.setText("SALIR");
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -128,7 +141,6 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         btnSalir.setBounds(590, 0, 130, 60);
 
         btnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnGuardar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnGuardar.setText("GUARDAR");
         btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar.setIconTextGap(2);
@@ -143,7 +155,6 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         btnGuardar.setBounds(110, 0, 120, 60);
 
         btnCancelar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnCancelar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\cerrar.png")); // NOI18N
         btnCancelar.setText("CANCELAR");
         btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCancelar.setIconTextGap(2);
@@ -158,7 +169,6 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         btnCancelar.setBounds(350, 0, 130, 60);
 
         btnNuevo.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnNuevo.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\añadir.png")); // NOI18N
         btnNuevo.setText("NUEVO");
         btnNuevo.setIconTextGap(2);
         btnNuevo.setNextFocusableComponent(txtCi);
@@ -254,7 +264,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(txtNombre);
-        txtNombre.setBounds(170, 50, 290, 27);
+        txtNombre.setBounds(170, 50, 290, 21);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel3.setText("Nro de C.I.");
@@ -271,7 +281,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(txtCi);
-        txtCi.setBounds(30, 50, 120, 27);
+        txtCi.setBounds(30, 50, 120, 21);
 
         jLabel4.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel4.setText("Dirección");
@@ -294,7 +304,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(txtCiudad);
-        txtCiudad.setBounds(310, 110, 160, 27);
+        txtCiudad.setBounds(310, 110, 160, 21);
 
         jLabel6.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel6.setText("Nro de Contacto");
@@ -317,7 +327,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         txtDireccion.setFocusCycleRoot(true);
         txtDireccion.setNextFocusableComponent(btnGuardar);
         pnlCampos.add(txtDireccion);
-        txtDireccion.setBounds(30, 170, 720, 26);
+        txtDireccion.setBounds(30, 170, 720, 24);
 
         btnAgregarCiudad.setText("jButton1");
         btnAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
@@ -341,7 +351,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         txtContacto.setFocusCycleRoot(true);
         txtContacto.setNextFocusableComponent(txtCiudadId);
         pnlCampos.add(txtContacto);
-        txtContacto.setBounds(30, 110, 218, 27);
+        txtContacto.setBounds(30, 110, 218, 21);
 
         jLabel10.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel10.setText("Ciudad");
@@ -359,13 +369,18 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
         txtApellido.setFocusCycleRoot(true);
         txtApellido.setNextFocusableComponent(txtContacto);
         pnlCampos.add(txtApellido);
-        txtApellido.setBounds(460, 50, 290, 27);
+        txtApellido.setBounds(460, 50, 290, 21);
 
         txtCiudadId.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtCiudadId.setFocusCycleRoot(true);
         txtCiudadId.setNextFocusableComponent(txtCiudad);
+        txtCiudadId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCiudadIdKeyReleased(evt);
+            }
+        });
         pnlCampos.add(txtCiudadId);
-        txtCiudadId.setBounds(260, 110, 50, 27);
+        txtCiudadId.setBounds(260, 110, 50, 21);
 
         txtBarrio.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtBarrio.setFocusCycleRoot(true);
@@ -376,43 +391,87 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(txtBarrio);
-        txtBarrio.setBounds(560, 110, 160, 27);
+        txtBarrio.setBounds(560, 110, 160, 21);
 
         txtBarrioId.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         txtBarrioId.setFocusCycleRoot(true);
         txtBarrioId.setNextFocusableComponent(txtBarrio);
+        txtBarrioId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBarrioIdKeyReleased(evt);
+            }
+        });
         pnlCampos.add(txtBarrioId);
-        txtBarrioId.setBounds(510, 110, 50, 27);
+        txtBarrioId.setBounds(510, 110, 50, 21);
 
         getContentPane().add(pnlCampos);
         pnlCampos.setBounds(0, 0, 760, 330);
+        getContentPane().add(txtClienteId);
+        txtClienteId.setBounds(30, 10, 88, 24);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        btnNuevo.setEnabled(true);
+        btnBuscar.setEnabled(false);
+        btnGuardar.setEnabled(true);
         banderaNuevo = false;
         clases.Utils.activarPanel(true, pnlCampos);
         KeyboardFocusManager.getCurrentKeyboardFocusManager().focusNextComponent();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        busqueda1.reset();
+        busqueda2.reset();
+        busqueda3.reset();
+        busqueda4.reset();
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        clases.Controlador.executeQuery("INSERT INTO cliente (cli_ci, cli_nom, cli_ape, cli_tel, ciu_id, bar_id, cli_dire) VALUES ('" + txtCi.getText()
-                + "', '" + txtNombre.getText()
-                + "', '" + txtApellido.getText()
-                + "', '" + txtContacto.getText()
-                + "', '" + txtCiudadId.getText()
-                + "', '" + txtBarrioId.getText()
-                + "', '" + txtDireccion.getText() + "');");
-        Utils.limpiarPanel(pnlCampos);
-        banderaNuevo = false;
+        System.out.println(Utils.condicionalGuardar(pnlCampos));
+        if (Utils.condicionalGuardar(pnlCampos)) {
+            if (banderaNuevo == true) {
+                clases.Controlador.executeQuery("INSERT INTO cliente (cli_ci, cli_nom, cli_ape, cli_tel, ciu_id, bar_id, cli_dire) VALUES ('" + txtCi.getText()
+                        + "', '" + txtNombre.getText()
+                        + "', '" + txtApellido.getText()
+                        + "', '" + txtContacto.getText()
+                        + "', '" + txtCiudadId.getText()
+                        + "', '" + txtBarrioId.getText()
+                        + "', '" + txtDireccion.getText() + "');");
+
+                btnNuevo.setEnabled(true);
+                btnBuscar.setEnabled(true);
+                banderaNuevo = false;
+                clases.Utils.activarPanel(false, pnlCampos);
+                Utils.limpiarPanel(pnlCampos);
+            }
+
+            if (!txtClienteId.getText().equals("") && banderaNuevo == false) {
+                clases.Controlador.executeQuery("UPDATE cliente SET "
+                        + "cli_nom = '" + txtNombre.getText() + "',"
+                        + "cli_ape = '" + txtApellido.getText() + "',"
+                        + "cli_ci = '" + txtCi.getText() + "',"
+                        + "cli_tel = '" + txtContacto.getText() + "',"
+                        + "cli_dire = '" + txtDireccion.getText() + "',"
+                        + "bar_id = '" + txtBarrioId.getText() + "',"
+                        + "ciu_id = '" + txtCiudadId.getText() + "' WHERE cli_id = '" + txtClienteId.getText() + "';");
+                
+                btnNuevo.setEnabled(true);
+                btnBuscar.setEnabled(true);
+                clases.Utils.activarPanel(false, pnlCampos);
+                Utils.limpiarPanel(pnlCampos);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "HAY CAMPOS VACIOS");
+        }
+
+
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        banderaNuevo = false;
         Utils.activarPanel(false, pnlCampos);
         Utils.limpiarPanel(pnlCampos);
     }//GEN-LAST:event_btnCancelarActionPerformed
@@ -426,6 +485,9 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnAgregarBarrioActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        btnNuevo.setEnabled(false);
+        btnBuscar.setEnabled(true);
+        btnGuardar.setEnabled(true);
         banderaNuevo = true;
         clases.Utils.activarPanel(true, pnlCampos);
         KeyboardFocusManager.getCurrentKeyboardFocusManager().focusNextComponent();
@@ -445,7 +507,8 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
 
     private void lstNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstNombreKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
-            busqueda1.setText(txtNombre, scrNombre, lstNombre);
+            busqueda1.setText(txtApellido, txtNombre, scrNombre, lstNombre);
+            cargarCampos(txtNombre);
         }
     }//GEN-LAST:event_lstNombreKeyReleased
     /*
@@ -453,7 +516,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
      */
     private void txtCiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCiKeyReleased
         if (banderaNuevo == false) {
-        busqueda2.busqueda("cli_ci", "cliente", txtCi, scrCi, lstCi);
+            busqueda2.busqueda("cli_ci", "cliente", txtCi, scrCi, lstCi);
         }
     }//GEN-LAST:event_txtCiKeyReleased
 
@@ -464,6 +527,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private void lstCiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstCiKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
             busqueda2.setText(txtCi, scrCi, lstCi);
+            cargarCampos(txtCi);
         }
     }//GEN-LAST:event_lstCiKeyReleased
     /*
@@ -480,6 +544,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private void lstCiudadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstCiudadKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
             busqueda3.setText(txtCiudad, scrCiudad, lstCiudad);
+            cargarCampos(txtCiudad);
         }
     }//GEN-LAST:event_lstCiudadKeyReleased
     /*
@@ -496,9 +561,89 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private void lstBarrioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstBarrioKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
             busqueda4.setText(txtBarrio, scrBarrio, lstBarrio);
+            cargarCampos(txtBarrio);
         }
     }//GEN-LAST:event_lstBarrioKeyReleased
 
+    private void txtCiudadIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCiudadIdKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            cargarCampos(txtCiudadId);
+        }
+    }//GEN-LAST:event_txtCiudadIdKeyReleased
+
+    private void txtBarrioIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBarrioIdKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            cargarCampos(txtBarrioId);
+        }
+    }//GEN-LAST:event_txtBarrioIdKeyReleased
+    private void cargarCampos(JTextField txtText) {
+        try {
+            statement = Controlador.getStatement();
+            queryCi = txtText.getText();
+            if (txtText.getName() == "txtNombre") {
+                rs = statement.executeQuery("SELECT * FROM cliente WHERE cli_nom = '" + queryCi + "'");
+                // Llenamos datos no foraneos
+                txtClienteId.setText(rs.getString("cli_id"));
+                txtApellido.setText(rs.getString("cli_ape"));
+                txtContacto.setText(rs.getString("cli_tel"));
+                txtCiudadId.setText(rs.getString("ciu_id"));
+                txtBarrioId.setText(rs.getString("bar_id"));
+                txtDireccion.setText(rs.getString("cli_dire"));
+                txtNombre.setText(rs.getString("cli_nom"));
+                txtCi.setText(rs.getString("cli_ci"));
+
+                queryCi = txtCiudadId.getText();
+                rs = statement.executeQuery("SELECT * FROM ciudad WHERE ciu_id = '" + queryCi + "'");
+                txtCiudad.setText(rs.getString("ciu_desc"));
+                queryCi = txtBarrioId.getText();
+                rs = statement.executeQuery("SELECT * FROM barrio WHERE bar_id = '" + queryCi + "'");
+                txtBarrio.setText(rs.getString("bar_desc"));
+            }
+            if (txtText.getName() == "txtCi") {
+                rs = statement.executeQuery("SELECT * FROM cliente WHERE cli_ci = '" + queryCi + "'");
+                // Llenamos datos no foraneos
+                txtClienteId.setText(rs.getString("cli_id"));
+                txtApellido.setText(rs.getString("cli_ape"));
+                txtContacto.setText(rs.getString("cli_tel"));
+                txtCiudadId.setText(rs.getString("ciu_id"));
+                txtBarrioId.setText(rs.getString("bar_id"));
+                txtDireccion.setText(rs.getString("cli_dire"));
+                txtNombre.setText(rs.getString("cli_nom"));
+                txtCi.setText(rs.getString("cli_ci"));
+
+                queryCi = txtCiudadId.getText();
+                rs = statement.executeQuery("SELECT * FROM ciudad WHERE ciu_id = '" + queryCi + "'");
+                txtCiudad.setText(rs.getString("ciu_desc"));
+                queryCi = txtBarrioId.getText();
+                rs = statement.executeQuery("SELECT * FROM barrio WHERE bar_id = '" + queryCi + "'");
+                txtBarrio.setText(rs.getString("bar_desc"));
+            }
+
+            // LOGICA DE NUEVO REGISTRO
+            if (txtText.getName() == "txtCiudadId") {
+                queryCi = txtCiudadId.getText();
+                rs = statement.executeQuery("SELECT * FROM ciudad WHERE ciu_id = '" + queryCi + "'");
+                txtCiudad.setText(rs.getString("ciu_desc"));
+            }
+            if (txtText.getName() == "txtBarrioId") {
+                queryCi = txtBarrioId.getText();
+                rs = statement.executeQuery("SELECT * FROM barrio WHERE bar_id = '" + queryCi + "'");
+                txtBarrio.setText(rs.getString("bar_desc"));
+            }
+
+            // Llenamos datos foraneos
+            queryCi = txtCiudad.getText();
+            rs = statement.executeQuery("SELECT * FROM ciudad WHERE ciu_desc = '" + queryCi + "'");
+            txtCiudadId.setText(rs.getString("ciu_id"));
+
+            queryCi = txtBarrio.getText();
+            rs = statement.executeQuery("SELECT * FROM barrio WHERE bar_desc = '" + queryCi + "'");
+            txtBarrioId.setText(rs.getString("bar_id"));
+
+        } catch (Exception e) {
+            System.err.println("Nombre err: Error SQL\n" + e);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarBarrio;
@@ -535,6 +680,7 @@ public class FrmGestionClientes extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtCi;
     private javax.swing.JTextField txtCiudad;
     private javax.swing.JTextField txtCiudadId;
+    private javax.swing.JTextField txtClienteId;
     private javax.swing.JTextField txtContacto;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtNombre;

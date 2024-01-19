@@ -1,7 +1,10 @@
 package ventanas;
 
+import clases.Controlador;
 import com.formdev.flatlaf.intellijthemes.FlatArcDarkIJTheme;
 import java.awt.Dimension;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
 
@@ -11,10 +14,30 @@ import javax.swing.JInternalFrame;
  */
 public class FrmMdi extends javax.swing.JFrame {
 
-    public FrmMdi() {
+    public static int envVarEmpleadoId;
+    public static String envVarEmpleado;
+
+    // Variables para cargar empleado
+    private static ResultSet rs;
+    private static Statement statement;
+
+    public FrmMdi(int envVar) {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setResizable(false);
+
+        // Seteamos el empleado
+        envVarEmpleadoId = envVar;
+        
+        try {
+            statement = Controlador.getStatement();
+            rs = statement.executeQuery("SELECT * FROM empleado WHERE emp_id = '" + envVarEmpleadoId + "'");
+            envVarEmpleado = (rs.getString("emp_nom") + ' ' + rs.getString("emp_ape"));
+            txtEmpleado.setText("Bienvenido: " + rs.getString("emp_nom") + ' ' + rs.getString("emp_ape"));
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
+
     }
 
     @SuppressWarnings("unchecked")
@@ -32,6 +55,7 @@ public class FrmMdi extends javax.swing.JFrame {
         btnGestionClientes = new javax.swing.JButton();
         btnGestionEmpleados1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        txtEmpleado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -47,7 +71,6 @@ public class FrmMdi extends javax.swing.JFrame {
         });
 
         btnGestionReportes.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnGestionReportes.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\reportes.png")); // NOI18N
         btnGestionReportes.setText("Gestion de Reportes");
         btnGestionReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGestionReportes.setIconTextGap(6);
@@ -60,7 +83,6 @@ public class FrmMdi extends javax.swing.JFrame {
         btnGestionReportes.setBounds(10, 500, 240, 50);
 
         btnGestionFuentes.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnGestionFuentes.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\fuentes.png")); // NOI18N
         btnGestionFuentes.setText("Gestion de Fuentes");
         btnGestionFuentes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGestionFuentes.setIconTextGap(6);
@@ -73,7 +95,6 @@ public class FrmMdi extends javax.swing.JFrame {
         btnGestionFuentes.setBounds(10, 400, 240, 50);
 
         btnGestionReferenciales.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnGestionReferenciales.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\referenciales.png")); // NOI18N
         btnGestionReferenciales.setText("Gestión de Referenciales");
         btnGestionReferenciales.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGestionReferenciales.setIconTextGap(6);
@@ -86,7 +107,6 @@ public class FrmMdi extends javax.swing.JFrame {
         btnGestionReferenciales.setBounds(10, 450, 240, 50);
 
         btnGestionLibros.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnGestionLibros.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\libros.png")); // NOI18N
         btnGestionLibros.setText("Gestion de Libros");
         btnGestionLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGestionLibros.setIconTextGap(6);
@@ -99,7 +119,6 @@ public class FrmMdi extends javax.swing.JFrame {
         btnGestionLibros.setBounds(10, 300, 240, 50);
 
         btnRegistrarAlquiler.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnRegistrarAlquiler.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\entregar.png")); // NOI18N
         btnRegistrarAlquiler.setText("Registrar alquiler");
         btnRegistrarAlquiler.setAutoscrolls(true);
         btnRegistrarAlquiler.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -113,7 +132,6 @@ public class FrmMdi extends javax.swing.JFrame {
         btnRegistrarAlquiler.setBounds(10, 250, 240, 50);
 
         btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\cerrar.png")); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.setIconTextGap(6);
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -123,13 +141,10 @@ public class FrmMdi extends javax.swing.JFrame {
         });
         desktopPane.add(btnSalir);
         btnSalir.setBounds(10, 640, 240, 60);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\logo.png")); // NOI18N
         desktopPane.add(jLabel1);
         jLabel1.setBounds(0, 0, 270, 230);
 
         btnGestionClientes.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnGestionClientes.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\clientes.png")); // NOI18N
         btnGestionClientes.setText("Gestion de Clientes");
         btnGestionClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGestionClientes.setIconTextGap(6);
@@ -142,7 +157,6 @@ public class FrmMdi extends javax.swing.JFrame {
         btnGestionClientes.setBounds(10, 350, 240, 50);
 
         btnGestionEmpleados1.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnGestionEmpleados1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\empleados.png")); // NOI18N
         btnGestionEmpleados1.setText("Gestion de Empleados");
         btnGestionEmpleados1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGestionEmpleados1.setIconTextGap(6);
@@ -153,10 +167,12 @@ public class FrmMdi extends javax.swing.JFrame {
         });
         desktopPane.add(btnGestionEmpleados1);
         btnGestionEmpleados1.setBounds(10, 550, 240, 50);
-
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\acercade.png")); // NOI18N
         desktopPane.add(jButton1);
         jButton1.setBounds(10, 720, 50, 40);
+
+        txtEmpleado.setText("1234565");
+        desktopPane.add(txtEmpleado);
+        txtEmpleado.setBounds(10, 600, 240, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -175,7 +191,8 @@ public class FrmMdi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void abrirInternalFrameMdi(JInternalFrame internalFrame) {
-        desactivarBotonesMdi();
+//        desactivarBotonesMdi();
+
         Dimension desktopSize = desktopPane.getSize();
         Dimension jInternalFrameSize = internalFrame.getSize();
         internalFrame.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,
@@ -183,6 +200,7 @@ public class FrmMdi extends javax.swing.JFrame {
 
         desktopPane.add(internalFrame);
         internalFrame.setVisible(true);
+
     }
 
     private void btnGestionReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionReportesActionPerformed
@@ -254,17 +272,17 @@ public class FrmMdi extends javax.swing.JFrame {
         return desktopPane;
     }
 
+    public static String getEmpleado() {
+        System.out.println(envVarEmpleado);
+        return envVarEmpleado;
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         FlatArcDarkIJTheme.setup();
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmMdi().setVisible(true);
-            }
-        });
+
 
     }
 
@@ -280,6 +298,7 @@ public class FrmMdi extends javax.swing.JFrame {
     public static javax.swing.JDesktopPane desktopPane;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel txtEmpleado;
     // End of variables declaration//GEN-END:variables
 
 }

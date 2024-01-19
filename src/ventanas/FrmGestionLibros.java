@@ -1,7 +1,12 @@
 package ventanas;
 
 import clases.BusquedaFuzzy;
+import clases.Controlador;
 import clases.Utils;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -9,11 +14,18 @@ import clases.Utils;
  */
 public class FrmGestionLibros extends javax.swing.JInternalFrame {
 
+    private static boolean banderaNuevo = false;
+
     //Inicializa Motores de busqueda
     private static BusquedaFuzzy busqueda1 = new BusquedaFuzzy();
     private static BusquedaFuzzy busqueda2 = new BusquedaFuzzy();
     private static BusquedaFuzzy busqueda3 = new BusquedaFuzzy();
     private static BusquedaFuzzy busqueda4 = new BusquedaFuzzy();
+
+    // Variables para cargar campos
+    private static ResultSet rs;
+    private static Statement statement;
+    private static String query;
 
     public FrmGestionLibros() {
         initComponents();
@@ -21,6 +33,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         clases.Utils.activarPanel(false, pnlCampos);
         clases.Utils.activarScrollList(false, pnlCampos);
         busqueda1.cerrarJListMouseExited(pnlCampos);
+        txtLibroId.setEnabled(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -33,6 +46,8 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         btnSalir = new javax.swing.JButton();
         btnNuevo = new javax.swing.JButton();
         btnELliminar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        txtLibroId = new javax.swing.JTextField();
         pnlCampos = new javax.swing.JPanel();
         scrEditorial = new javax.swing.JScrollPane();
         lstEditorial = new javax.swing.JList<>();
@@ -40,11 +55,11 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         lstAutor = new javax.swing.JList<>();
         scrGenero = new javax.swing.JScrollPane();
         lstGenero = new javax.swing.JList<>();
-        scrNombreLibro = new javax.swing.JScrollPane();
-        lstNombreLibro = new javax.swing.JList<>();
+        scrLibro = new javax.swing.JScrollPane();
+        lstLibro = new javax.swing.JList<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        txtNombreLibro = new javax.swing.JTextField();
+        txtLibro = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtISBN = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -56,21 +71,21 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         btnAgregarGen = new javax.swing.JButton();
         btnAgregarAut = new javax.swing.JButton();
         btnAgregarEdi = new javax.swing.JButton();
-        txtIdEdi = new javax.swing.JTextField();
+        txtEditorialId = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txtIdGen = new javax.swing.JTextField();
-        txtIdAut = new javax.swing.JTextField();
+        txtGeneroId = new javax.swing.JTextField();
+        txtAutorId = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtIdAut1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(655, 310));
         setMinimumSize(new java.awt.Dimension(655, 310));
         getContentPane().setLayout(null);
 
+        pnlBotonera.setLayout(null);
+
         btnBuscar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnBuscar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\buscar.png")); // NOI18N
         btnBuscar.setText("BUSCAR");
         btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBuscar.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -80,9 +95,10 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
+        pnlBotonera.add(btnBuscar);
+        btnBuscar.setBounds(210, 0, 100, 60);
 
         btnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnGuardar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnGuardar.setText("GUARDAR");
         btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -92,9 +108,10 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
+        pnlBotonera.add(btnGuardar);
+        btnGuardar.setBounds(110, 0, 100, 60);
 
         btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir.setText("SALIR");
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -104,22 +121,24 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
                 btnSalirActionPerformed(evt);
             }
         });
+        pnlBotonera.add(btnSalir);
+        btnSalir.setBounds(570, 0, 100, 60);
 
         btnNuevo.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnNuevo.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\añadir.png")); // NOI18N
         btnNuevo.setText("NUEVO");
         btnNuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnNuevo.setMaximumSize(new java.awt.Dimension(100, 100));
         btnNuevo.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnNuevo.setNextFocusableComponent(txtNombreLibro);
+        btnNuevo.setNextFocusableComponent(txtLibro);
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoActionPerformed(evt);
             }
         });
+        pnlBotonera.add(btnNuevo);
+        btnNuevo.setBounds(10, 0, 100, 60);
 
         btnELliminar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        btnELliminar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\eliminar.png")); // NOI18N
         btnELliminar.setText("ELIMINAR");
         btnELliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnELliminar.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -129,43 +148,34 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
                 btnELliminarActionPerformed(evt);
             }
         });
+        pnlBotonera.add(btnELliminar);
+        btnELliminar.setBounds(310, 0, 100, 60);
 
-        javax.swing.GroupLayout pnlBotoneraLayout = new javax.swing.GroupLayout(pnlBotonera);
-        pnlBotonera.setLayout(pnlBotoneraLayout);
-        pnlBotoneraLayout.setHorizontalGroup(
-            pnlBotoneraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlBotoneraLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnELliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
-        );
-        pnlBotoneraLayout.setVerticalGroup(
-            pnlBotoneraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlBotoneraLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlBotoneraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnELliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        btnCancelar.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        pnlBotonera.add(btnCancelar);
+        btnCancelar.setBounds(410, 0, 100, 60);
 
         getContentPane().add(pnlBotonera);
-        pnlBotonera.setBounds(10, 190, 700, 70);
+        pnlBotonera.setBounds(10, 200, 690, 60);
+
+        txtLibroId.setNextFocusableComponent(txtLibro);
+        txtLibroId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtLibroIdKeyReleased(evt);
+            }
+        });
+        getContentPane().add(txtLibroId);
+        txtLibroId.setBounds(20, 70, 40, 24);
 
         pnlCampos.setLayout(null);
 
-        scrEditorial.setNextFocusableComponent(lstEditorial);
+        scrEditorial.setNextFocusableComponent(txtAutorId);
 
         lstEditorial.setNextFocusableComponent(txtAutor);
         lstEditorial.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -181,11 +191,11 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         scrEditorial.setViewportView(lstEditorial);
 
         pnlCampos.add(scrEditorial);
-        scrEditorial.setBounds(490, 100, 160, 10);
+        scrEditorial.setBounds(500, 100, 160, 10);
 
         scrAutor.setNextFocusableComponent(lstAutor);
 
-        lstAutor.setNextFocusableComponent(txtGenero);
+        lstAutor.setNextFocusableComponent(txtGeneroId);
         lstAutor.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 lstAutorFocusGained(evt);
@@ -219,23 +229,23 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         pnlCampos.add(scrGenero);
         scrGenero.setBounds(370, 160, 200, 10);
 
-        scrNombreLibro.setNextFocusableComponent(lstNombreLibro);
+        scrLibro.setNextFocusableComponent(lstLibro);
 
-        lstNombreLibro.setNextFocusableComponent(txtISBN);
-        lstNombreLibro.addFocusListener(new java.awt.event.FocusAdapter() {
+        lstLibro.setNextFocusableComponent(txtISBN);
+        lstLibro.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                lstNombreLibroFocusGained(evt);
+                lstLibroFocusGained(evt);
             }
         });
-        lstNombreLibro.addKeyListener(new java.awt.event.KeyAdapter() {
+        lstLibro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                lstNombreLibroKeyReleased(evt);
+                lstLibroKeyReleased(evt);
             }
         });
-        scrNombreLibro.setViewportView(lstNombreLibro);
+        scrLibro.setViewportView(lstLibro);
 
-        pnlCampos.add(scrNombreLibro);
-        scrNombreLibro.setBounds(60, 100, 230, 10);
+        pnlCampos.add(scrLibro);
+        scrLibro.setBounds(60, 100, 230, 10);
 
         jLabel9.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         jLabel9.setText("Gestion de Libros");
@@ -245,72 +255,72 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel1.setText("Nombre del Libro");
         pnlCampos.add(jLabel1);
-        jLabel1.setBounds(70, 50, 150, 17);
+        jLabel1.setBounds(70, 50, 150, 20);
 
-        txtNombreLibro.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        txtNombreLibro.setNextFocusableComponent(lstNombreLibro);
-        txtNombreLibro.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtLibro.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
+        txtLibro.setNextFocusableComponent(lstLibro);
+        txtLibro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtNombreLibroKeyReleased(evt);
+                txtLibroKeyReleased(evt);
             }
         });
-        pnlCampos.add(txtNombreLibro);
-        txtNombreLibro.setBounds(60, 70, 230, 27);
+        pnlCampos.add(txtLibro);
+        txtLibro.setBounds(60, 70, 230, 21);
 
         jLabel2.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel2.setText("ISBN");
         pnlCampos.add(jLabel2);
-        jLabel2.setBounds(280, 50, 80, 17);
+        jLabel2.setBounds(300, 50, 80, 20);
 
         txtISBN.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        txtISBN.setNextFocusableComponent(txtEditorial);
+        txtISBN.setNextFocusableComponent(txtEditorialId);
         pnlCampos.add(txtISBN);
-        txtISBN.setBounds(290, 70, 150, 27);
+        txtISBN.setBounds(290, 70, 150, 21);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel3.setText("Nombre del autor");
         pnlCampos.add(jLabel3);
-        jLabel3.setBounds(70, 110, 160, 17);
+        jLabel3.setBounds(70, 110, 160, 20);
 
         txtAutor.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        txtAutor.setNextFocusableComponent(scrAutor);
+        txtAutor.setNextFocusableComponent(lstAutor);
         txtAutor.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtAutorKeyReleased(evt);
             }
         });
         pnlCampos.add(txtAutor);
-        txtAutor.setBounds(60, 130, 230, 27);
+        txtAutor.setBounds(60, 130, 230, 21);
 
         jLabel4.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel4.setText("Editorial");
         pnlCampos.add(jLabel4);
-        jLabel4.setBounds(500, 50, 110, 17);
+        jLabel4.setBounds(510, 50, 110, 20);
 
         txtEditorial.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        txtEditorial.setNextFocusableComponent(scrEditorial);
+        txtEditorial.setNextFocusableComponent(lstEditorial);
         txtEditorial.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEditorialKeyReleased(evt);
             }
         });
         pnlCampos.add(txtEditorial);
-        txtEditorial.setBounds(490, 70, 160, 27);
+        txtEditorial.setBounds(500, 70, 160, 21);
 
         jLabel5.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         jLabel5.setText("Género");
         pnlCampos.add(jLabel5);
-        jLabel5.setBounds(380, 110, 90, 17);
+        jLabel5.setBounds(380, 110, 90, 20);
 
         txtGenero.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        txtGenero.setNextFocusableComponent(scrGenero);
+        txtGenero.setNextFocusableComponent(lstGenero);
         txtGenero.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtGeneroKeyReleased(evt);
             }
         });
         pnlCampos.add(txtGenero);
-        txtGenero.setBounds(370, 130, 200, 27);
+        txtGenero.setBounds(370, 130, 200, 21);
 
         btnAgregarGen.setText("jButton1");
         btnAgregarGen.addActionListener(new java.awt.event.ActionListener() {
@@ -319,7 +329,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(btnAgregarGen);
-        btnAgregarGen.setBounds(570, 130, 20, 27);
+        btnAgregarGen.setBounds(570, 130, 20, 24);
 
         btnAgregarAut.setText("jButton1");
         btnAgregarAut.addActionListener(new java.awt.event.ActionListener() {
@@ -328,7 +338,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(btnAgregarAut);
-        btnAgregarAut.setBounds(290, 130, 20, 27);
+        btnAgregarAut.setBounds(290, 130, 20, 24);
 
         btnAgregarEdi.setText("jButton1");
         btnAgregarEdi.addActionListener(new java.awt.event.ActionListener() {
@@ -337,31 +347,50 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
             }
         });
         pnlCampos.add(btnAgregarEdi);
-        btnAgregarEdi.setBounds(650, 70, 20, 27);
-        pnlCampos.add(txtIdEdi);
-        txtIdEdi.setBounds(450, 70, 40, 26);
+        btnAgregarEdi.setBounds(660, 70, 20, 24);
+
+        txtEditorialId.setNextFocusableComponent(txtEditorial);
+        txtEditorialId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEditorialIdKeyReleased(evt);
+            }
+        });
+        pnlCampos.add(txtEditorialId);
+        txtEditorialId.setBounds(460, 70, 40, 24);
 
         jLabel6.setText("ID");
         pnlCampos.add(jLabel6);
-        jLabel6.setBounds(460, 50, 30, 16);
-        pnlCampos.add(txtIdGen);
-        txtIdGen.setBounds(330, 130, 40, 26);
-        pnlCampos.add(txtIdAut);
-        txtIdAut.setBounds(20, 130, 40, 26);
+        jLabel6.setBounds(470, 50, 30, 18);
+
+        txtGeneroId.setNextFocusableComponent(txtGenero);
+        txtGeneroId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtGeneroIdKeyReleased(evt);
+            }
+        });
+        pnlCampos.add(txtGeneroId);
+        txtGeneroId.setBounds(330, 130, 40, 24);
+
+        txtAutorId.setNextFocusableComponent(txtAutor);
+        txtAutorId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAutorIdKeyReleased(evt);
+            }
+        });
+        pnlCampos.add(txtAutorId);
+        txtAutorId.setBounds(20, 130, 40, 24);
 
         jLabel7.setText("ID");
         pnlCampos.add(jLabel7);
-        jLabel7.setBounds(30, 110, 30, 16);
+        jLabel7.setBounds(30, 110, 30, 18);
 
         jLabel8.setText("ID");
         pnlCampos.add(jLabel8);
-        jLabel8.setBounds(340, 110, 30, 16);
-        pnlCampos.add(txtIdAut1);
-        txtIdAut1.setBounds(20, 70, 40, 26);
+        jLabel8.setBounds(340, 110, 30, 18);
 
         jLabel10.setText("ID");
         pnlCampos.add(jLabel10);
-        jLabel10.setBounds(30, 50, 30, 16);
+        jLabel10.setBounds(30, 50, 30, 18);
 
         getContentPane().add(pnlCampos);
         pnlCampos.setBounds(0, 0, 710, 280);
@@ -370,32 +399,61 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        btnNuevo.setEnabled(true);
+        btnBuscar.setEnabled(false);
+        btnGuardar.setEnabled(true);
+        banderaNuevo = false;
         clases.Utils.activarPanel(true, pnlCampos);
+        txtLibroId.setEnabled(true);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        clases.Controlador.executeQuery("INSERT INTO libro (lib_nom, lib_isbn, edi_id, aut_id, gen_id) VALUES ('" + txtNombreLibro.getText()
-                + "', '" + txtISBN.getText()
-                + "', '" + txtIdEdi.getText()
-                + "', '" + txtIdAut.getText()
-                + "', '" + txtIdGen.getText() + "')");
-        txtNombreLibro.setText("");
-        txtISBN.setText("");
-        txtEditorial.setText("");
-        txtAutor.setText("");
-        txtGenero.setText("");
+        if (Utils.condicionalGuardar(pnlCampos)) {
+            clases.Controlador.executeQuery("INSERT INTO libro (lib_nom, lib_isbn, edi_id, aut_id, gen_id) VALUES ('" + txtLibro.getText()
+                    + "', '" + txtISBN.getText()
+                    + "', '" + txtEditorialId.getText()
+                    + "', '" + txtAutorId.getText()
+                    + "', '" + txtGeneroId.getText() + "')");
+
+            btnNuevo.setEnabled(true);
+            btnBuscar.setEnabled(true);
+            banderaNuevo = false;
+            clases.Utils.activarPanel(false, pnlCampos);
+            Utils.limpiarPanel(pnlCampos);
+            txtLibroId.setText("");
+            txtLibroId.setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "HAY CAMPOS VACIOS");
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        busqueda1.reset();
+        busqueda2.reset();
+        busqueda3.reset();
+        busqueda4.reset();
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        btnNuevo.setEnabled(false);
+        btnBuscar.setEnabled(true);
+        btnGuardar.setEnabled(true);
+        banderaNuevo = true;
         clases.Utils.activarPanel(true, pnlCampos);
+        txtLibroId.setText("");
+        txtLibroId.setEnabled(false);
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnELliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnELliminarActionPerformed
-        // TODO add your handling code here:
+        Controlador.executeQuery("DELETE FROM libro where lib_id = '" + txtLibroId.getText() + "'");
+        btnNuevo.setEnabled(true);
+        btnBuscar.setEnabled(true);
+        banderaNuevo = false;
+        clases.Utils.activarPanel(false, pnlCampos);
+        Utils.limpiarPanel(pnlCampos);
+        txtLibroId.setText("");
+        txtLibroId.setEnabled(false);
     }//GEN-LAST:event_btnELliminarActionPerformed
 
     private void btnAgregarAutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAutActionPerformed
@@ -424,6 +482,13 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     private void lstEditorialKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstEditorialKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
             busqueda1.setText(txtEditorial, scrEditorial, lstEditorial);
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM editorial WHERE edi_nom = '" + txtEditorial.getText() + "'");
+                txtEditorialId.setText(rs.getString("edi_id"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
         }
     }//GEN-LAST:event_lstEditorialKeyReleased
 
@@ -441,6 +506,13 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     private void lstAutorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstAutorKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
             busqueda2.setText(txtAutor, scrAutor, lstAutor);
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM autor WHERE aut_nom = '" + txtAutor.getText().split(" ")[0] + "'");
+                txtAutorId.setText(rs.getString("aut_id"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
         }
     }//GEN-LAST:event_lstAutorKeyReleased
 
@@ -458,25 +530,132 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     private void lstGeneroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstGeneroKeyReleased
         if (evt.getKeyCode() == evt.VK_ENTER) {
             busqueda3.setText(txtGenero, scrGenero, lstGenero);
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM genero WHERE gen_desc = '" + txtGenero.getText() + "'");
+                txtGeneroId.setText(rs.getString("gen_id"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
         }
     }//GEN-LAST:event_lstGeneroKeyReleased
 
     /*
-        BLOQUE DE BUSQUEDA GENERO
+        BLOQUE DE BUSQUEDA LIBRO
      */
-    private void lstNombreLibroFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lstNombreLibroFocusGained
-        lstNombreLibro.setSelectedIndex(0);
-    }//GEN-LAST:event_lstNombreLibroFocusGained
-
-    private void lstNombreLibroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstNombreLibroKeyReleased
-        if (evt.getKeyCode() == evt.VK_ENTER) {
-            busqueda4.setText(txtNombreLibro, scrNombreLibro, lstNombreLibro);
+    private void txtLibroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLibroKeyReleased
+        if (banderaNuevo == false) {
+            busqueda4.busqueda("lib_nom", "libro", txtLibro, scrLibro, lstLibro);
         }
-    }//GEN-LAST:event_lstNombreLibroKeyReleased
+    }//GEN-LAST:event_txtLibroKeyReleased
 
-    private void txtNombreLibroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreLibroKeyReleased
-        busqueda4.busqueda("lib_nom", "libro", txtNombreLibro, scrNombreLibro, lstNombreLibro);
-    }//GEN-LAST:event_txtNombreLibroKeyReleased
+    private void lstLibroFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lstLibroFocusGained
+        lstLibro.setSelectedIndex(0);
+    }//GEN-LAST:event_lstLibroFocusGained
+
+    private void lstLibroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstLibroKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            busqueda4.setText(txtLibro, scrLibro, lstLibro);
+            cargarCampos("txtLibro", txtLibro);
+        }
+    }//GEN-LAST:event_lstLibroKeyReleased
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        btnNuevo.setEnabled(true);
+        btnBuscar.setEnabled(true);
+        banderaNuevo = false;
+        clases.Utils.activarPanel(false, pnlCampos);
+        Utils.limpiarPanel(pnlCampos);
+        txtLibroId.setText("");
+        
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void txtLibroIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLibroIdKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            cargarCampos("txtLibroId", txtLibroId);
+        }
+    }//GEN-LAST:event_txtLibroIdKeyReleased
+
+    private void txtEditorialIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEditorialIdKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM editorial WHERE edi_id = '" + txtEditorialId.getText() + "'");
+                txtEditorial.setText(rs.getString("edi_nom"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
+        }
+    }//GEN-LAST:event_txtEditorialIdKeyReleased
+
+    private void txtAutorIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAutorIdKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM autor WHERE aut_id = '" + txtAutorId.getText() + "'");
+                txtAutor.setText(rs.getString("aut_nom") + ' ' + rs.getString("aut_ape"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
+        }
+    }//GEN-LAST:event_txtAutorIdKeyReleased
+
+    private void txtGeneroIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGeneroIdKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM genero WHERE gen_id = '" + txtGeneroId.getText() + "'");
+                txtGenero.setText(rs.getString("gen_desc"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
+        }
+    }//GEN-LAST:event_txtGeneroIdKeyReleased
+    
+
+    private void cargarCampos(String cajaTexto, JTextField txtText) {
+        try {
+            rs = null;
+            statement = Controlador.getStatement();
+            System.out.println(txtText.getText());
+            query = txtText.getText();
+
+            if (cajaTexto == "txtLibro") {
+                rs = statement.executeQuery("SELECT * FROM v_libro WHERE lib_nom = '" + query + "'");
+            }
+
+            if (cajaTexto == "txtLibroId") {
+                rs = statement.executeQuery("SELECT * FROM v_libro WHERE lib_id = '" + query + "'");
+            }
+
+            if (rs.next()) {
+                // DEBUG
+                System.out.println("gen_desc: " + rs.getString("gen_desc"));
+                System.out.println("gen_id: " + rs.getString("gen_id"));
+                System.out.println("aut_nom_ape: " + rs.getString("aut_nom") + ' ' + rs.getString("aut_ape"));
+                System.out.println("aut_id: " + rs.getString("aut_id"));
+                System.out.println("edi_nom: " + rs.getString("edi_nom"));
+                System.out.println("edi_id: " + rs.getString("edi_id"));
+                System.out.println("lib_isbn: " + rs.getString("lib_isbn"));
+                System.out.println("lib_nom: " + rs.getString("lib_nom"));
+                System.out.println("lib_id: " + rs.getString("lib_id"));
+                // DEBUG
+
+                txtGenero.setText(rs.getString("gen_desc"));
+                txtGeneroId.setText(rs.getString("gen_id"));
+                txtAutor.setText(rs.getString("aut_nom") + ' ' + rs.getString("aut_ape"));
+                txtAutorId.setText(rs.getString("aut_id"));
+                txtEditorial.setText(rs.getString("edi_nom"));
+                txtEditorialId.setText(rs.getString("edi_id"));
+                txtISBN.setText(rs.getString("lib_isbn"));
+                txtLibro.setText(rs.getString("lib_nom"));
+                txtLibroId.setText(rs.getString("lib_id"));
+            }
+
+        } catch (Exception e) {
+            System.err.println("Nombre err: Error SQL\n" + e);
+        }
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -484,6 +663,7 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnAgregarEdi;
     private javax.swing.JButton btnAgregarGen;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnELliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnNuevo;
@@ -501,21 +681,21 @@ public class FrmGestionLibros extends javax.swing.JInternalFrame {
     private javax.swing.JList<String> lstAutor;
     private javax.swing.JList<String> lstEditorial;
     private javax.swing.JList<String> lstGenero;
-    private javax.swing.JList<String> lstNombreLibro;
+    private javax.swing.JList<String> lstLibro;
     private javax.swing.JPanel pnlBotonera;
     private javax.swing.JPanel pnlCampos;
     private javax.swing.JScrollPane scrAutor;
     private javax.swing.JScrollPane scrEditorial;
     private javax.swing.JScrollPane scrGenero;
-    private javax.swing.JScrollPane scrNombreLibro;
+    private javax.swing.JScrollPane scrLibro;
     private javax.swing.JTextField txtAutor;
+    private javax.swing.JTextField txtAutorId;
     private javax.swing.JTextField txtEditorial;
+    private javax.swing.JTextField txtEditorialId;
     private javax.swing.JTextField txtGenero;
+    private javax.swing.JTextField txtGeneroId;
     private javax.swing.JTextField txtISBN;
-    private javax.swing.JTextField txtIdAut;
-    private javax.swing.JTextField txtIdAut1;
-    private javax.swing.JTextField txtIdEdi;
-    private javax.swing.JTextField txtIdGen;
-    private javax.swing.JTextField txtNombreLibro;
+    private javax.swing.JTextField txtLibro;
+    private javax.swing.JTextField txtLibroId;
     // End of variables declaration//GEN-END:variables
 }

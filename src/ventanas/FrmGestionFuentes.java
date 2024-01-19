@@ -1,17 +1,29 @@
 package ventanas;
 
+import clases.BusquedaFuzzy;
+import clases.Controlador;
+import clases.Utils;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  *
  * @author Walter
  */
 public class FrmGestionFuentes extends javax.swing.JInternalFrame {
 
+    // Inicializa Motores de busqueda
+    private static BusquedaFuzzy busqueda1 = new BusquedaFuzzy();
+
+    // Variables para cargar campos
+    private static ResultSet rs;
+    private static Statement statement;
+
     public FrmGestionFuentes() {
         initComponents();
         setSize(630, 300);
         clases.Utils.activarScrollList(false, pnlAutor);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -34,6 +46,8 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         btnGuardar2 = new javax.swing.JButton();
         btnSalir2 = new javax.swing.JButton();
         pnlAutor = new javax.swing.JPanel();
+        scrPais = new javax.swing.JScrollPane();
+        lstPais = new javax.swing.JList<>();
         lblAutor = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         BotoneraAutor = new javax.swing.JPanel();
@@ -44,7 +58,7 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
-        txtIdPais = new javax.swing.JTextField();
+        txtPaisId = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -65,19 +79,15 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         lblEditorial.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         lblEditorial.setText("Ingrese Editorial");
         pnlEditorial.add(lblEditorial);
-        lblEditorial.setBounds(35, 22, 240, 21);
+        lblEditorial.setBounds(40, 20, 240, 30);
 
         txtEditorial.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        txtEditorial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEditorialActionPerformed(evt);
-            }
-        });
         pnlEditorial.add(txtEditorial);
-        txtEditorial.setBounds(25, 52, 250, 31);
+        txtEditorial.setBounds(30, 50, 250, 25);
+
+        BotoneraEditorial.setLayout(null);
 
         btnGuardar1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnGuardar1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnGuardar1.setText("GUARDAR");
         btnGuardar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar1.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -87,9 +97,10 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
                 btnGuardar1btnGuaPaiActionPerformed(evt);
             }
         });
+        BotoneraEditorial.add(btnGuardar1);
+        btnGuardar1.setBounds(0, 0, 140, 60);
 
         btnSalir1.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnSalir1.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir1.setText("SALIR");
         btnSalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir1.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -99,28 +110,11 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
                 btnSalir1btnSaliPaiActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout BotoneraEditorialLayout = new javax.swing.GroupLayout(BotoneraEditorial);
-        BotoneraEditorial.setLayout(BotoneraEditorialLayout);
-        BotoneraEditorialLayout.setHorizontalGroup(
-            BotoneraEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BotoneraEditorialLayout.createSequentialGroup()
-                .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
-                .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        BotoneraEditorialLayout.setVerticalGroup(
-            BotoneraEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BotoneraEditorialLayout.createSequentialGroup()
-                .addGroup(BotoneraEditorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12))
-        );
+        BotoneraEditorial.add(btnSalir1);
+        btnSalir1.setBounds(380, 0, 140, 60);
 
         pnlEditorial.add(BotoneraEditorial);
-        BotoneraEditorial.setBounds(25, 127, 514, 60);
+        BotoneraEditorial.setBounds(30, 130, 520, 60);
 
         tabInfoLibros.addTab("Editorial", pnlEditorial);
 
@@ -129,14 +123,15 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
         lblGenero.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         lblGenero.setText("Ingrese Genero");
         pnlGenero.add(lblGenero);
-        lblGenero.setBounds(35, 22, 230, 21);
+        lblGenero.setBounds(40, 20, 230, 30);
 
         txtGenero.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         pnlGenero.add(txtGenero);
-        txtGenero.setBounds(25, 52, 250, 31);
+        txtGenero.setBounds(30, 50, 250, 25);
+
+        BotoneraGenero.setLayout(null);
 
         btnGuardar2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnGuardar2.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         btnGuardar2.setText("GUARDAR");
         btnGuardar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar2.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -146,9 +141,10 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
                 btnGuardar2btnGuaPaiActionPerformed(evt);
             }
         });
+        BotoneraGenero.add(btnGuardar2);
+        btnGuardar2.setBounds(0, 0, 140, 60);
 
         btnSalir2.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnSalir2.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir2.setText("SALIR");
         btnSalir2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir2.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -158,45 +154,43 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
                 btnSalir2btnSaliPaiActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout BotoneraGeneroLayout = new javax.swing.GroupLayout(BotoneraGenero);
-        BotoneraGenero.setLayout(BotoneraGeneroLayout);
-        BotoneraGeneroLayout.setHorizontalGroup(
-            BotoneraGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BotoneraGeneroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
-                .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        BotoneraGeneroLayout.setVerticalGroup(
-            BotoneraGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BotoneraGeneroLayout.createSequentialGroup()
-                .addGroup(BotoneraGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12))
-        );
+        BotoneraGenero.add(btnSalir2);
+        btnSalir2.setBounds(380, 0, 140, 60);
 
         pnlGenero.add(BotoneraGenero);
-        BotoneraGenero.setBounds(25, 127, 517, 60);
+        BotoneraGenero.setBounds(30, 130, 540, 60);
 
         tabInfoLibros.addTab("Genero", pnlGenero);
 
         pnlAutor.setLayout(null);
 
+        lstPais.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                lstPaisFocusGained(evt);
+            }
+        });
+        lstPais.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                lstPaisKeyReleased(evt);
+            }
+        });
+        scrPais.setViewportView(lstPais);
+
+        pnlAutor.add(scrPais);
+        scrPais.setBounds(470, 130, 130, 10);
+
         lblAutor.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         lblAutor.setText("Ingrese Autor");
         pnlAutor.add(lblAutor);
-        lblAutor.setBounds(30, 20, 105, 21);
+        lblAutor.setBounds(30, 20, 98, 19);
 
         txtNombre.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         pnlAutor.add(txtNombre);
         txtNombre.setBounds(10, 90, 205, 30);
 
+        BotoneraAutor.setLayout(null);
+
         BtnGuardar.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        BtnGuardar.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\guardar.png")); // NOI18N
         BtnGuardar.setText("GUARDAR");
         BtnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnGuardar.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -206,9 +200,10 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
                 BtnGuardarActionPerformed(evt);
             }
         });
+        BotoneraAutor.add(BtnGuardar);
+        BtnGuardar.setBounds(6, 0, 116, 60);
 
         btnSalir.setFont(new java.awt.Font("HP Simplified", 1, 12)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JAVALPI\\FINALJAVA\\src\\assets\\inicio.png")); // NOI18N
         btnSalir.setText("SALIR");
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -218,65 +213,52 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout BotoneraAutorLayout = new javax.swing.GroupLayout(BotoneraAutor);
-        BotoneraAutor.setLayout(BotoneraAutorLayout);
-        BotoneraAutorLayout.setHorizontalGroup(
-            BotoneraAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BotoneraAutorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 337, Short.MAX_VALUE)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        BotoneraAutorLayout.setVerticalGroup(
-            BotoneraAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BotoneraAutorLayout.createSequentialGroup()
-                .addGroup(BotoneraAutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12))
-        );
+        BotoneraAutor.add(btnSalir);
+        btnSalir.setBounds(450, 0, 115, 60);
 
         pnlAutor.add(BotoneraAutor);
         BotoneraAutor.setBounds(20, 140, 580, 60);
 
         txtPais.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        txtPais.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPaisKeyReleased(evt);
+            }
+        });
         pnlAutor.add(txtPais);
         txtPais.setBounds(470, 90, 130, 31);
 
         jLabel2.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel2.setText("Nombre");
         pnlAutor.add(jLabel2);
-        jLabel2.setBounds(30, 60, 190, 17);
+        jLabel2.setBounds(20, 70, 190, 20);
 
         jLabel3.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel3.setText("Apellido");
         pnlAutor.add(jLabel3);
-        jLabel3.setBounds(230, 60, 180, 17);
+        jLabel3.setBounds(230, 70, 180, 20);
 
         jLabel6.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         jLabel6.setText("Pais");
         pnlAutor.add(jLabel6);
-        jLabel6.setBounds(490, 60, 40, 17);
+        jLabel6.setBounds(480, 70, 40, 20);
 
         txtApellido.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
         pnlAutor.add(txtApellido);
         txtApellido.setBounds(220, 90, 190, 31);
 
-        txtIdPais.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
-        txtIdPais.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdPaisActionPerformed(evt);
+        txtPaisId.setFont(new java.awt.Font("HP Simplified", 1, 14)); // NOI18N
+        txtPaisId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPaisIdKeyReleased(evt);
             }
         });
-        pnlAutor.add(txtIdPais);
-        txtIdPais.setBounds(420, 90, 50, 31);
+        pnlAutor.add(txtPaisId);
+        txtPaisId.setBounds(420, 90, 50, 31);
 
         jLabel5.setText("ID");
         pnlAutor.add(jLabel5);
-        jLabel5.setBounds(440, 60, 30, 16);
+        jLabel5.setBounds(440, 60, 30, 40);
 
         tabInfoLibros.addTab("Autor", pnlAutor);
 
@@ -287,8 +269,10 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardar1btnGuaPaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1btnGuaPaiActionPerformed
-        clases.Controlador.executeQuery("INSERT INTO editorial (edi_nom) VALUES ( '"+txtEditorial.getText() +"')");
-        txtEditorial.setText("");
+        if (Utils.condicionalGuardar(pnlEditorial)) {
+            clases.Controlador.executeQuery("INSERT INTO editorial (edi_nom) VALUES ( '" + txtEditorial.getText() + "')");
+            txtEditorial.setText("");
+        }
     }//GEN-LAST:event_btnGuardar1btnGuaPaiActionPerformed
 
     private void btnSalir1btnSaliPaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1btnSaliPaiActionPerformed
@@ -296,8 +280,10 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalir1btnSaliPaiActionPerformed
 
     private void btnGuardar2btnGuaPaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar2btnGuaPaiActionPerformed
-        clases.Controlador.executeQuery("INSERT INTO genero (gen_desc) VALUES ( '"+txtGenero.getText() +"')");
-        txtGenero.setText("");
+        if (Utils.condicionalGuardar(pnlGenero)) {
+            clases.Controlador.executeQuery("INSERT INTO genero (gen_desc) VALUES ( '" + txtGenero.getText() + "')");
+            txtGenero.setText("");
+        }
     }//GEN-LAST:event_btnGuardar2btnGuaPaiActionPerformed
 
     private void btnSalir2btnSaliPaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir2btnSaliPaiActionPerformed
@@ -309,22 +295,50 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
-       clases.Controlador.executeQuery("INSERT INTO autor (aut_nom, aut_ape, pai_id) VALUES ('" + txtNombre.getText() + 
-                "', '" + txtApellido.getText() + 
-              "', '" + txtIdPais.getText() + "');");
-       txtNombre.setText("");  
-       txtApellido.setText("");  
-       txtIdPais.setText(""); 
-       txtPais.setText("");
+        if (Utils.condicionalGuardar(pnlAutor)) {
+            clases.Controlador.executeQuery("INSERT INTO autor (aut_nom, aut_ape, pai_id) VALUES ('" + txtNombre.getText()
+                    + "', '" + txtApellido.getText()
+                    + "', '" + txtPaisId.getText() + "');");
+            txtNombre.setText("");
+            txtApellido.setText("");
+            txtPaisId.setText("");
+            txtPais.setText("");
+        }
+
     }//GEN-LAST:event_BtnGuardarActionPerformed
 
-    private void txtEditorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEditorialActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEditorialActionPerformed
+    private void txtPaisKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaisKeyReleased
+        busqueda1.busqueda("pai_desc", "pais", txtPais, scrPais, lstPais);
+    }//GEN-LAST:event_txtPaisKeyReleased
 
-    private void txtIdPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdPaisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdPaisActionPerformed
+    private void lstPaisFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lstPaisFocusGained
+        lstPais.setSelectedIndex(0);
+    }//GEN-LAST:event_lstPaisFocusGained
+
+    private void lstPaisKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstPaisKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            busqueda1.setText(txtPais, scrPais, lstPais);
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM pais WHERE pai_desc = '" + txtPais.getText() + "'");
+                txtPaisId.setText(rs.getString("pai_id"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
+        }
+    }//GEN-LAST:event_lstPaisKeyReleased
+
+    private void txtPaisIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaisIdKeyReleased
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            try {
+                statement = Controlador.getStatement();
+                rs = statement.executeQuery("SELECT * FROM pais WHERE pai_id = '" + txtPaisId.getText() + "'");
+                txtPais.setText(rs.getString("pai_desc"));
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
+        }
+    }//GEN-LAST:event_txtPaisIdKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -347,15 +361,17 @@ public class FrmGestionFuentes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblAutor;
     private javax.swing.JLabel lblEditorial;
     private javax.swing.JLabel lblGenero;
+    private javax.swing.JList<String> lstPais;
     private javax.swing.JPanel pnlAutor;
     private javax.swing.JPanel pnlEditorial;
     private javax.swing.JPanel pnlGenero;
+    private javax.swing.JScrollPane scrPais;
     private javax.swing.JTabbedPane tabInfoLibros;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtEditorial;
     private javax.swing.JTextField txtGenero;
-    private javax.swing.JTextField txtIdPais;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPais;
+    private javax.swing.JTextField txtPaisId;
     // End of variables declaration//GEN-END:variables
 }
